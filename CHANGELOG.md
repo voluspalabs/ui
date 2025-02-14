@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.12
+
+### Patch Changes
+
+- c881288: New export config!
+
 ## 0.0.11
 
 ### Patch Changes
