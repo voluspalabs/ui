@@ -3,8 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import type * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
 import { type ComponentProps, createContext, useContext, useId } from 'react'
-import { cn } from '../../utils/cn.js'
-
 import {
   Controller,
   type ControllerProps,
@@ -17,7 +15,8 @@ import {
   useFormState,
 } from 'react-hook-form'
 import type { ZodType, ZodTypeDef } from 'zod'
-import { Label } from './label.js'
+import { cn } from '../../utils/cn'
+import { Label } from './label'
 
 const useForm = <
   TOut extends FieldValues,

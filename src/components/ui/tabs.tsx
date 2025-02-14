@@ -1,8 +1,7 @@
 'use client'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { cn } from '../../utils/cn.js'
-
 import type { ComponentProps } from 'react'
+import { cn } from '../../utils/cn'
 
 function Tabs({
   className,

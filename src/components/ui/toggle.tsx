@@ -1,9 +1,8 @@
 'use client'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
 import { type VariantProps, cva } from 'class-variance-authority'
-import { cn } from '../../utils/cn.js'
-
 import type { ComponentProps } from 'react'
+import { cn } from '../../utils/cn'
 
 const toggleVariants = cva(
   // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.

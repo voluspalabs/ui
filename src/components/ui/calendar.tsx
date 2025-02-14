@@ -1,10 +1,9 @@
 'use client'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { cn } from '../../utils/cn.js'
-
 import type { ComponentProps } from 'react'
 import { DayPicker } from 'react-day-picker'
-import { buttonVariants } from './button.js'
+import { cn } from '../../utils/cn'
+import { buttonVariants } from './button'
 
 function Calendar({
   className,
