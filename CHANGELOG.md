@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.10
+
+### Patch Changes
+
+- aec39cb: Testing exports again
+
 ## 0.0.9
 
 ### Patch Changes
