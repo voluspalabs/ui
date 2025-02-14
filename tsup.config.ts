@@ -13,7 +13,7 @@ export default defineConfig({
   target: 'es2022',
 
   // Dev
-  external: ['react', 'react-dom', 'react-hook-form'],
+  // external: ['react', 'react-dom', 'react-hook-form'],
 
   // Prod
   minify: true,
