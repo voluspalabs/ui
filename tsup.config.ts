@@ -9,10 +9,11 @@ export default defineConfig({
   treeshake: true,
   splitting: true,
   skipNodeModulesBundle: true,
-  target: 'esnext',
+  sourcemap: true,
+  target: 'es2022',
 
   // Dev
-  external: ['react-hook-form'],
+  external: ['react', 'react-dom', 'react-hook-form'],
 
   // Prod
   minify: true,
