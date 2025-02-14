@@ -11,6 +11,9 @@ export default defineConfig({
   skipNodeModulesBundle: true,
   target: 'esnext',
 
+  // Dev
+  external: ['react-hook-form'],
+
   // Prod
   minify: true,
   bundle: true,
