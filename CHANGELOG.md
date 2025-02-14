@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.4
+
+### Patch Changes
+
+- feb88d0: Added missing react-hook-form package.
+
 ## 0.0.3
 
 ### Patch Changes
