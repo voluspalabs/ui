@@ -1,4 +1,4 @@
-# @voluspa/ui
+# @voluspalabs/ui
 
 A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.
 
@@ -13,13 +13,13 @@ A collection of high-quality React components styled with Tailwind CSS for build
 Install the package via npm:
 
 ```zsh
-npm install @voluspa/ui
+npm install @voluspalabs/ui
 ```
 
 Or via Bun:
 
 ```zsh
-bun add @voluspa/ui
+bun add @voluspalabs/ui
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ bun add @voluspa/ui
 Import the component you need from the package. For example, to use the button component:
 
 ```tsx
-import { Button } from '@voluspa/ui/button';
+import { Button } from '@voluspalabs/ui/button';
 
 function App() {
   return <Button>Click Me</Button>;
@@ -40,7 +40,7 @@ export default App;
 
 To work on this project locally, follow these steps:
 
-1. Clone the repo: `git clone https://github.com/voluspa-labs/ui.git`
+1. Clone the repo: `git clone https://github.com/voluspalabs/ui.git`
 2. Install dependencies: `bun install`
 
 For building the package, run: `bun run build`
