@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.11
+
+### Patch Changes
+
+- 7a141cd: More testing...
+
 ## 0.0.10
 
 ### Patch Changes
