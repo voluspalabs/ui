@@ -2,12 +2,7 @@
   "name": "@voluspalabs/ui",
   "version": "0.0.11",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
-  "keywords": [
-    "UI",
-    "typescript",
-    "react",
-    "tailwindcss"
-  ],
+  "keywords": ["UI", "typescript", "react", "tailwindcss"],
   "homepage": "https://github.com/voluspa-labs/ui",
   "bugs": {
     "url": "https://github.com/voluspa-labs/ui/issues"
@@ -17,19 +12,199 @@
     "type": "git",
     "url": "git+https://github.com/voluspa-labs/ui.git"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "type": "module",
   "license": "BSL-1.0",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+    "./accordion": {
+      "types": "./dist/accordion.d.ts",
+      "default": "./dist/accordion.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/alert-dialog.d.ts",
+      "default": "./dist/alert-dialog.js"
+    },
+    "./alert": {
+      "types": "./dist/alert.d.ts",
+      "default": "./dist/alert.js"
+    },
+    "./aspect-ratio": {
+      "types": "./dist/aspect-ratio.d.ts",
+      "default": "./dist/aspect-ratio.js"
+    },
+    "./avatar": {
+      "types": "./dist/avatar.d.ts",
+      "default": "./dist/avatar.js"
+    },
+    "./badge": {
+      "types": "./dist/badge.d.ts",
+      "default": "./dist/badge.js"
+    },
+    "./breadcrumb": {
+      "types": "./dist/breadcrumb.d.ts",
+      "default": "./dist/breadcrumb.js"
+    },
+    "./button": {
+      "types": "./dist/button.d.ts",
+      "default": "./dist/button.js"
+    },
+    "./calendar": {
+      "types": "./dist/calendar.d.ts",
+      "default": "./dist/calendar.js"
+    },
+    "./card": {
+      "types": "./dist/card.d.ts",
+      "default": "./dist/card.js"
+    },
+    "./carousel": {
+      "types": "./dist/carousel.d.ts",
+      "default": "./dist/carousel.js"
+    },
+    "./chart": {
+      "types": "./dist/chart.d.ts",
+      "default": "./dist/chart.js"
+    },
+    "./checkbox": {
+      "types": "./dist/checkbox.d.ts",
+      "default": "./dist/checkbox.js"
+    },
+    "./collapsible": {
+      "types": "./dist/collapsible.d.ts",
+      "default": "./dist/collapsible.js"
+    },
+    "./command": {
+      "types": "./dist/command.d.ts",
+      "default": "./dist/command.js"
+    },
+    "./context-menu": {
+      "types": "./dist/context-menu.d.ts",
+      "default": "./dist/context-menu.js"
+    },
+    "./dialog": {
+      "types": "./dist/dialog.d.ts",
+      "default": "./dist/dialog.js"
+    },
+    "./drawer": {
+      "types": "./dist/drawer.d.ts",
+      "default": "./dist/drawer.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/dropdown-menu.d.ts",
+      "default": "./dist/dropdown-menu.js"
+    },
+    "./form": {
+      "types": "./dist/form.d.ts",
+      "default": "./dist/form.js"
+    },
+    "./hover-card": {
+      "types": "./dist/hover-card.d.ts",
+      "default": "./dist/hover-card.js"
+    },
+    "./input-otp": {
+      "types": "./dist/input-otp.d.ts",
+      "default": "./dist/input-otp.js"
+    },
+    "./input": {
+      "types": "./dist/input.d.ts",
+      "default": "./dist/input.js"
+    },
+    "./label": {
+      "types": "./dist/label.d.ts",
+      "default": "./dist/label.js"
+    },
+    "./menubar": {
+      "types": "./dist/menubar.d.ts",
+      "default": "./dist/menubar.js"
+    },
+    "./navigation-menu": {
+      "types": "./dist/navigation-menu.d.ts",
+      "default": "./dist/navigation-menu.js"
+    },
+    "./pagination": {
+      "types": "./dist/pagination.d.ts",
+      "default": "./dist/pagination.js"
+    },
+    "./popover": {
+      "types": "./dist/popover.d.ts",
+      "default": "./dist/popover.js"
+    },
+    "./progress": {
+      "types": "./dist/progress.d.ts",
+      "default": "./dist/progress.js"
+    },
+    "./radio-group": {
+      "types": "./dist/radio-group.d.ts",
+      "default": "./dist/radio-group.js"
+    },
+    "./resizable": {
+      "types": "./dist/resizable.d.ts",
+      "default": "./dist/resizable.js"
+    },
+    "./scroll-area": {
+      "types": "./dist/scroll-area.d.ts",
+      "default": "./dist/scroll-area.js"
+    },
+    "./select": {
+      "types": "./dist/select.d.ts",
+      "default": "./dist/select.js"
+    },
+    "./separator": {
+      "types": "./dist/separator.d.ts",
+      "default": "./dist/separator.js"
+    },
+    "./sheet": {
+      "types": "./dist/sheet.d.ts",
+      "default": "./dist/sheet.js"
+    },
+    "./sidebar": {
+      "types": "./dist/sidebar.d.ts",
+      "default": "./dist/sidebar.js"
+    },
+    "./skeleton": {
+      "types": "./dist/skeleton.d.ts",
+      "default": "./dist/skeleton.js"
+    },
+    "./slider": {
+      "types": "./dist/slider.d.ts",
+      "default": "./dist/slider.js"
+    },
+    "./sonner": {
+      "types": "./dist/sonner.d.ts",
+      "default": "./dist/sonner.js"
+    },
+    "./spinner": {
+      "types": "./dist/spinner.d.ts",
+      "default": "./dist/spinner.js"
+    },
+    "./switch": {
+      "types": "./dist/switch.d.ts",
+      "default": "./dist/switch.js"
+    },
+    "./table": {
+      "types": "./dist/table.d.ts",
+      "default": "./dist/table.js"
+    },
+    "./tabs": {
+      "types": "./dist/tabs.d.ts",
+      "default": "./dist/tabs.js"
+    },
+    "./textarea": {
+      "types": "./dist/textarea.d.ts",
+      "default": "./dist/textarea.js"
+    },
+    "./toggle-group": {
+      "types": "./dist/toggle-group.d.ts",
+      "default": "./dist/toggle-group.js"
+    },
+    "./toggle": {
+      "types": "./dist/toggle.d.ts",
+      "default": "./dist/toggle.js"
+    },
+    "./tooltip": {
+      "types": "./dist/tooltip.d.ts",
+      "default": "./dist/tooltip.js"
     }
   },
-  "bin": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "bunx del-cli ./dist",
     "build": "tsup",

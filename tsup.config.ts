@@ -1,13 +1,13 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/components/ui/*'],
   outDir: 'dist',
   format: ['esm'],
   dts: true,
   clean: true,
   treeshake: true,
-  splitting: false, // Disabled after some testing.
+  splitting: true,
   skipNodeModulesBundle: true,
   target: 'es2022',
 
