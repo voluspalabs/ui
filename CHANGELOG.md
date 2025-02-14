@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- 247afd5: Reverting some changes.
+
 ## 0.0.7
 
 ### Patch Changes
