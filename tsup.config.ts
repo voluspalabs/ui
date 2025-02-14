@@ -7,9 +7,8 @@ export default defineConfig({
   dts: true,
   clean: true,
   treeshake: true,
-  splitting: true,
+  splitting: false, // Disabled after some testing.
   skipNodeModulesBundle: true,
-  sourcemap: true,
   target: 'es2022',
 
   // Dev

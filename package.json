@@ -2,12 +2,7 @@
   "name": "@voluspalabs/ui",
   "version": "0.0.10",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
-  "keywords": [
-    "UI",
-    "typescript",
-    "react",
-    "tailwindcss"
-  ],
+  "keywords": ["UI", "typescript", "react", "tailwindcss"],
   "homepage": "https://github.com/voluspa-labs/ui",
   "bugs": {
     "url": "https://github.com/voluspa-labs/ui/issues"
@@ -17,12 +12,15 @@
     "type": "git",
     "url": "git+https://github.com/voluspa-labs/ui.git"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "type": "module",
   "license": "BSL-1.0",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "bin": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
