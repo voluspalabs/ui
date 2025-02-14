@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.3
+
+### Patch Changes
+
+- 6c278e4: New exports in index.ts file and some minor improvements.
+
 ## 0.0.2
 
 ### Patch Changes
