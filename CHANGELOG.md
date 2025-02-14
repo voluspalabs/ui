@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.13
+
+### Patch Changes
+
+- db63d02: Updated info and README.md
+
 ## 0.0.12
 
 ### Patch Changes
