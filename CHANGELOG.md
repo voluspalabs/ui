@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.14
+
+### Patch Changes
+
+- af5a5ac: Correct URLs in package.json
+
 ## 0.0.13
 
 ### Patch Changes
