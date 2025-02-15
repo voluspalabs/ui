@@ -18,16 +18,32 @@ import {
 import type { ZodType, ZodTypeDef } from 'zod'
 import { Label } from './label'
 
+// TODO: Check if this is still needed, old code before the update.
+// const useForm = <
+//   TOut extends FieldValues,
+//   TDef extends ZodTypeDef,
+//   TIn extends FieldValues,
+// >(
+//   props: Omit<UseFormProps<TIn>, 'resolver'> & {
+//     schema: ZodType<TOut, TDef, TIn>
+//   },
+// ) => {
+//   return __useForm<TIn, unknown, TOut>({
+//     ...props,
+//     resolver: zodResolver(props.schema, undefined),
+//   })
+// }
+
 const useForm = <
   TOut extends FieldValues,
   TDef extends ZodTypeDef,
   TIn extends FieldValues,
 >(
-  props: Omit<UseFormProps<TIn>, 'resolver'> & {
+  props: Omit<UseFormProps<TOut>, 'resolver'> & {
     schema: ZodType<TOut, TDef, TIn>
   },
 ) => {
-  return __useForm<TIn, unknown, TOut>({
+  return __useForm<TOut>({
     ...props,
     resolver: zodResolver(props.schema, undefined),
   })
