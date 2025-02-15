@@ -2,7 +2,7 @@ import { Slot, Slottable } from '@radix-ui/react-slot'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
 import type { ComponentProps } from 'react'
-import { Spinner } from './spinner.js'
+import { Spinner } from './spinner'
 
 const buttonVariants = cva(
   // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.

@@ -6,8 +6,8 @@ import {
   type ComponentPropsWithRef,
   useState,
 } from 'react'
-import { Button } from './button.js'
-import { Input } from './input.js'
+import { Button } from './button'
+import { Input } from './input'
 
 export type InputProps = ComponentPropsWithRef<'input'>
 

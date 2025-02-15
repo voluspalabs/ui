@@ -10,7 +10,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from './dialog.js'
+} from './dialog'
 
 function Command({
   className,

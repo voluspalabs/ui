@@ -3,7 +3,7 @@ import { cn } from '@voluspalabs/lib/utils/cn'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { DayPicker } from 'react-day-picker'
-import { buttonVariants } from './button.js'
+import { buttonVariants } from './button'
 
 function Calendar({
   className,
