@@ -1,5 +1,7 @@
 'use client'
 import { Slot } from '@radix-ui/react-slot'
+import { useIsMobile } from '@voluspalabs/lib/hooks/use-mobile'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
 import { PanelLeftIcon } from 'lucide-react'
 import {
@@ -13,8 +15,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { useIsMobile } from '../../hooks/use-mobile'
-import { cn } from '../../utils/cn'
 import { Button } from './button'
 import { Input } from './input'
 import { Separator } from './separator'

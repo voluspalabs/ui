@@ -1,7 +1,7 @@
 'use client'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import type { ComponentProps } from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
-import { cn } from '../../utils/cn'
 
 function Drawer({ ...props }: ComponentProps<typeof DrawerPrimitive.Root>) {
   return <DrawerPrimitive.Root data-slot="drawer" {...props} />

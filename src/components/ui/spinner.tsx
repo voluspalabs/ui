@@ -1,7 +1,7 @@
 import { Slot } from '@radix-ui/react-slot'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
 import type { ComponentProps, HTMLAttributes } from 'react'
-import { cn } from '../../utils/cn'
 
 const spinnerVariants = cva('relative block opacity-65', {
   variants: {

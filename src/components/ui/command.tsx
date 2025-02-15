@@ -1,7 +1,7 @@
 'use client'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
-import { cn } from '../../utils/cn'
 
 import type { ComponentProps } from 'react'
 import {

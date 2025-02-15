@@ -1,7 +1,7 @@
 'use client'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 function Avatar({
   className,

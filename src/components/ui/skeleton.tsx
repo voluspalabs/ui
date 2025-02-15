@@ -1,5 +1,5 @@
+import { cn } from '@voluspalabs/lib/utils/cn'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 function Skeleton({ className, ...props }: ComponentProps<'div'>) {
   return (

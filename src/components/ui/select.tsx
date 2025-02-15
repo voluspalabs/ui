@@ -1,8 +1,8 @@
 'use client'
 import * as SelectPrimitive from '@radix-ui/react-select'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 function Select({ ...props }: ComponentProps<typeof SelectPrimitive.Root>) {
   return <SelectPrimitive.Root data-slot="select" {...props} />

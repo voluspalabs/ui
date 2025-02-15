@@ -1,8 +1,8 @@
 'use client'
 import * as MenubarPrimitive from '@radix-ui/react-menubar'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 function Menubar({
   className,

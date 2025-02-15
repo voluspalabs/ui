@@ -2,6 +2,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import type * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { type ComponentProps, createContext, useContext, useId } from 'react'
 import {
   Controller,
@@ -15,7 +16,6 @@ import {
   useFormState,
 } from 'react-hook-form'
 import type { ZodType, ZodTypeDef } from 'zod'
-import { cn } from '../../utils/cn'
 import { Label } from './label'
 
 const useForm = <

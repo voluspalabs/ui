@@ -1,11 +1,11 @@
 'use client'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { Eye, EyeClosed } from 'lucide-react'
 import {
   type ComponentProps,
   type ComponentPropsWithRef,
   useState,
 } from 'react'
-import { cn } from '../../utils/cn'
 import { Button } from './button'
 import { Input } from './input'
 

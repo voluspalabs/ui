@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react'
@@ -12,7 +13,6 @@ import {
   useEffect,
   useState,
 } from 'react'
-import { cn } from '../../utils/cn'
 import { Button } from './button'
 
 type CarouselApi = UseEmblaCarouselType[1]

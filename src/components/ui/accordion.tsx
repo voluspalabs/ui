@@ -1,8 +1,8 @@
 'use client'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { ChevronDownIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 function Accordion({
   ...props

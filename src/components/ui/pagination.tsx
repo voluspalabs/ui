@@ -1,10 +1,10 @@
+import { cn } from '@voluspalabs/lib/utils/cn'
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
   MoreHorizontalIcon,
 } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { cn } from '../../utils/cn'
 
 import { type Button, buttonVariants } from './button'
 

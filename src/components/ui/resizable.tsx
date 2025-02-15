@@ -1,8 +1,8 @@
 'use client'
+import { cn } from '@voluspalabs/lib/utils/cn'
 import { GripVerticalIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import * as ResizablePrimitive from 'react-resizable-panels'
-import { cn } from '../../utils/cn'
 
 function ResizablePanelGroup({
   className,
