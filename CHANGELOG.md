@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.24
+
+### Patch Changes
+
+- 3574cf9: Config?
+
 ## 0.0.23
 
 ### Patch Changes
