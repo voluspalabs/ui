@@ -5,12 +5,7 @@ export default defineConfig({
   outDir: 'dist',
   format: ['esm'],
   sourcemap: true,
-  dts: {
-    resolve: true,
-    compilerOptions: {
-      moduleResolution: 'node',
-    },
-  },
+  dts: true,
   clean: true,
   treeshake: true,
   skipNodeModulesBundle: true,
@@ -23,5 +18,6 @@ export default defineConfig({
     'tailwindcss-animate',
   ],
   minify: false,
-  bundle: false,
+  bundle: true, // Change this back to true
+  splitting: true, // Add splitting for better tree-shaking
 })
