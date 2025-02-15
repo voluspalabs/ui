@@ -4,10 +4,16 @@ export default defineConfig({
   entry: ['src/*'],
   outDir: 'dist',
   format: ['esm'],
-  dts: true,
+  dts: {
+    resolve: true,
+    compilerOptions: {
+      moduleResolution: 'bundler',
+      declarationMap: true,
+      declaration: true,
+    },
+  },
   clean: true,
   treeshake: true,
-  // splitting: true,
   skipNodeModulesBundle: true,
   target: 'es2022',
   external: [
@@ -17,6 +23,6 @@ export default defineConfig({
     'tailwindcss',
     'tailwindcss-animate',
   ],
-  minify: true,
-  bundle: true,
+  minify: false,
+  bundle: false,
 })
