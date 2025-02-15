@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.31
+
+### Patch Changes
+
+- 684953b: Config...
+
 ## 0.0.30
 
 ### Patch Changes
