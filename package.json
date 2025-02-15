@@ -2,12 +2,7 @@
   "name": "@voluspalabs/ui",
   "version": "0.0.15",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
-  "keywords": [
-    "UI",
-    "typescript",
-    "react",
-    "tailwindcss"
-  ],
+  "keywords": ["UI", "typescript", "react", "tailwindcss"],
   "homepage": "https://github.com/voluspalabs/ui",
   "bugs": {
     "url": "https://github.com/voluspalabs/ui/issues"
@@ -17,9 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/voluspalabs/ui.git"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "type": "module",
   "license": "BSL-1.0",
   "exports": {
@@ -247,7 +240,7 @@
     "@radix-ui/react-toggle": "^1.1.2",
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.8",
-    "@voluspalabs/lib": "^0.0.2",
+    "@voluspalabs/lib": "^0.0.3",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.0.4",
     "embla-carousel-react": "^8.5.2",

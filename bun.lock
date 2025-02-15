@@ -30,7 +30,7 @@
         "@radix-ui/react-toggle": "^1.1.2",
         "@radix-ui/react-toggle-group": "^1.1.2",
         "@radix-ui/react-tooltip": "^1.1.8",
-        "@voluspalabs/lib": "^0.0.2",
+        "@voluspalabs/lib": "^0.0.3",
         "class-variance-authority": "^0.7.1",
         "cmdk": "^1.0.4",
         "embla-carousel-react": "^8.5.2",
@@ -415,7 +415,7 @@
 
     "@types/react-dom": ["@types/react-dom@19.0.3", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA=="],
 
-    "@voluspalabs/lib": ["@voluspalabs/lib@0.0.2", "", { "dependencies": { "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "tailwind-merge": "^3.0.1" }, "peerDependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" } }, "sha512-XNMtUoFMmel/qE/k2lJoi1zYDJSYKy1g8ZaizAlZaZbcEX5rAZPTR6hjm0DSG3C/SIudhgZ6PxJ2UMmCnbV3JA=="],
+    "@voluspalabs/lib": ["@voluspalabs/lib@0.0.3", "", { "dependencies": { "class-variance-authority": "^0.7.1", "clsx": "^2.1.1", "tailwind-merge": "^3.0.1" }, "peerDependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" } }, "sha512-31FfyU2bOlk3PSuB0RuyPZHR7p4er6MkCeROazntcWiMJwEUY9Jv1pC0vUdzQGQ1L0berQF/sAg2AkHgn2GfOg=="],
 
     "ansi-colors": ["ansi-colors@4.1.3", "", {}, "sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw=="],
 
