@@ -3,7 +3,7 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2022",
+    "target": "ESNext",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -26,22 +26,15 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true, // Set to false if you want to compile to JS
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // "rootDir": "src", // Using tsup
     // "outDir": "dist", // Using tsup
     // "sourceMap": true, // Using tsup
 
     /* Lib */
-    "jsx": "react-jsx",
+    "jsx": "react-jsx"
     // "declaration": true, // Using tsup
     // "declarationMap": true // Using tsup
-
-    /* Path Mappings */
-    "baseUrl": ".",
-    "paths": {
-      "@voluspalabs/ui": ["./src/index.ts"],
-      "@voluspalabs/ui/*": ["./src/*"]
-    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
