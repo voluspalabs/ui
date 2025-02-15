@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.18
+
+### Patch Changes
+
+- 6398c98: Rebuilding
+
 ## 0.0.17
 
 ### Patch Changes
