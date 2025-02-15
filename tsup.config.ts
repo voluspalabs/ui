@@ -7,7 +7,7 @@ export default defineConfig({
   dts: {
     resolve: true,
     compilerOptions: {
-      moduleResolution: 'node',
+      moduleResolution: 'bundler',
       declarationDir: './dist',
     },
   },
@@ -17,7 +17,7 @@ export default defineConfig({
   skipNodeModulesBundle: true,
   target: 'es2022',
 
-  external: ['react'],
+  external: ['react', '@voluspalabs/lib'],
 
   // Prod
   minify: true,
