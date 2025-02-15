@@ -1,7 +1,8 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/components/ui/*'],
+  // entry: ['src/components/ui/*'],
+  entry: ['src/index.ts', 'src/components/ui/*'],
   outDir: 'dist',
   format: ['esm'],
   dts: {
@@ -13,13 +14,10 @@ export default defineConfig({
   },
   clean: true,
   treeshake: true,
-  splitting: false,
+  splitting: true,
   skipNodeModulesBundle: true,
   target: 'es2022',
-
   external: ['react', '@voluspalabs/lib'],
-
-  // Prod
   minify: true,
   bundle: true,
 })
