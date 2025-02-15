@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.15
+
+### Patch Changes
+
+- 3c38486: Updated packages, form component and some module testings.
+
 ## 0.0.14
 
 ### Patch Changes
