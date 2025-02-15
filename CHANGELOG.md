@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.17
+
+### Patch Changes
+
+- 34609ee: Some package.json changes and testing
+
 ## 0.0.16
 
 ### Patch Changes
