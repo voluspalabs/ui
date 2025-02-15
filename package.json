@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/ui",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
   "keywords": [
     "UI",
@@ -20,6 +20,7 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",

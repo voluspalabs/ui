@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.23
+
+### Patch Changes
+
+- 9ba67cd: Minor conifg changes...
+
 ## 0.0.22
 
 ### Patch Changes
