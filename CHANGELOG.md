@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.19
+
+### Patch Changes
+
+- 10119e4: Implementing back entry point
+
 ## 0.0.18
 
 ### Patch Changes
