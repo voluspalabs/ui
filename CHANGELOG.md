@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.29
+
+### Patch Changes
+
+- c548fea: Testing new dep. format
+
 ## 0.0.28
 
 ### Patch Changes
