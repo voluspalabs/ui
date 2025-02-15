@@ -4,12 +4,11 @@ export default defineConfig({
   entry: ['src/*'],
   outDir: 'dist',
   format: ['esm'],
+  sourcemap: true,
   dts: {
     resolve: true,
     compilerOptions: {
-      moduleResolution: 'bundler',
-      declarationMap: true,
-      declaration: true,
+      moduleResolution: 'node',
     },
   },
   clean: true,

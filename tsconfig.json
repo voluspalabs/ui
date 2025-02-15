@@ -3,7 +3,7 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ESNext",
+    "target": "ES2022",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -24,7 +24,7 @@
     /* If transpiling with TypeScript: */
     // "module": "Preserve", Testing now...
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "noEmit": true, // Set to false if you want to compile to JS
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     // "rootDir": "src", // Using tsup
