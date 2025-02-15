@@ -16,7 +16,7 @@ import {
   useFormState,
 } from 'react-hook-form'
 import type { ZodType, ZodTypeDef } from 'zod'
-import { Label } from './label'
+import { Label } from './label.js'
 
 // TODO: Check if this is still needed, old code before the update.
 // const useForm = <

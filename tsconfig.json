@@ -23,8 +23,8 @@
 
     /* If transpiling with TypeScript: */
     // "module": "Preserve", Testing now...
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "noEmit": true, // Set to false if you want to compile to JS
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     // "rootDir": "src", // Using tsup

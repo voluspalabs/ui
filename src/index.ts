@@ -3,7 +3,7 @@ export {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from './accordion'
+} from './accordion.js'
 export {
   AlertDialog,
   AlertDialogPortal,
@@ -16,11 +16,11 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
-} from './alert-dialog'
-export { Alert, AlertTitle, AlertDescription } from './alert'
-export { AspectRatio } from './aspect-ratio'
-export { Avatar, AvatarImage, AvatarFallback } from './avatar'
-export { Badge, badgeVariants } from './badge'
+} from './alert-dialog.js'
+export { Alert, AlertTitle, AlertDescription } from './alert.js'
+export { AspectRatio } from './aspect-ratio.js'
+export { Avatar, AvatarImage, AvatarFallback } from './avatar.js'
+export { Badge, badgeVariants } from './badge.js'
 export {
   Breadcrumb,
   BreadcrumbList,
@@ -29,9 +29,9 @@ export {
   BreadcrumbPage,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
-} from './breadcrumb'
-export { Button, buttonVariants } from './button'
-export { Calendar } from './calendar'
+} from './breadcrumb.js'
+export { Button, buttonVariants } from './button.js'
+export { Calendar } from './calendar.js'
 export {
   Card,
   CardHeader,
@@ -39,7 +39,7 @@ export {
   CardTitle,
   CardDescription,
   CardContent,
-} from './card'
+} from './card.js'
 export {
   type CarouselApi,
   Carousel,
@@ -47,7 +47,7 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from './carousel'
+} from './carousel.js'
 export {
   ChartContainer,
   ChartTooltip,
@@ -55,13 +55,13 @@ export {
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
-} from './chart'
-export { Checkbox } from './checkbox'
+} from './chart.js'
+export { Checkbox } from './checkbox.js'
 export {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from './collapsible'
+} from './collapsible.js'
 export {
   Command,
   CommandDialog,
@@ -72,7 +72,7 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-} from './command'
+} from './command.js'
 export {
   ContextMenu,
   ContextMenuTrigger,
@@ -89,7 +89,7 @@ export {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
-} from './context-menu'
+} from './context-menu.js'
 export {
   Dialog,
   DialogClose,
@@ -101,7 +101,7 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from './dialog'
+} from './dialog.js'
 export {
   Drawer,
   DrawerPortal,
@@ -113,7 +113,7 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
-} from './drawer'
+} from './drawer.js'
 export {
   DropdownMenu,
   DropdownMenuPortal,
@@ -130,7 +130,7 @@ export {
   DropdownMenuSub,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-} from './dropdown-menu'
+} from './dropdown-menu.js'
 export {
   useForm,
   useFormField,
@@ -141,21 +141,21 @@ export {
   FormDescription,
   FormMessage,
   FormField,
-} from './form'
+} from './form.js'
 export {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from './hover-card'
+} from './hover-card.js'
 export {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
   InputOTPSeparator,
-} from './input-otp'
-export { PasswordInput } from './input-password'
-export { Input } from './input'
-export { Label } from './label'
+} from './input-otp.js'
+export { PasswordInput } from './input-password.js'
+export { Input } from './input.js'
+export { Label } from './label.js'
 export {
   Menubar,
   MenubarPortal,
@@ -173,7 +173,7 @@ export {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-} from './menubar'
+} from './menubar.js'
 export {
   NavigationMenu,
   NavigationMenuList,
@@ -184,7 +184,7 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from './navigation-menu'
+} from './navigation-menu.js'
 export {
   Pagination,
   PaginationContent,
@@ -193,21 +193,21 @@ export {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-} from './pagination'
+} from './pagination.js'
 export {
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverAnchor,
-} from './popover'
-export { Progress } from './progress'
-export { RadioGroup, RadioGroupItem } from './radio-group'
+} from './popover.js'
+export { Progress } from './progress.js'
+export { RadioGroup, RadioGroupItem } from './radio-group.js'
 export {
   ResizablePanelGroup,
   ResizablePanel,
   ResizableHandle,
-} from './resizable'
-export { ScrollArea, ScrollBar } from './scroll-area'
+} from './resizable.js'
+export { ScrollArea, ScrollBar } from './scroll-area.js'
 export {
   Select,
   SelectContent,
@@ -219,8 +219,8 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from './select'
-export { Separator } from './separator'
+} from './select.js'
+export { Separator } from './separator.js'
 export {
   Sheet,
   SheetTrigger,
@@ -230,7 +230,7 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-} from './sheet'
+} from './sheet.js'
 export {
   Sidebar,
   SidebarContent,
@@ -256,12 +256,12 @@ export {
   SidebarSeparator,
   SidebarTrigger,
   useSidebar,
-} from './sidebar'
-export { Skeleton } from './skeleton'
-export { Slider } from './slider'
-export { Toaster } from './sonner'
-export { Spinner, spinnerVariants } from './spinner'
-export { Switch } from './switch'
+} from './sidebar.js'
+export { Skeleton } from './skeleton.js'
+export { Slider } from './slider.js'
+export { Toaster } from './sonner.js'
+export { Spinner, spinnerVariants } from './spinner.js'
+export { Switch } from './switch.js'
 export {
   Table,
   TableHeader,
@@ -271,19 +271,19 @@ export {
   TableRow,
   TableCell,
   TableCaption,
-} from './table'
+} from './table.js'
 export {
   Tabs,
   TabsList,
   TabsTrigger,
   TabsContent,
-} from './tabs'
-export { Textarea } from './textarea'
-export { ToggleGroup, ToggleGroupItem } from './toggle-group'
-export { Toggle, toggleVariants } from './toggle'
+} from './tabs.js'
+export { Textarea } from './textarea.js'
+export { ToggleGroup, ToggleGroupItem } from './toggle-group.js'
+export { Toggle, toggleVariants } from './toggle.js'
 export {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
   TooltipProvider,
-} from './tooltip'
+} from './tooltip.js'
