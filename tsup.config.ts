@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup'
 export default defineConfig({
   entry: ['src/*'],
   outDir: 'dist',
-  format: ['esm'],
+  format: ['esm', 'cjs'],
   sourcemap: true,
   dts: true,
   clean: true,
@@ -18,6 +18,11 @@ export default defineConfig({
     'tailwindcss-animate',
   ],
   minify: false,
-  bundle: true, // Change this back to true
-  splitting: true, // Add splitting for better tree-shaking
+  bundle: true,
+  splitting: false,
+  outExtension({ format }) {
+    return {
+      js: format === 'esm' ? '.mjs' : '.cjs',
+    }
+  },
 })

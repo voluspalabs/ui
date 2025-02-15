@@ -32,9 +32,16 @@
     // "sourceMap": true, // Using tsup
 
     /* Lib */
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
     // "declaration": true, // Using tsup
     // "declarationMap": true // Using tsup
+
+    /* Path Mappings */
+    "baseUrl": ".",
+    "paths": {
+      "@voluspalabs/ui": ["./src/index.ts"],
+      "@voluspalabs/ui/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
