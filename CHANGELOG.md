@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.27
+
+### Patch Changes
+
+- d51684f: Updated paths
+
 ## 0.0.26
 
 ### Patch Changes
