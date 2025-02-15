@@ -1,23 +1,22 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  // entry: ['src/components/ui/*'],
-  entry: ['src/index.ts', 'src/components/ui/*'],
+  entry: ['src/*'],
   outDir: 'dist',
   format: ['esm'],
-  dts: {
-    resolve: true,
-    compilerOptions: {
-      moduleResolution: 'bundler',
-      declarationDir: './dist',
-    },
-  },
+  dts: true,
   clean: true,
   treeshake: true,
-  splitting: true,
+  // splitting: true,
   skipNodeModulesBundle: true,
   target: 'es2022',
-  external: ['react', '@voluspalabs/lib'],
+  external: [
+    'react',
+    'react-dom',
+    '@tailwindcss/postcss',
+    'tailwindcss',
+    'tailwindcss-animate',
+  ],
   minify: true,
   bundle: true,
 })
