@@ -13,7 +13,7 @@ export default defineConfig({
   },
   clean: true,
   treeshake: true,
-  splitting: true,
+  splitting: false,
   skipNodeModulesBundle: true,
   target: 'es2022',
 
