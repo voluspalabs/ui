@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/ui",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
   "keywords": [
     "UI",
@@ -21,199 +21,195 @@
     "dist"
   ],
   "type": "module",
-  "license": "BSL-1.0",
+  "license": "MIT",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
     "./accordion": {
-      "types": "./dist/components/ui/accordion.d.ts",
-      "default": "./dist/components/ui/accordion.js"
+      "types": "./dist/accordion.d.ts",
+      "default": "./dist/accordion.js"
     },
     "./alert-dialog": {
-      "types": "./dist/components/ui/alert-dialog.d.ts",
-      "default": "./dist/components/ui/alert-dialog.js"
+      "types": "./dist/alert-dialog.d.ts",
+      "default": "./dist/alert-dialog.js"
     },
     "./alert": {
-      "types": "./dist/components/ui/alert.d.ts",
-      "default": "./dist/components/ui/alert.js"
+      "types": "./dist/alert.d.ts",
+      "default": "./dist/alert.js"
     },
     "./aspect-ratio": {
-      "types": "./dist/components/ui/aspect-ratio.d.ts",
-      "default": "./dist/components/ui/aspect-ratio.js"
+      "types": "./dist/aspect-ratio.d.ts",
+      "default": "./dist/aspect-ratio.js"
     },
     "./avatar": {
-      "types": "./dist/components/ui/avatar.d.ts",
-      "default": "./dist/components/ui/avatar.js"
+      "types": "./dist/avatar.d.ts",
+      "default": "./dist/avatar.js"
     },
     "./badge": {
-      "types": "./dist/components/ui/badge.d.ts",
-      "default": "./dist/components/ui/badge.js"
+      "types": "./dist/badge.d.ts",
+      "default": "./dist/badge.js"
     },
     "./breadcrumb": {
-      "types": "./dist/components/ui/breadcrumb.d.ts",
-      "default": "./dist/components/ui/breadcrumb.js"
+      "types": "./dist/breadcrumb.d.ts",
+      "default": "./dist/breadcrumb.js"
     },
     "./button": {
-      "types": "./dist/components/ui/button.d.ts",
-      "default": "./dist/components/ui/button.js"
+      "types": "./dist/button.d.ts",
+      "default": "./dist/button.js"
     },
     "./calendar": {
-      "types": "./dist/components/ui/calendar.d.ts",
-      "default": "./dist/components/ui/calendar.js"
+      "types": "./dist/calendar.d.ts",
+      "default": "./dist/calendar.js"
     },
     "./card": {
-      "types": "./dist/components/ui/card.d.ts",
-      "default": "./dist/components/ui/card.js"
+      "types": "./dist/card.d.ts",
+      "default": "./dist/card.js"
     },
     "./carousel": {
-      "types": "./dist/components/ui/carousel.d.ts",
-      "default": "./dist/components/ui/carousel.js"
+      "types": "./dist/carousel.d.ts",
+      "default": "./dist/carousel.js"
     },
     "./chart": {
-      "types": "./dist/components/ui/chart.d.ts",
-      "default": "./dist/components/ui/chart.js"
+      "types": "./dist/chart.d.ts",
+      "default": "./dist/chart.js"
     },
     "./checkbox": {
-      "types": "./dist/components/ui/checkbox.d.ts",
-      "default": "./dist/components/ui/checkbox.js"
+      "types": "./dist/checkbox.d.ts",
+      "default": "./dist/checkbox.js"
     },
     "./collapsible": {
-      "types": "./dist/components/ui/collapsible.d.ts",
-      "default": "./dist/components/ui/collapsible.js"
+      "types": "./dist/collapsible.d.ts",
+      "default": "./dist/collapsible.js"
     },
     "./command": {
-      "types": "./dist/components/ui/command.d.ts",
-      "default": "./dist/components/ui/command.js"
+      "types": "./dist/command.d.ts",
+      "default": "./dist/command.js"
     },
     "./context-menu": {
-      "types": "./dist/components/ui/context-menu.d.ts",
-      "default": "./dist/components/ui/context-menu.js"
+      "types": "./dist/context-menu.d.ts",
+      "default": "./dist/context-menu.js"
     },
     "./dialog": {
-      "types": "./dist/components/ui/dialog.d.ts",
-      "default": "./dist/components/ui/dialog.js"
+      "types": "./dist/dialog.d.ts",
+      "default": "./dist/dialog.js"
     },
     "./drawer": {
-      "types": "./dist/components/ui/drawer.d.ts",
-      "default": "./dist/components/ui/drawer.js"
+      "types": "./dist/drawer.d.ts",
+      "default": "./dist/drawer.js"
     },
     "./dropdown-menu": {
-      "types": "./dist/components/ui/dropdown-menu.d.ts",
-      "default": "./dist/components/ui/dropdown-menu.js"
+      "types": "./dist/dropdown-menu.d.ts",
+      "default": "./dist/dropdown-menu.js"
     },
     "./form": {
-      "types": "./dist/components/ui/form.d.ts",
-      "default": "./dist/components/ui/form.js"
+      "types": "./dist/form.d.ts",
+      "default": "./dist/form.js"
     },
     "./hover-card": {
-      "types": "./dist/components/ui/hover-card.d.ts",
-      "default": "./dist/components/ui/hover-card.js"
+      "types": "./dist/hover-card.d.ts",
+      "default": "./dist/hover-card.js"
     },
     "./input-otp": {
-      "types": "./dist/components/ui/input-otp.d.ts",
-      "default": "./dist/components/ui/input-otp.js"
+      "types": "./dist/input-otp.d.ts",
+      "default": "./dist/input-otp.js"
     },
     "./input": {
-      "types": "./dist/components/ui/input.d.ts",
-      "default": "./dist/components/ui/input.js"
+      "types": "./dist/input.d.ts",
+      "default": "./dist/input.js"
     },
     "./label": {
-      "types": "./dist/components/ui/label.d.ts",
-      "default": "./dist/components/ui/label.js"
+      "types": "./dist/label.d.ts",
+      "default": "./dist/label.js"
     },
     "./menubar": {
-      "types": "./dist/components/ui/menubar.d.ts",
-      "default": "./dist/components/ui/menubar.js"
+      "types": "./dist/menubar.d.ts",
+      "default": "./dist/menubar.js"
     },
     "./navigation-menu": {
-      "types": "./dist/components/ui/navigation-menu.d.ts",
-      "default": "./dist/components/ui/navigation-menu.js"
+      "types": "./dist/navigation-menu.d.ts",
+      "default": "./dist/navigation-menu.js"
     },
     "./pagination": {
-      "types": "./dist/components/ui/pagination.d.ts",
-      "default": "./dist/components/ui/pagination.js"
+      "types": "./dist/pagination.d.ts",
+      "default": "./dist/pagination.js"
     },
     "./popover": {
-      "types": "./dist/components/ui/popover.d.ts",
-      "default": "./dist/components/ui/popover.js"
+      "types": "./dist/popover.d.ts",
+      "default": "./dist/popover.js"
     },
     "./progress": {
-      "types": "./dist/components/ui/progress.d.ts",
-      "default": "./dist/components/ui/progress.js"
+      "types": "./dist/progress.d.ts",
+      "default": "./dist/progress.js"
     },
     "./radio-group": {
-      "types": "./dist/components/ui/radio-group.d.ts",
-      "default": "./dist/components/ui/radio-group.js"
+      "types": "./dist/radio-group.d.ts",
+      "default": "./dist/radio-group.js"
     },
     "./resizable": {
-      "types": "./dist/components/ui/resizable.d.ts",
-      "default": "./dist/components/ui/resizable.js"
+      "types": "./dist/resizable.d.ts",
+      "default": "./dist/resizable.js"
     },
     "./scroll-area": {
-      "types": "./dist/components/ui/scroll-area.d.ts",
-      "default": "./dist/components/ui/scroll-area.js"
+      "types": "./dist/scroll-area.d.ts",
+      "default": "./dist/scroll-area.js"
     },
     "./select": {
-      "types": "./dist/components/ui/select.d.ts",
-      "default": "./dist/components/ui/select.js"
+      "types": "./dist/select.d.ts",
+      "default": "./dist/select.js"
     },
     "./separator": {
-      "types": "./dist/components/ui/separator.d.ts",
-      "default": "./dist/components/ui/separator.js"
+      "types": "./dist/separator.d.ts",
+      "default": "./dist/separator.js"
     },
     "./sheet": {
-      "types": "./dist/components/ui/sheet.d.ts",
-      "default": "./dist/components/ui/sheet.js"
+      "types": "./dist/sheet.d.ts",
+      "default": "./dist/sheet.js"
     },
     "./sidebar": {
-      "types": "./dist/components/ui/sidebar.d.ts",
-      "default": "./dist/components/ui/sidebar.js"
+      "types": "./dist/sidebar.d.ts",
+      "default": "./dist/sidebar.js"
     },
     "./skeleton": {
-      "types": "./dist/components/ui/skeleton.d.ts",
-      "default": "./dist/components/ui/skeleton.js"
+      "types": "./dist/skeleton.d.ts",
+      "default": "./dist/skeleton.js"
     },
     "./slider": {
-      "types": "./dist/components/ui/slider.d.ts",
-      "default": "./dist/components/ui/slider.js"
+      "types": "./dist/slider.d.ts",
+      "default": "./dist/slider.js"
     },
     "./sonner": {
-      "types": "./dist/components/ui/sonner.d.ts",
-      "default": "./dist/components/ui/sonner.js"
+      "types": "./dist/sonner.d.ts",
+      "default": "./dist/sonner.js"
     },
     "./spinner": {
-      "types": "./dist/components/ui/spinner.d.ts",
-      "default": "./dist/components/ui/spinner.js"
+      "types": "./dist/spinner.d.ts",
+      "default": "./dist/spinner.js"
     },
     "./switch": {
-      "types": "./dist/components/ui/switch.d.ts",
-      "default": "./dist/components/ui/switch.js"
+      "types": "./dist/switch.d.ts",
+      "default": "./dist/switch.js"
     },
     "./table": {
-      "types": "./dist/components/ui/table.d.ts",
-      "default": "./dist/components/ui/table.js"
+      "types": "./dist/table.d.ts",
+      "default": "./dist/table.js"
     },
     "./tabs": {
-      "types": "./dist/components/ui/tabs.d.ts",
-      "default": "./dist/components/ui/tabs.js"
+      "types": "./dist/tabs.d.ts",
+      "default": "./dist/tabs.js"
     },
     "./textarea": {
-      "types": "./dist/components/ui/textarea.d.ts",
-      "default": "./dist/components/ui/textarea.js"
+      "types": "./dist/textarea.d.ts",
+      "default": "./dist/textarea.js"
     },
     "./toggle-group": {
-      "types": "./dist/components/ui/toggle-group.d.ts",
-      "default": "./dist/components/ui/toggle-group.js"
+      "types": "./dist/toggle-group.d.ts",
+      "default": "./dist/toggle-group.js"
     },
     "./toggle": {
-      "types": "./dist/components/ui/toggle.d.ts",
-      "default": "./dist/components/ui/toggle.js"
+      "types": "./dist/toggle.d.ts",
+      "default": "./dist/toggle.js"
     },
     "./tooltip": {
-      "types": "./dist/components/ui/tooltip.d.ts",
-      "default": "./dist/components/ui/tooltip.js"
+      "types": "./dist/tooltip.d.ts",
+      "default": "./dist/tooltip.js"
     }
   },
   "scripts": {

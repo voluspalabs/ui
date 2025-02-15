@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.20
+
+### Patch Changes
+
+- bd631c3: Reverting some changes and minor updates
+
 ## 0.0.19
 
 ### Patch Changes
