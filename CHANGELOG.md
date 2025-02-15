@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.26
+
+### Patch Changes
+
+- c964686: Add CJS support
+
 ## 0.0.25
 
 ### Patch Changes
