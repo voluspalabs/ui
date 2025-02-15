@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.16
+
+### Patch Changes
+
+- 18e77ef: Config changes in tsup
+
 ## 0.0.15
 
 ### Patch Changes
