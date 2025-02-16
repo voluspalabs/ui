@@ -53,4 +53,4 @@ For more details on configuring Tailwind CSS with this package, please refer to 
 
 ## License
 
-This project is licensed under the BSL-1.0 License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for more details.
