@@ -1,19 +1,9 @@
 'use client'
-import { useTheme } from 'next-themes'
 import { Toaster as Sonner, type ToasterProps } from 'sonner'
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = 'system' } = useTheme()
-
   return (
     <Sonner
-      theme={theme as NonNullable<ToasterProps['theme']>}
-      // icons={{
-      //   error: <PiAlertTriangleContrast />,
-      //   warning: <PiAlertTriangleContrast />,
-      //   info: <PiInformationCircleContrast />,
-      //   success: <PiCheckTickCircleContrast />,
-      // }}
       className="toaster group"
       toastOptions={{
         classNames: {
