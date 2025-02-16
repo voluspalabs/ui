@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.32
+
+### Patch Changes
+
+- 06827f5: Removed themes from sonner
+
 ## 0.0.31
 
 ### Patch Changes
