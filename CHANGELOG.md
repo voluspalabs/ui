@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.35
+
+### Patch Changes
+
+- f33ce83: Re-enabled sourcemaps
+
 ## 0.0.34
 
 ### Patch Changes
