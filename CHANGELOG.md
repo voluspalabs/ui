@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.36
+
+### Patch Changes
+
+- ef5a526: Updated packages and text
+
 ## 0.0.35
 
 ### Patch Changes
