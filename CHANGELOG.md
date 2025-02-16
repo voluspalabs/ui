@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.33
+
+### Patch Changes
+
+- 96f812e: Added shadows for button and card components.
+
 ## 0.0.32
 
 ### Patch Changes
