@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.37
+
+### Patch Changes
+
+- 604fd59: Update dependencies and clean up package.json
+
 ## 0.0.36
 
 ### Patch Changes
