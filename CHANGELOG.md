@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.38
+
+### Patch Changes
+
+- 4b44cfb: Enhance Toaster component with richColors and closeButton props
+
 ## 0.0.37
 
 ### Patch Changes
