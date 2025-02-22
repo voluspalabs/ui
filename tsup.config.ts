@@ -25,7 +25,7 @@ export default defineConfig({
   bundle: true,
   splitting: true,
   // treeshake: true,
-  banner: {
-    js: `"use client"`,
-  },
+  // banner: {
+  //   js: `"use client"`,
+  // },
 })
