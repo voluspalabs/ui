@@ -17,6 +17,12 @@ function Slider({
     return [min, max]
   }, [value, defaultValue, min, max])
 
+  // Generate keys only once per _values
+  const thumbKeys = useMemo(
+    () => _values.map(() => crypto.randomUUID()),
+    [_values],
+  )
+
   return (
     <SliderPrimitive.Root
       data-slot="slider"
@@ -43,11 +49,11 @@ function Slider({
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_) => (
+      {Array.from({ length: _values.length }, (_, index) => (
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
-          key={crypto.randomUUID()}
-          className="block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm ring-ring/20 transition-[color,box-shadow] hover:ring-4 focus-visible:outline-hidden focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
+          key={thumbKeys[index]}
+          className="block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm ring-ring/50 transition-[color,box-shadow] hover:ring-4 focus-visible:outline-hidden focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
         />
       ))}
     </SliderPrimitive.Root>

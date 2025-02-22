@@ -222,7 +222,7 @@ const ChartTooltipContent = forwardRef<
                           className={cn(
                             'shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)',
                             {
-                              'size-2.5': indicator === 'dot',
+                              'h-2.5 w-2.5': indicator === 'dot',
                               'w-1': indicator === 'line',
                               'w-0 border-[1.5px] border-dashed bg-transparent':
                                 indicator === 'dashed',
@@ -270,63 +270,59 @@ ChartTooltipContent.displayName = 'ChartTooltip'
 
 const ChartLegend = RechartsPrimitive.Legend
 
-const ChartLegendContent = forwardRef<
-  HTMLDivElement,
-  ComponentProps<'div'> &
-    Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
-      hideIcon?: boolean
-      nameKey?: string
-    }
->(
-  (
-    { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },
-    ref,
-  ) => {
-    const { config } = useChart()
+function ChartLegendContent({
+  className,
+  hideIcon = false,
+  payload,
+  verticalAlign = 'bottom',
+  nameKey,
+}: ComponentProps<'div'> &
+  Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+    hideIcon?: boolean
+    nameKey?: string
+  }) {
+  const { config } = useChart()
 
-    if (!payload?.length) {
-      return null
-    }
+  if (!payload?.length) {
+    return null
+  }
 
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          'flex items-center justify-center gap-4',
-          verticalAlign === 'top' ? 'pb-3' : 'pt-3',
-          className,
-        )}
-      >
-        {payload.map((item) => {
-          const key = `${nameKey || item.dataKey || 'value'}`
-          const itemConfig = getPayloadConfigFromPayload(config, item, key)
+  return (
+    <div
+      className={cn(
+        'flex items-center justify-center gap-4',
+        verticalAlign === 'top' ? 'pb-3' : 'pt-3',
+        className,
+      )}
+    >
+      {payload.map((item) => {
+        const key = `${nameKey || item.dataKey || 'value'}`
+        const itemConfig = getPayloadConfigFromPayload(config, item, key)
 
-          return (
-            <div
-              key={item.value}
-              className={cn(
-                'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground',
-              )}
-            >
-              {itemConfig?.icon && !hideIcon ? (
-                <itemConfig.icon />
-              ) : (
-                <div
-                  className="h-2 w-2 shrink-0 rounded-[2px]"
-                  style={{
-                    backgroundColor: item.color,
-                  }}
-                />
-              )}
-              {itemConfig?.label}
-            </div>
-          )
-        })}
-      </div>
-    )
-  },
-)
-ChartLegendContent.displayName = 'ChartLegend'
+        return (
+          <div
+            key={item.value}
+            className={cn(
+              'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground',
+            )}
+          >
+            {itemConfig?.icon && !hideIcon ? (
+              <itemConfig.icon />
+            ) : (
+              <div
+                className="h-2 w-2 shrink-0 rounded-[2px]"
+                style={{
+                  backgroundColor: item.color,
+                }}
+              />
+            )}
+            {itemConfig?.label}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
