@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.46
+
+### Patch Changes
+
+- 24fcd54: Minor changes
+
 ## 0.0.45
 
 ### Patch Changes
