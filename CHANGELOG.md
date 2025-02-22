@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.39
+
+### Patch Changes
+
+- 4a00ef7: Refine class names for improved styling consistency across components
+
 ## 0.0.38
 
 ### Patch Changes
