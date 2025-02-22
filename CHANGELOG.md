@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.42
+
+### Patch Changes
+
+- c185abc: Minior changes
+
 ## 0.0.41
 
 ### Patch Changes
