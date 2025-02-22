@@ -35,6 +35,13 @@ const buttonVariants = cva(
   },
 )
 
+interface ButtonProps
+  extends ComponentProps<'button'>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  isPending?: boolean
+}
+
 function Button({
   className,
   variant,
@@ -42,11 +49,7 @@ function Button({
   asChild = false,
   isPending = false,
   ...props
-}: ComponentProps<'button'> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-    isPending?: boolean
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : 'button'
 
   return (
@@ -74,4 +77,4 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants, type ButtonProps }
