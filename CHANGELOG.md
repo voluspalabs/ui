@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.45
+
+### Patch Changes
+
+- 3ac5b6d: Use client changes
+
 ## 0.0.44
 
 ### Patch Changes
