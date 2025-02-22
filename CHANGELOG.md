@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.41
+
+### Patch Changes
+
+- adc1780: Updated packages
+
 ## 0.0.40
 
 ### Patch Changes
