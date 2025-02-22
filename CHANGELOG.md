@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.43
+
+### Patch Changes
+
+- 1870e49: Minor fix in exports
+
 ## 0.0.42
 
 ### Patch Changes
