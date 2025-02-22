@@ -7,7 +7,6 @@ export default defineConfig({
   sourcemap: true,
   dts: true,
   clean: true,
-  treeshake: true,
   skipNodeModulesBundle: true,
   target: 'esnext',
   external: [
@@ -25,4 +24,8 @@ export default defineConfig({
   minify: true,
   bundle: true,
   splitting: true,
+  // treeshake: true,
+  banner: {
+    js: `"use client"`,
+  },
 })
