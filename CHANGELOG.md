@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.40
+
+### Patch Changes
+
+- 2bedf88: Add ButtonProps interface for enhanced button component flexibility
+
 ## 0.0.39
 
 ### Patch Changes
