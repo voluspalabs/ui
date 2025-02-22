@@ -1,4 +1,5 @@
 'use client'
+
 import { Slot } from '@radix-ui/react-slot'
 import { useIsMobile } from '@voluspalabs/lib/hooks/use-mobile'
 import { cn } from '@voluspalabs/lib/utils/cn'
