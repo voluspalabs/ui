@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.53
+
+### Patch Changes
+
+- 2afb47a: Table - Add text truncation and improve cell alignment
+
 ## 0.0.52
 
 ### Patch Changes
