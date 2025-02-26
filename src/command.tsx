@@ -2,7 +2,6 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
-
 import type { ComponentProps } from 'react'
 import {
   Dialog,
@@ -59,7 +58,7 @@ function CommandInput({
   return (
     <div
       data-slot="command-input-wrapper"
-      // className="flex h-9 items-center gap-2 border-b px-3"
+      // TODO: Focus ring not working with `Command.Input` directly for some reason.
       className={cn(
         'items-center gap-2',
         'flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-actions-primary outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
@@ -71,17 +70,10 @@ function CommandInput({
       <SearchIcon className="size-4 shrink-0 opacity-50" />
       <CommandPrimitive.Input
         data-slot="command-input"
-        // TODO: Delete new code.
         className={cn(
           'flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
           className,
         )}
-        // className={cn(
-        //   'flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-actions-primary outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-        //   'focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50',
-        //   'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40',
-        //   className,
-        // )}
         {...props}
       />
     </div>
