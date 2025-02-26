@@ -3,6 +3,7 @@ import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { XIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
+import { ScrollArea } from './scroll-area'
 
 function Sheet({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
@@ -81,9 +82,48 @@ function SheetHeader({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="sheet-header"
-      className={cn('flex flex-col gap-1.5 p-4', className)}
+      className={cn(
+        'flex flex-col gap-1.5 border-b bg-muted/40 p-4',
+        className,
+      )}
       {...props}
     />
+  )
+}
+
+function SheetBody({
+  className,
+  children,
+  scrollable = true,
+  padding = true,
+  ...props
+}: ComponentProps<'div'> & {
+  scrollable?: boolean
+  padding?: boolean | string
+}) {
+  let paddingClass = ''
+  if (padding === true) {
+    paddingClass = 'px-4'
+  } else if (typeof padding === 'string') {
+    paddingClass = padding
+  }
+
+  const contentStyles = cn('flex-1', paddingClass, className)
+
+  if (!scrollable) {
+    return (
+      <div className={contentStyles} {...props}>
+        {children}
+      </div>
+    )
+  }
+
+  return (
+    <div className="w-full flex-1 overflow-hidden" {...props}>
+      <ScrollArea className="h-full">
+        <div className={contentStyles}>{children}</div>
+      </ScrollArea>
+    </div>
   )
 }
 
@@ -91,7 +131,7 @@ function SheetFooter({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="sheet-footer"
-      className={cn('mt-auto flex flex-col gap-2 p-4', className)}
+      className={cn('mt-auto flex gap-2 border-t p-4', className)}
       {...props}
     />
   )
@@ -129,6 +169,7 @@ export {
   SheetClose,
   SheetContent,
   SheetHeader,
+  SheetBody,
   SheetFooter,
   SheetTitle,
   SheetDescription,
