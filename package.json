@@ -2,12 +2,7 @@
   "name": "@voluspalabs/ui",
   "version": "0.0.53",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
-  "keywords": [
-    "UI",
-    "typescript",
-    "react",
-    "tailwindcss"
-  ],
+  "keywords": ["UI", "typescript", "react", "tailwindcss"],
   "homepage": "https://github.com/voluspalabs/ui",
   "bugs": {
     "url": "https://github.com/voluspalabs/ui/issues"
@@ -17,158 +12,60 @@
     "type": "git",
     "url": "git+https://github.com/voluspalabs/ui.git"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
   "typesVersions": {
     "*": {
-      "*": [
-        "./dist/*"
-      ],
-      "accordion": [
-        "./dist/accordion.d.ts"
-      ],
-      "alert-dialog": [
-        "./dist/alert-dialog.d.ts"
-      ],
-      "alert": [
-        "./dist/alert.d.ts"
-      ],
-      "aspect-ratio": [
-        "./dist/aspect-ratio.d.ts"
-      ],
-      "avatar": [
-        "./dist/avatar.d.ts"
-      ],
-      "badge": [
-        "./dist/badge.d.ts"
-      ],
-      "breadcrumb": [
-        "./dist/breadcrumb.d.ts"
-      ],
-      "button": [
-        "./dist/button.d.ts"
-      ],
-      "calendar": [
-        "./dist/calendar.d.ts"
-      ],
-      "card": [
-        "./dist/card.d.ts"
-      ],
-      "carousel": [
-        "./dist/carousel.d.ts"
-      ],
-      "chart": [
-        "./dist/chart.d.ts"
-      ],
-      "checkbox": [
-        "./dist/checkbox.d.ts"
-      ],
-      "collapsible": [
-        "./dist/collapsible.d.ts"
-      ],
-      "command": [
-        "./dist/command.d.ts"
-      ],
-      "context-menu": [
-        "./dist/context-menu.d.ts"
-      ],
-      "dialog": [
-        "./dist/dialog.d.ts"
-      ],
-      "drawer": [
-        "./dist/drawer.d.ts"
-      ],
-      "dropdown-menu": [
-        "./dist/dropdown-menu.d.ts"
-      ],
-      "form": [
-        "./dist/form.d.ts"
-      ],
-      "hover-card": [
-        "./dist/hover-card.d.ts"
-      ],
-      "input-otp": [
-        "./dist/input-otp.d.ts"
-      ],
-      "input": [
-        "./dist/input.d.ts"
-      ],
-      "label": [
-        "./dist/label.d.ts"
-      ],
-      "menubar": [
-        "./dist/menubar.d.ts"
-      ],
-      "navigation-menu": [
-        "./dist/navigation-menu.d.ts"
-      ],
-      "pagination": [
-        "./dist/pagination.d.ts"
-      ],
-      "popover": [
-        "./dist/popover.d.ts"
-      ],
-      "progress": [
-        "./dist/progress.d.ts"
-      ],
-      "radio-group": [
-        "./dist/radio-group.d.ts"
-      ],
-      "resizable": [
-        "./dist/resizable.d.ts"
-      ],
-      "scroll-area": [
-        "./dist/scroll-area.d.ts"
-      ],
-      "select": [
-        "./dist/select.d.ts"
-      ],
-      "separator": [
-        "./dist/separator.d.ts"
-      ],
-      "sheet": [
-        "./dist/sheet.d.ts"
-      ],
-      "sidebar": [
-        "./dist/sidebar.d.ts"
-      ],
-      "skeleton": [
-        "./dist/skeleton.d.ts"
-      ],
-      "slider": [
-        "./dist/slider.d.ts"
-      ],
-      "sonner": [
-        "./dist/sonner.d.ts"
-      ],
-      "spinner": [
-        "./dist/spinner.d.ts"
-      ],
-      "switch": [
-        "./dist/switch.d.ts"
-      ],
-      "table": [
-        "./dist/table.d.ts"
-      ],
-      "tabs": [
-        "./dist/tabs.d.ts"
-      ],
-      "textarea": [
-        "./dist/textarea.d.ts"
-      ],
-      "toggle-group": [
-        "./dist/toggle-group.d.ts"
-      ],
-      "toggle": [
-        "./dist/toggle.d.ts"
-      ],
-      "tooltip": [
-        "./dist/tooltip.d.ts"
-      ]
+      "*": ["./dist/*"],
+      "accordion": ["./dist/accordion.d.ts"],
+      "alert-dialog": ["./dist/alert-dialog.d.ts"],
+      "alert": ["./dist/alert.d.ts"],
+      "aspect-ratio": ["./dist/aspect-ratio.d.ts"],
+      "avatar": ["./dist/avatar.d.ts"],
+      "badge": ["./dist/badge.d.ts"],
+      "breadcrumb": ["./dist/breadcrumb.d.ts"],
+      "button": ["./dist/button.d.ts"],
+      "calendar": ["./dist/calendar.d.ts"],
+      "card": ["./dist/card.d.ts"],
+      "carousel": ["./dist/carousel.d.ts"],
+      "chart": ["./dist/chart.d.ts"],
+      "checkbox": ["./dist/checkbox.d.ts"],
+      "collapsible": ["./dist/collapsible.d.ts"],
+      "command": ["./dist/command.d.ts"],
+      "context-menu": ["./dist/context-menu.d.ts"],
+      "dialog": ["./dist/dialog.d.ts"],
+      "drawer": ["./dist/drawer.d.ts"],
+      "dropdown-menu": ["./dist/dropdown-menu.d.ts"],
+      "form": ["./dist/form.d.ts"],
+      "hover-card": ["./dist/hover-card.d.ts"],
+      "input-otp": ["./dist/input-otp.d.ts"],
+      "input": ["./dist/input.d.ts"],
+      "label": ["./dist/label.d.ts"],
+      "menubar": ["./dist/menubar.d.ts"],
+      "navigation-menu": ["./dist/navigation-menu.d.ts"],
+      "pagination": ["./dist/pagination.d.ts"],
+      "popover": ["./dist/popover.d.ts"],
+      "progress": ["./dist/progress.d.ts"],
+      "radio-group": ["./dist/radio-group.d.ts"],
+      "resizable": ["./dist/resizable.d.ts"],
+      "scroll-area": ["./dist/scroll-area.d.ts"],
+      "select": ["./dist/select.d.ts"],
+      "separator": ["./dist/separator.d.ts"],
+      "sheet": ["./dist/sheet.d.ts"],
+      "sidebar": ["./dist/sidebar.d.ts"],
+      "skeleton": ["./dist/skeleton.d.ts"],
+      "slider": ["./dist/slider.d.ts"],
+      "sonner": ["./dist/sonner.d.ts"],
+      "spinner": ["./dist/spinner.d.ts"],
+      "switch": ["./dist/switch.d.ts"],
+      "table": ["./dist/table.d.ts"],
+      "tabs": ["./dist/tabs.d.ts"],
+      "textarea": ["./dist/textarea.d.ts"],
+      "toggle-group": ["./dist/toggle-group.d.ts"],
+      "toggle": ["./dist/toggle.d.ts"],
+      "tooltip": ["./dist/tooltip.d.ts"]
     }
   },
   "exports": {
