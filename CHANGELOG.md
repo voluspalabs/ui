@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.50
+
+### Patch Changes
+
+- 92a9a53: Update package.json dependencies and improve component styles
+
 ## 0.0.49
 
 ### Patch Changes
