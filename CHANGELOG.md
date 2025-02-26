@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.54
+
+### Patch Changes
+
+- 4589e8d: Class text update
+
 ## 0.0.53
 
 ### Patch Changes
