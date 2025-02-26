@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.51
+
+### Patch Changes
+
+- c6b82c6: Updated styles for skeleton component
+
 ## 0.0.50
 
 ### Patch Changes
