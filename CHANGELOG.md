@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.57
+
+### Patch Changes
+
+- 10548c3: Update shadow styles for input and textarea components
+
 ## 0.0.56
 
 ### Patch Changes
