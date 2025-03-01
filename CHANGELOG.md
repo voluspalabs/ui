@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.66
+
+### Patch Changes
+
+- 801b60a: Update sheet close button
+
 ## 0.0.65
 
 ### Patch Changes
