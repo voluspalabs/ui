@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.62
+
+### Patch Changes
+
+- c184853: Alert dialog style fix
+
 ## 0.0.61
 
 ### Patch Changes
