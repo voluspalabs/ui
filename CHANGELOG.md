@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.61
+
+### Patch Changes
+
+- fb58540: Command and alert dialog style update
+
 ## 0.0.60
 
 ### Patch Changes
