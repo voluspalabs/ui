@@ -68,7 +68,9 @@ function SheetContent({
         )}
         {...props}
       >
-        {children}
+        <div className="max-h-full w-full min-w-0 rounded-2xl p-2 shadow-dialog backdrop-blur-[1px] transition-all duration-300 will-change-transform">
+          {children}
+        </div>
         <SheetPrimitive.Close className="absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
           <XIcon className="size-4" />
           <span className="sr-only">Close</span>
@@ -83,7 +85,7 @@ function SheetHeader({ className, ...props }: ComponentProps<'div'>) {
     <div
       data-slot="sheet-header"
       className={cn(
-        'flex flex-col gap-1.5 border-b bg-muted/40 p-4',
+        'flex flex-col gap-1.5 rounded-2xl border-b bg-muted/40 p-4',
         className,
       )}
       {...props}
