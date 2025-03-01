@@ -71,7 +71,7 @@ function SheetContent({
         <div className="h-full max-h-full w-full min-w-0 rounded-2xl p-2 shadow-dialog backdrop-blur-[1px] transition-all duration-300 will-change-transform">
           {children}
         </div>
-        <SheetPrimitive.Close className="absolute top-7 right-6 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+        <SheetPrimitive.Close className="absolute top-8 right-7 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
           <XIcon className="size-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
