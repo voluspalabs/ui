@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.68
+
+### Patch Changes
+
+- e821133: Updated switch color
+
 ## 0.0.67
 
 ### Patch Changes
