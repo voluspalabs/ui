@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.58
+
+### Patch Changes
+
+- 7987075: Dialog style update
+
 ## 0.0.57
 
 ### Patch Changes
