@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.67
+
+### Patch Changes
+
+- 8291b46: Sheet update
+
 ## 0.0.66
 
 ### Patch Changes
