@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.64
+
+### Patch Changes
+
+- e51c9a2: Updated sheet styles for X close button
+
 ## 0.0.63
 
 ### Patch Changes
