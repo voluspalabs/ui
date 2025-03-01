@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.60
+
+### Patch Changes
+
+- 5143b74: Switch style update
+
 ## 0.0.59
 
 ### Patch Changes
