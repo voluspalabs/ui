@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.65
+
+### Patch Changes
+
+- ce54be5: More sheet updates
+
 ## 0.0.64
 
 ### Patch Changes
