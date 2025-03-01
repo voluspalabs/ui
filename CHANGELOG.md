@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.59
+
+### Patch Changes
+
+- 94bc471: Label update
+
 ## 0.0.58
 
 ### Patch Changes
