@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.69
+
+### Patch Changes
+
+- 0da490a: Minor updates to spinner and label, package bumps
+
 ## 0.0.68
 
 ### Patch Changes
