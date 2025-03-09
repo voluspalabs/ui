@@ -1,7 +1,7 @@
 import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
-import type { ComponentProps, HTMLAttributes } from 'react'
+import { type ComponentProps, type HTMLAttributes, useMemo } from 'react'
 
 const spinnerVariants = cva('relative block opacity-65', {
   variants: {
@@ -39,6 +39,12 @@ const Spinner = ({
   }) => {
   const Comp = asChild ? Slot : 'span'
 
+  const array8 = Array.from({ length: 8 })
+  const spinnerLineKeys = useMemo(
+    () => array8.map(() => crypto.randomUUID()),
+    [],
+  )
+
   if (!loading) return null
 
   return (
@@ -47,13 +53,13 @@ const Spinner = ({
       className={cn(spinnerVariants({ size, className }))}
       {...props}
     >
-      {Array.from({ length: 8 }).map((_, i) => (
+      {array8.map((_, index) => (
         <span
-          key={crypto.randomUUID()}
+          key={spinnerLineKeys[index]}
           className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
           style={{
-            transform: `rotate(${i * 45}deg)`,
-            animationDelay: `${-(7 - i) * 100}ms`,
+            transform: `rotate(${index * 45}deg)`,
+            animationDelay: `${-(7 - index) * 100}ms`,
           }}
         >
           <span
