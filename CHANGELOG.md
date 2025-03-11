@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.70
+
+### Patch Changes
+
+- 7b05211: Updated badge, button, dialog components
+
 ## 0.0.69
 
 ### Patch Changes
