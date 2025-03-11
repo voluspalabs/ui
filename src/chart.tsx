@@ -196,7 +196,6 @@ const ChartTooltipContent = forwardRef<
       >
         {nestLabel ? null : tooltipLabel}
         <div className="grid gap-1.5">
-          {/* biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This is needed to be like this for now. */}
           {payload.map((item, index) => {
             const key = `${nameKey || item.name || item.dataKey || 'value'}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
