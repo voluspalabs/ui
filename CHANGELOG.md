@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.72
+
+### Patch Changes
+
+- a7d6e8c: Update @voluspalabs/lib to version 0.0.13
+
 ## 0.0.71
 
 ### Patch Changes
