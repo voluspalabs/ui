@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/*'],
+  entry: ['src/*', './src/blocks/*'],
   outDir: 'dist',
   format: ['esm'],
   sourcemap: true,
@@ -20,6 +20,7 @@ export default defineConfig({
     'tailwindcss-animate',
     'sonner',
     'zod',
+    'next',
   ],
   minify: true,
   bundle: true,
