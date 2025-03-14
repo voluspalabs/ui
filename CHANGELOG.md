@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.71
+
+### Patch Changes
+
+- 6eb19a8: Added new block components and dep. updates
+
 ## 0.0.70
 
 ### Patch Changes
