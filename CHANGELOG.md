@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.73
+
+### Patch Changes
+
+- ccab184: Update dependencies to latest versions
+
 ## 0.0.72
 
 ### Patch Changes
