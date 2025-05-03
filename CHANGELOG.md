@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.76
+
+### Patch Changes
+
+- 3790138: Minor form changes
+
 ## 0.0.75
 
 ### Patch Changes
