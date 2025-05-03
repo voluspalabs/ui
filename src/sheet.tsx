@@ -1,7 +1,7 @@
 'use client'
-import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { XIcon } from 'lucide-react'
+import { Dialog as SheetPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { ScrollArea } from './scroll-area'
 

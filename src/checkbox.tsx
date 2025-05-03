@@ -1,7 +1,7 @@
 'use client'
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon } from 'lucide-react'
+import { Checkbox as CheckboxPrimitive } from 'radix-ui'
 
 function Checkbox({
   className,

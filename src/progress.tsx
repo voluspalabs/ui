@@ -1,6 +1,6 @@
 'use client'
-import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { cn } from '@voluspalabs/lib/utils/cn'
+import { Progress as ProgressPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Progress({

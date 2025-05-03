@@ -1,6 +1,6 @@
 'use client'
-import * as LabelPrimitive from '@radix-ui/react-label'
 import { cn } from '@voluspalabs/lib/utils/cn'
+import { Label as LabelPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Label({

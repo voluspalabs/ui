@@ -1,6 +1,6 @@
 'use client'
-import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
+import { Dialog as DialogPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Dialog({ ...props }: ComponentProps<typeof DialogPrimitive.Root>) {

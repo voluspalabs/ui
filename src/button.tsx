@@ -1,6 +1,6 @@
-import { Slot, Slottable } from '@radix-ui/react-slot'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
+import { Slot } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { Spinner } from './spinner'
 
@@ -50,7 +50,7 @@ function Button({
   isPending = false,
   ...props
 }: ButtonProps) {
-  const Comp = asChild ? Slot : 'button'
+  const Comp = asChild ? Slot.Root : 'button'
 
   return (
     <Comp
@@ -59,7 +59,7 @@ function Button({
       {...props}
     >
       {isPending ? (
-        <Slottable>
+        <Slot.Slottable>
           <Spinner
             loading
             size="sm"
@@ -67,11 +67,11 @@ function Button({
             aria-hidden="true"
           />
           <span className="opacity-0">
-            <Slottable>{props.children}</Slottable>
+            <Slot.Slottable>{props.children}</Slot.Slottable>
           </span>
-        </Slottable>
+        </Slot.Slottable>
       ) : (
-        <Slottable>{props.children}</Slottable>
+        <Slot.Slottable>{props.children}</Slot.Slottable>
       )}
     </Comp>
   )

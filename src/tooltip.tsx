@@ -1,6 +1,6 @@
 'use client'
-import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { cn } from '@voluspalabs/lib/utils/cn'
+import { Tooltip as TooltipPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function TooltipProvider({

@@ -1,6 +1,6 @@
-import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
+import { Slot } from 'radix-ui'
 import { type ComponentProps, type HTMLAttributes, useMemo } from 'react'
 
 const spinnerVariants = cva('relative block opacity-65', {
@@ -37,7 +37,7 @@ const Spinner = ({
     loading?: boolean
     inverted?: boolean
   }) => {
-  const Comp = asChild ? Slot : 'span'
+  const Comp = asChild ? Slot.Root : 'span'
 
   const array8 = Array.from({ length: 8 })
   const spinnerLineKeys = useMemo(

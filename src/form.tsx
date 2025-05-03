@@ -1,86 +1,32 @@
-'use client'
-import { zodResolver } from '@hookform/resolvers/zod'
-import type * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
+import {
+  createFormHook,
+  createFormHookContexts,
+  useStore,
+} from '@tanstack/react-form'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type ComponentProps, createContext, useContext, useId } from 'react'
-import {
-  Controller,
-  type ControllerProps,
-  type FieldPath,
-  type FieldValues,
-  FormProvider,
-  type UseFormProps,
-  useForm as __useForm,
-  useFormContext,
-  useFormState,
-} from 'react-hook-form'
-import type { ZodType, ZodTypeDef } from 'zod'
 import { Label } from './label'
 
-const useForm = <
-  TOut extends FieldValues,
-  TDef extends ZodTypeDef,
-  TIn extends FieldValues,
->(
-  props: Omit<UseFormProps<TOut>, 'resolver'> & {
-    schema: ZodType<TOut, TDef, TIn>
+const {
+  fieldContext,
+  formContext,
+  useFieldContext: _useFieldContext,
+  useFormContext,
+} = createFormHookContexts()
+
+const { useAppForm, withForm } = createFormHook({
+  fieldContext,
+  formContext,
+  fieldComponents: {
+    FormLabel,
+    FormControl,
+    FormDescription,
+    FormMessage,
+    FormItem,
   },
-) => {
-  return __useForm<TOut>({
-    ...props,
-    resolver: zodResolver(props.schema, undefined),
-  })
-}
-
-const Form = FormProvider
-
-type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
-  name: TName
-}
-
-const FormFieldContext = createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue,
-)
-
-const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
-  return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
-    </FormFieldContext.Provider>
-  )
-}
-
-const useFormField = () => {
-  const fieldContext = useContext(FormFieldContext)
-  const itemContext = useContext(FormItemContext)
-  const { getFieldState } = useFormContext()
-  const formState = useFormState({ name: fieldContext.name })
-  const fieldState = getFieldState(fieldContext.name, formState)
-
-  if (!fieldContext) {
-    throw new Error('useFormField should be used within <FormField>')
-  }
-
-  const { id } = itemContext
-
-  return {
-    id,
-    name: fieldContext.name,
-    formItemId: `${id}-form-item`,
-    formDescriptionId: `${id}-form-item-description`,
-    formMessageId: `${id}-form-item-message`,
-    ...fieldState,
-  }
-}
+  formComponents: {},
+})
 
 type FormItemContextValue = {
   id: string
@@ -97,24 +43,42 @@ function FormItem({ className, ...props }: ComponentProps<'div'>) {
     <FormItemContext.Provider value={{ id }}>
       <div
         data-slot="form-item"
-        className={cn('grid gap-1', className)}
+        className={cn('grid gap-2', className)}
         {...props}
       />
     </FormItemContext.Provider>
   )
 }
 
-function FormLabel({
-  className,
-  ...props
-}: ComponentProps<typeof LabelPrimitive.Root>) {
-  const { error, formItemId } = useFormField()
+const useFieldContext = () => {
+  const { id } = useContext(FormItemContext)
+  const { name, store, ...fieldContext } = _useFieldContext()
+
+  const errors = useStore(store, (state) => state.meta.errors)
+  if (!fieldContext) {
+    throw new Error('useFieldContext should be used within <FormItem>')
+  }
+
+  return {
+    id,
+    name,
+    formItemId: `${id}-form-item`,
+    formDescriptionId: `${id}-form-item-description`,
+    formMessageId: `${id}-form-item-message`,
+    errors,
+    store,
+    ...fieldContext,
+  }
+}
+
+function FormLabel({ className, ...props }: ComponentProps<typeof Label>) {
+  const { formItemId, errors } = useFieldContext()
 
   return (
     <Label
       data-slot="form-label"
-      data-error={!!error}
-      className={cn('data-[error=true]:text-destructive-foreground', className)}
+      data-error={!!errors.length}
+      className={cn('data-[error=true]:text-destructive', className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -122,23 +86,26 @@ function FormLabel({
 }
 
 function FormControl({ ...props }: ComponentProps<typeof Slot>) {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
+  const { errors, formItemId, formDescriptionId, formMessageId } =
+    useFieldContext()
 
   return (
     <Slot
       data-slot="form-control"
       id={formItemId}
       aria-describedby={
-        error ? `${formDescriptionId} ${formMessageId}` : `${formDescriptionId}`
+        !errors.length
+          ? `${formDescriptionId}`
+          : `${formDescriptionId} ${formMessageId}`
       }
-      aria-invalid={!!error}
+      aria-invalid={!!errors.length}
       {...props}
     />
   )
 }
 
 function FormDescription({ className, ...props }: ComponentProps<'p'>) {
-  const { formDescriptionId } = useFormField()
+  const { formDescriptionId } = useFieldContext()
 
   return (
     <p
@@ -151,18 +118,17 @@ function FormDescription({ className, ...props }: ComponentProps<'p'>) {
 }
 
 function FormMessage({ className, ...props }: ComponentProps<'p'>) {
-  const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : props.children
-
-  if (!body) {
-    return null
-  }
+  const { errors, formMessageId } = useFieldContext()
+  const body = errors.length
+    ? String(errors.at(0)?.message ?? '')
+    : props.children
+  if (!body) return null
 
   return (
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-destructive-foreground text-sm', className)}
+      className={cn('text-destructive text-sm', className)}
       {...props}
     >
       {body}
@@ -170,14 +136,4 @@ function FormMessage({ className, ...props }: ComponentProps<'p'>) {
   )
 }
 
-export {
-  useForm,
-  useFormField,
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-  FormField,
-}
+export { useAppForm, useFormContext, useFieldContext, withForm }

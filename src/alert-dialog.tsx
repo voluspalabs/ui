@@ -1,6 +1,6 @@
 'use client'
-import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
+import { AlertDialog as AlertDialogPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { buttonVariants } from './button'
 

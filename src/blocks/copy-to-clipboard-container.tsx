@@ -1,8 +1,8 @@
 import { useCopyToClipboard } from '@voluspalabs/lib/hooks/use-copy-to-clipboard'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Button } from '@voluspalabs/ui/button'
 import { Check, Copy } from 'lucide-react'
 import { type ComponentProps, useRef } from 'react'
+import { Button } from '../button'
 
 const CopyToClipboardContainer = ({
   children,
