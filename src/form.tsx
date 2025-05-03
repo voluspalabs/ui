@@ -136,4 +136,4 @@ function FormMessage({ className, ...props }: ComponentProps<'p'>) {
   )
 }
 
-export { useAppForm, useFormContext, useFieldContext, withForm }
+export { useAppForm as useForm, useFormContext, useFieldContext, withForm }
