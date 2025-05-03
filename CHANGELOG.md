@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.75
+
+### Patch Changes
+
+- 05a6d1a: Package updated and minor stucture change
+
 ## 0.0.74
 
 ### Patch Changes
