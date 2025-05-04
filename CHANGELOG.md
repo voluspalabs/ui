@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.77
+
+### Patch Changes
+
+- f44070b: Update drawer styles and enhance form context handling
+
 ## 0.0.76
 
 ### Patch Changes
