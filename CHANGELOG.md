@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.85
+
+### Patch Changes
+
+- 7ba19c0: Updated same icons size and input color
+
 ## 0.0.84
 
 ### Patch Changes
