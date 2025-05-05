@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.83
+
+### Patch Changes
+
+- d2e7be4: Sidebar icon update
+
 ## 0.0.82
 
 ### Patch Changes
