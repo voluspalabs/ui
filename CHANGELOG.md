@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.80
+
+### Patch Changes
+
+- 59f7e5f: Dialog and Sheets update
+
 ## 0.0.79
 
 ### Patch Changes
