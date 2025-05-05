@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.84
+
+### Patch Changes
+
+- 7639fee: Update sidebar icon size
+
 ## 0.0.83
 
 ### Patch Changes
