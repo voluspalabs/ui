@@ -278,7 +278,7 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <PiSidebarDefaultContrast className="size-4" />
+      <PiSidebarDefaultContrast className="size-5" />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
