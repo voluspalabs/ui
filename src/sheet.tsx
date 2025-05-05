@@ -2,7 +2,7 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { Dialog as SheetPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
-import { PiDoubleChevronRightSolid } from './icons/pi-double-chevron-right-solid'
+import { PiDoubleChevronRightStroke } from './icons/pi-double-chevron-right-stroke'
 import { ScrollArea } from './scroll-area'
 
 function Sheet({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) {
@@ -75,7 +75,7 @@ function SheetContent({
             {title && (
               <SheetTitle className="group flex items-center gap-2 font-bold">
                 <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-                  <PiDoubleChevronRightSolid className="size-5" />
+                  <PiDoubleChevronRightStroke className="size-5" />
                   <span className="sr-only">Close</span>
                 </SheetPrimitive.Close>
                 {title}
