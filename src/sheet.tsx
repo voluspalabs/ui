@@ -73,18 +73,15 @@ function SheetContent({
         <div className="flex items-center gap-3 border-b px-3 py-2">
           <div className="flex-1">
             {title && (
-              <SheetTitle className="group flex items-center gap-2 font-medium text-lg">
-                <span className="text-muted-foreground transition-colors group-hover:text-foreground">
-                  »
-                </span>
+              <SheetTitle className="group flex items-center gap-2 font-bold">
+                <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+                  <ChevronsRight className="size-4" />
+                  <span className="sr-only">Close</span>
+                </SheetPrimitive.Close>
                 {title}
               </SheetTitle>
             )}
           </div>
-          <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-            <ChevronsRight className="size-4" />
-            <span className="sr-only">Close</span>
-          </SheetPrimitive.Close>
         </div>
         {children}
       </SheetPrimitive.Content>
