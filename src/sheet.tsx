@@ -1,8 +1,8 @@
 'use client'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { ChevronsRight } from 'lucide-react'
 import { Dialog as SheetPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
+import { PiDoubleChevronRightSolid } from './icons/pi-double-chevron-right-solid'
 import { ScrollArea } from './scroll-area'
 
 function Sheet({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) {
@@ -70,12 +70,12 @@ function SheetContent({
         )}
         {...props}
       >
-        <div className="flex items-center gap-3 border-b px-3 py-2">
+        <div className="flex items-center gap-3 border-b px-4 py-3">
           <div className="flex-1">
             {title && (
               <SheetTitle className="group flex items-center gap-2 font-bold">
                 <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-                  <ChevronsRight className="size-4" />
+                  <PiDoubleChevronRightSolid className="size-5" />
                   <span className="sr-only">Close</span>
                 </SheetPrimitive.Close>
                 {title}
