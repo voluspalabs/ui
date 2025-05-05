@@ -2,7 +2,6 @@
 import { useIsMobile } from '@voluspalabs/lib/hooks/use-mobile'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
-import { PanelLeftIcon } from 'lucide-react'
 import { Slot } from 'radix-ui'
 import {
   type CSSProperties,
@@ -15,6 +14,7 @@ import {
   useState,
 } from 'react'
 import { Button } from './button'
+import { PiSidebarDefaultContrast } from './icons/pi-sidebar-default-contrast'
 import { Input } from './input'
 import { Separator } from './separator'
 import {
@@ -271,14 +271,14 @@ function SidebarTrigger({
       data-slot="sidebar-trigger"
       variant="ghost"
       size="icon"
-      className={cn('h-7 w-7', className)}
+      className={cn('size-7', className)}
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
       }}
       {...props}
     >
-      <PanelLeftIcon />
+      <PiSidebarDefaultContrast className="size-6" />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
