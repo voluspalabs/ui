@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.79
+
+### Patch Changes
+
+- 236a9c9: Minor updates to sheet component
+
 ## 0.0.78
 
 ### Patch Changes
