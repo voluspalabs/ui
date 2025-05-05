@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.82
+
+### Patch Changes
+
+- d485ad5: Same update
+
 ## 0.0.81
 
 ### Patch Changes
