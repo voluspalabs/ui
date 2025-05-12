@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.86
+
+### Patch Changes
+
+- c97a59b: Package update and tabs colors
+
 ## 0.0.85
 
 ### Patch Changes
