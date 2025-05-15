@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.87
+
+### Patch Changes
+
+- 70f59d5: Minor changes and package updates
+
 ## 0.0.86
 
 ### Patch Changes
