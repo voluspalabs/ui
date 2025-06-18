@@ -6,8 +6,8 @@ import useEmblaCarousel, {
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import {
   type ComponentProps,
-  type KeyboardEvent,
   createContext,
+  type KeyboardEvent,
   useCallback,
   useContext,
   useEffect,
@@ -128,7 +128,6 @@ function Carousel({
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
         // role="region"
-        aria-roledescription="carousel"
         data-slot="carousel"
         {...props}
       >

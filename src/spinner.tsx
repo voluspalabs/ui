@@ -1,5 +1,5 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { type VariantProps, cva } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { Slot } from 'radix-ui'
 import { type ComponentProps, type HTMLAttributes, useMemo } from 'react'
 

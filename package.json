@@ -435,38 +435,38 @@
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "dependencies": {
-    "@tanstack/react-form": "^1.11.1",
-    "@voluspalabs/lib": "^0.0.17",
+    "@tanstack/react-form": "^1.12.3",
+    "@voluspalabs/lib": "^0.0.18",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.510.0",
-    "radix-ui": "^1.4.1",
-    "react-resizable-panels": "^3.0.2",
+    "lucide-react": "^0.517.0",
+    "radix-ui": "^1.4.2",
+    "react-resizable-panels": "^3.0.3",
     "recharts": "^2.15.3",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.18.1",
-    "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.29.3",
-    "@voluspalabs/lint": "^0.0.10",
-    "tsup": "^8.4.0",
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@biomejs/biome": "^2.0.0",
+    "@changesets/cli": "^2.29.4",
+    "@voluspalabs/lint": "^0.0.11",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "@tailwindcss/postcss": "^4.1.6",
-    "postcss": "^8.5.3",
+    "@tailwindcss/postcss": "^4.1.10",
+    "postcss": "^8.5.6",
     "class-variance-authority": "^0.7.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "next": "15.3.2",
-    "tailwindcss": "^4.1.6",
+    "next": "15.3.3",
+    "tailwindcss": "^4.1.10",
     "tailwindcss-animate": "^1.0.7",
-    "sonner": "^2.0.3",
-    "zod": "^3.24.4"
+    "sonner": "^2.0.5",
+    "zod": "^3.25.67"
   },
   "engines": {
     "node": ">=20.0.0"

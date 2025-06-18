@@ -1,5 +1,5 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { type VariantProps, cva } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { type ComponentPropsWithoutRef, forwardRef } from 'react'
 
 // TODO: Dont use forwardRef anymore and migrate to Tailwind CSS V4.

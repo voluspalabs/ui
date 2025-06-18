@@ -1,11 +1,11 @@
 'use client'
 import { useIsMobile } from '@voluspalabs/lib/hooks/use-mobile'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { type VariantProps, cva } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { Slot } from 'radix-ui'
 import {
-  type CSSProperties,
   type ComponentProps,
+  type CSSProperties,
   createContext,
   useCallback,
   useContext,
@@ -90,7 +90,7 @@ function SidebarProvider({
       }
 
       // This sets the cookie to keep the sidebar state.
-      // biome-ignore lint/nursery/noDocumentCookie: Needed to set the cookie like this.
+      // biome-ignore lint/suspicious/noDocumentCookie: We need to set the cookie like this.
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`
     },
     [setOpenProp, open],
