@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.88
+
+### Patch Changes
+
+- 04f0ad4: Updated packages and biome
+
 ## 0.0.87
 
 ### Patch Changes
