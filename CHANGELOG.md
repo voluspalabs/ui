@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.89
+
+### Patch Changes
+
+- a5a01d8: Add new Calendar component
+
 ## 0.0.88
 
 ### Patch Changes
