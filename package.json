@@ -52,6 +52,9 @@
       "button": [
         "./dist/button.d.ts"
       ],
+      "calendar": [
+        "./dist/calendar.d.ts"
+      ],
       "card": [
         "./dist/card.d.ts"
       ],
@@ -217,6 +220,11 @@
       "types": "./dist/button.d.ts",
       "import": "./dist/button.js",
       "default": "./dist/button.js"
+    },
+    "./calendar": {
+      "types": "./dist/calendar.d.ts",
+      "import": "./dist/calendar.js",
+      "default": "./dist/calendar.js"
     },
     "./card": {
       "types": "./dist/card.d.ts",
@@ -436,21 +444,22 @@
   },
   "dependencies": {
     "@tanstack/react-form": "^1.12.3",
-    "@voluspalabs/lib": "^0.0.18",
+    "@voluspalabs/lib": "^0.0.19",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.517.0",
+    "lucide-react": "^0.522.0",
     "radix-ui": "^1.4.2",
+    "react-day-picker": "^9.7.0",
     "react-resizable-panels": "^3.0.3",
-    "recharts": "^2.15.3",
+    "recharts": "^2.15.4",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@biomejs/biome": "^2.0.0",
-    "@changesets/cli": "^2.29.4",
-    "@voluspalabs/lint": "^0.0.11",
+    "@biomejs/biome": "^2.0.4",
+    "@changesets/cli": "^2.29.5",
+    "@voluspalabs/lint": "^0.0.12",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
@@ -462,7 +471,7 @@
     "react-dom": "19.0.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "next": "15.3.3",
+    "next": "15.3.4",
     "tailwindcss": "^4.1.10",
     "tailwindcss-animate": "^1.0.7",
     "sonner": "^2.0.5",
