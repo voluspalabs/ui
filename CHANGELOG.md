@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.90
+
+### Patch Changes
+
+- 190c64e: Updated packages and chart component to support rechart v3
+
 ## 0.0.89
 
 ### Patch Changes
