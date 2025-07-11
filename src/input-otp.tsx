@@ -68,6 +68,7 @@ function InputOTPSeparator({ ...props }: ComponentProps<'div'>) {
   return (
     // biome-ignore lint/a11y/useFocusableInteractive: We need this, because we have children element inside.
     // biome-ignore lint/a11y/useSemanticElements: We need this, because we have children element inside.
+    // biome-ignore lint/a11y/useAriaPropsForRole: We need this, because we have children element inside.
     <div data-slot="input-otp-separator" role="separator" {...props}>
       <MinusIcon />
     </div>
