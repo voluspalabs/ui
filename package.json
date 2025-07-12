@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/ui",
-  "version": "0.0.90",
+  "version": "0.0.91",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
   "keywords": [
     "UI",
@@ -475,7 +475,7 @@
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "sonner": "^2.0.6",
-    "zod": "^3.25.76"
+    "zod": "^4.0.5"
   },
   "engines": {
     "node": ">=20.0.0"
