@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.95
+
+### Patch Changes
+
+- 2a960bf: Updated switch component
+
 ## 0.0.94
 
 ### Patch Changes
