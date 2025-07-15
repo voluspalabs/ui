@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.99
+
+### Patch Changes
+
+- a7e7c40: Updated toaster
+
 ## 0.0.98
 
 ### Patch Changes
