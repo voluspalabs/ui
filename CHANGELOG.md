@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.98
+
+### Patch Changes
+
+- 524f20a: Updated switch again
+
 ## 0.0.97
 
 ### Patch Changes
