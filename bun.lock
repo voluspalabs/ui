@@ -20,7 +20,7 @@
         "@arethetypeswrong/cli": "^0.18.2",
         "@biomejs/biome": "^2.1.1",
         "@changesets/cli": "^2.29.5",
-        "@voluspalabs/lint": "^0.0.17",
+        "@voluspalabs/lint": "^0.0.18",
         "tsup": "^8.5.0",
         "typescript": "^5.8.3",
       },
@@ -499,7 +499,7 @@
 
     "@voluspalabs/lib": ["@voluspalabs/lib@0.0.22", "", { "dependencies": { "clsx": "^2.1.1", "tailwind-merge": "^3.3.1" }, "peerDependencies": { "class-variance-authority": "^0.7.1", "react": "^19.1.0", "react-dom": "^19.1.0", "sonner": "^2.0.6" } }, "sha512-+UIrBcmL/DVcd5pJRj4M3XIpQPFNcbe/Ny8VboC3vzn/m+jh7e5ThEeZ0bAGKw9EVI1OFV/4rjroDnLQiiW7JA=="],
 
-    "@voluspalabs/lint": ["@voluspalabs/lint@0.0.17", "", {}, "sha512-Du7svKiA+wHE5DGjonRklStjxNsJhoXtq3XZdjNRjwD+zvRPCAkRLTuBMNnvwWAHubPk7DjVWolT2vh4Lx8W3g=="],
+    "@voluspalabs/lint": ["@voluspalabs/lint@0.0.18", "", {}, "sha512-NtKeREkgNMZKogjhvFAHc1UeYsIisGUAkwVD1j0z0pDuuNfAcbVp+dMLuG8PYWEZiZk4gMUPsj0OrjioqY/4eA=="],
 
     "acorn": ["acorn@8.15.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg=="],
 
