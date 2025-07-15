@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.94
+
+### Patch Changes
+
+- a053bef: Updated packages
+
 ## 0.0.93
 
 ### Patch Changes

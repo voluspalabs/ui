@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/ui",
-  "version": "0.0.93",
+  "version": "0.0.94",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
   "keywords": [
     "UI",
@@ -459,7 +459,7 @@
     "@arethetypeswrong/cli": "^0.18.2",
     "@biomejs/biome": "^2.1.1",
     "@changesets/cli": "^2.29.5",
-    "@voluspalabs/lint": "^0.0.17",
+    "@voluspalabs/lint": "^0.0.18",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
