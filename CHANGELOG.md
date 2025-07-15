@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.93
+
+### Patch Changes
+
+- 5f1c2e8: Updated code to match new lint rules
+
 ## 0.0.92
 
 ### Patch Changes
