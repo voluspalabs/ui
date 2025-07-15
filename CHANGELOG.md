@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.96
+
+### Patch Changes
+
+- 85c9b7c: Updated switch and button variant
+
 ## 0.0.95
 
 ### Patch Changes
