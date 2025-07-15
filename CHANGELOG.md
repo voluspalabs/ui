@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.97
+
+### Patch Changes
+
+- bcb4923: Updated switch
+
 ## 0.0.96
 
 ### Patch Changes
