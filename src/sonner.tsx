@@ -4,9 +4,9 @@ import { Toaster as Sonner, type ToasterProps } from 'sonner'
 const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
-      richColors
-      closeButton
       className="toaster group pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)]"
+      closeButton
+      richColors
       toastOptions={{
         classNames: {
           toast:

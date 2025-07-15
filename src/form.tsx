@@ -48,8 +48,8 @@ function FormItem({ className, ...props }: ComponentProps<'div'>) {
   return (
     <FormItemContext.Provider value={{ id }}>
       <div
-        data-slot="form-item"
         className={cn('grid gap-2', className)}
+        data-slot="form-item"
         {...props}
       />
     </FormItemContext.Provider>
@@ -95,9 +95,9 @@ function FormLabel({
 
   return (
     <Label
-      data-slot="form-label"
-      data-error={!!errors.length}
       className={cn('data-[error=true]:text-destructive', className)}
+      data-error={!!errors.length}
+      data-slot="form-label"
       htmlFor={formItemId}
       {...props}
     >
@@ -123,15 +123,15 @@ function FormControl({ error, className, ...props }: FormControlProps) {
 
   return (
     <Slot
-      data-slot="form-control"
-      id={formItemId}
       aria-describedby={
-        !displayErrors.length
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
+        displayErrors.length
+          ? `${formDescriptionId} ${formMessageId}`
+          : `${formDescriptionId}`
       }
       aria-invalid={!!displayErrors.length}
       className={cn('w-full', className)}
+      data-slot="form-control"
+      id={formItemId}
       {...props}
     />
   )
@@ -151,13 +151,15 @@ function FormDescription({
 }: FormDescriptionProps) {
   const { formDescriptionId, errors } = useFieldContext()
 
-  if (errors.length && !forceShow) return null
+  if (errors.length && !forceShow) {
+    return null
+  }
 
   return (
     <p
+      className={cn('text-muted-foreground text-sm', className)}
       data-slot="form-description"
       id={formDescriptionId}
-      className={cn('text-muted-foreground text-sm', className)}
       {...props}
     />
   )
@@ -177,13 +179,15 @@ function FormMessage({ className, error, ...props }: FormMessageProps) {
     ? String(displayErrors[0]?.message ?? '')
     : props.children
 
-  if (!body) return null
+  if (!body) {
+    return null
+  }
 
   return (
     <p
+      className={cn('text-destructive text-sm', className)}
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-destructive text-sm', className)}
       {...props}
     >
       {body}

@@ -19,23 +19,23 @@ const PasswordInput = ({ className, ...props }: ComponentProps<'input'>) => {
   return (
     <div className="relative">
       <Input
-        type={showPassword ? 'text' : 'password'}
         className={cn('hide-password-toggle pr-10', className)}
         data-slot="password-input"
+        type={showPassword ? 'text' : 'password'}
         {...props}
       />
       <Button
+        className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
+        disabled={disabled}
+        onClick={() => setShowPassword((prev) => !prev)}
+        size="sm"
         type="button"
         variant="ghost"
-        size="sm"
-        className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
-        onClick={() => setShowPassword((prev) => !prev)}
-        disabled={disabled}
       >
         {showPassword && !disabled ? (
-          <Eye className="size-4" aria-hidden="true" />
+          <Eye aria-hidden="true" className="size-4" />
         ) : (
-          <EyeClosed className="size-4" aria-hidden="true" />
+          <EyeClosed aria-hidden="true" className="size-4" />
         )}
         <span className="sr-only">
           {showPassword ? 'Hide password' : 'Show password'}

@@ -54,17 +54,17 @@ function Button({
 
   return (
     <Comp
-      data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      data-slot="button"
       {...props}
     >
       {isPending ? (
         <Slot.Slottable>
           <Spinner
+            aria-hidden="true"
+            className="absolute inset-0 z-10 m-auto"
             loading
             size="sm"
-            className="absolute inset-0 z-10 m-auto"
-            aria-hidden="true"
           />
           <span className="opacity-0">
             <Slot.Slottable>{props.children}</Slot.Slottable>

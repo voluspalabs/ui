@@ -45,18 +45,20 @@ const Spinner = ({
     [],
   )
 
-  if (!loading) return null
+  if (!loading) {
+    return null
+  }
 
   return (
     <Comp
-      data-slot="spinner"
       className={cn(spinnerVariants({ size, className }))}
+      data-slot="spinner"
       {...props}
     >
       {array8.map((_, index) => (
         <span
-          key={spinnerLineKeys[index]}
           className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
+          key={spinnerLineKeys[index]}
           style={{
             transform: `rotate(${index * 45}deg)`,
             animationDelay: `${-(7 - index) * 100}ms`,

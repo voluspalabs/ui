@@ -39,7 +39,7 @@ const Kbd = forwardRef<HTMLUnknownElement, KbdProps>(
         {...props}
       >
         {abbrTitle ? (
-          <abbr title={abbrTitle} className="no-underline">
+          <abbr className="no-underline" title={abbrTitle}>
             {children}
           </abbr>
         ) : (
