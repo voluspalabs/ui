@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.100
+
+### Patch Changes
+
+- 6adaf31: Updated packages
+
 ## 0.0.99
 
 ### Patch Changes
