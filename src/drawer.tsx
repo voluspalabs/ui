@@ -1,9 +1,9 @@
 'use client'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Button } from '@voluspalabs/ui/button'
 import { Check, X } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
+import { Button } from './button'
 
 function Drawer({ ...props }: ComponentProps<typeof DrawerPrimitive.Root>) {
   return <DrawerPrimitive.Root data-slot="drawer" {...props} />
@@ -82,6 +82,7 @@ function DrawerContent({
                   aria-label="Cancel"
                   className="size-12 rounded-full bg-transparent brightness-125 backdrop-saturate-150"
                   onClick={onCancel}
+                  size="icon"
                   variant="outline"
                 >
                   <X className="size-5" />
@@ -94,6 +95,8 @@ function DrawerContent({
                   aria-label="Confirm"
                   className="size-12 rounded-full"
                   onClick={onConfirm}
+                  size="icon"
+                  variant="default"
                 >
                   <Check className="size-5" />
                 </Button>
