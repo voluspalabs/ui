@@ -1,5 +1,12 @@
 # @voluspalabs/ui
 
+## 0.0.101
+
+### Patch Changes
+
+- cda9936: Updated toaster and drawer components
+- b92645a: Updated build script
+
 ## 0.0.100
 
 ### Patch Changes
