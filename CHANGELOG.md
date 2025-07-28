@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.102
+
+### Patch Changes
+
+- a451047: Updated font sizes
+
 ## 0.0.101
 
 ### Patch Changes
