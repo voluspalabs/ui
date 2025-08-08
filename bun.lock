@@ -9,7 +9,7 @@
         "cmdk": "^1.1.1",
         "embla-carousel-react": "^8.6.0",
         "input-otp": "^1.4.2",
-        "lucide-react": "^0.537.0",
+        "lucide-react": "^0.539.0",
         "radix-ui": "^1.4.2",
         "react-day-picker": "^9.8.1",
         "react-resizable-panels": "^3.0.4",
@@ -20,7 +20,7 @@
         "@arethetypeswrong/cli": "^0.18.2",
         "@biomejs/biome": "^2.1.4",
         "@changesets/cli": "^2.29.5",
-        "@voluspalabs/lint": "^0.0.21",
+        "@voluspalabs/lint": "^0.0.22",
         "tsup": "^8.5.0",
         "typescript": "^5.9.2",
       },
@@ -499,7 +499,7 @@
 
     "@voluspalabs/lib": ["@voluspalabs/lib@0.0.25", "", { "dependencies": { "clsx": "^2.1.1", "tailwind-merge": "^3.3.1" }, "peerDependencies": { "class-variance-authority": "^0.7.1", "react": "^19.1.1", "react-dom": "^19.1.1", "sonner": "^2.0.7" } }, "sha512-wb+YJsq0/oSxtFz5LtdaT4FfK4Q7XXaMTxkwtRkUnh4xMwk8gj1TVWzZWeHqQLNU6qMpN4tbEXxkN4peEzjltQ=="],
 
-    "@voluspalabs/lint": ["@voluspalabs/lint@0.0.21", "", {}, "sha512-tTeVxUZXzw+6KYtA+YENMhTM2Wn703djrLOO6IVD49EwRKisxzW5zr5whtSXFOlAzPC2MioLdtwl9+M9VraIqA=="],
+    "@voluspalabs/lint": ["@voluspalabs/lint@0.0.22", "", {}, "sha512-nEVVLd7qcrnlYNS+QlIvEVvOmRjLvOErcByEEEYagoNmbfponZoYLuvcd9EUTosCa+fHeeNtZF1xFp+ezfqZBQ=="],
 
     "acorn": ["acorn@8.15.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg=="],
 
@@ -763,7 +763,7 @@
 
     "lru-cache": ["lru-cache@11.1.0", "", {}, "sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A=="],
 
-    "lucide-react": ["lucide-react@0.537.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-VxWsdxBGeFnlC+HwMg/l08HptN4YRU9o/lRog156jOmRxI1ERKqN+rJiNY/mPcKAdWdM0UbyO8ft1o0jq69SSQ=="],
+    "lucide-react": ["lucide-react@0.539.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-VVISr+VF2krO91FeuCrm1rSOLACQUYVy7NQkzrOty52Y8TlTPcXcMdQFj9bYzBgXbWCiywlwSZ3Z8u6a+6bMlg=="],
 
     "magic-string": ["magic-string@0.30.17", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0" } }, "sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA=="],
 
