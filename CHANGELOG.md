@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.104
+
+### Patch Changes
+
+- daa6634: Updated drawer component
+
 ## 0.0.103
 
 ### Patch Changes
