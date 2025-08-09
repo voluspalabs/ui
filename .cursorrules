@@ -1,0 +1,136 @@
+---
+alwaysApply: true
+---
+## @voluspalabs/ui — Cursor Rules
+
+### Who this is for
+- **Repos that depend on `@voluspalabs/ui`**: What you can import, how to use it, and constraints.
+
+## Import policy
+- **Always import from subpath exports**. Example:
+  ```tsx
+  import { Button } from '@voluspalabs/ui/button'
+  ```
+- **Do not import** from `@voluspalabs/ui` root, `src/`, `icons/`, or `experimental/` paths. Only the subpaths listed below are public.
+- **Types and helpers** that a component exposes (e.g., `ButtonProps`, `buttonVariants`) are imported from the same subpath.
+- This UI lib is based on ShadCN
+
+## Public subpath exports (what you can use)
+- **Core/overlay**: `accordion`, `alert-dialog`, `dialog`, `drawer`, `dropdown-menu`, `hover-card`, `popover`, `sheet`, `tooltip`
+- **Inputs & form**: `input`, `textarea`, `checkbox`, `radio-group`, `select`, `input-otp`, `label`, `form`
+- **Actions**: `button`, `toggle`, `toggle-group`, `switch`
+- **Navigation**: `tabs`, `menubar`, `navigation-menu`, `breadcrumb`, `pagination`, `sidebar`
+- **Data display/layout**: `card`, `table`, `avatar`, `badge`, `separator`, `skeleton`, `spinner`, `progress`, `slider`, `carousel`, `chart`, `collapsible`, `command`, `resizable`, `scroll-area`, `aspect-ratio`
+- **Feedback**: `alert`, `sonner`
+- **Blocks**: `copy-to-clipboard-container`, `input-password`, `link`
+
+Notes:
+- Each subpath provides its family of components (e.g., `@voluspalabs/ui/dialog` exports `Dialog`, `DialogTrigger`, `DialogContent`, etc.).
+- Some components export additional types/utilities (e.g., `buttonVariants`, `ButtonProps`). Prefer variants over manual class overrides.
+
+## Usage patterns and conventions
+- **asChild pattern**: Many components accept `asChild` and use Radix Slot; wrap anchors/links without extra DOM:
+  ```tsx
+  <Button asChild><a href="/docs">Docs</a></Button>
+  ```
+- **Variants via CVA**: Prefer provided `variant`/`size` props (e.g., `Button`) instead of overriding classes. If needed, compose with `className`.
+- **data-slot attributes**: Components render `data-slot` for testing and targeted styling. Keep these attributes intact.
+- **Accessibility**: ARIA and focus rings are wired. For forms, use the `form` helpers so `aria-invalid`/`aria-describedby` are applied correctly.
+
+## Client vs. server components
+- Interactive/overlay primitives (e.g., `dialog`, `tooltip`, `sidebar`) are **client components**. Use them in client files (Next.js: add `'use client'` where needed).
+- Pure display components (e.g., `badge`, `separator`) can be rendered on the server.
+
+## Peer dependencies and setup
+- React 19, React DOM 19; Next 15 supported.
+- Tailwind CSS 4.x with `tailwindcss-animate` recommended.
+- Ensure Tailwind scans your app code; if styles are missing, explicitly register this package as a content source per Tailwind docs.
+- ESM-only. Node >= 20.
+
+## Quick examples
+### Button
+```tsx
+import { Button, type ButtonProps, buttonVariants } from '@voluspalabs/ui/button'
+
+export function Actions() {
+  return (
+    <div className="flex gap-2">
+      <Button>Default</Button>
+      <Button variant="destructive">Delete</Button>
+      <Button size="icon" aria-label="More" isPending />
+    </div>
+  )
+}
+```
+
+### Dialog
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@voluspalabs/ui/dialog'
+import { Button } from '@voluspalabs/ui/button'
+
+export function ExampleDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Title</DialogTitle>
+          <DialogDescription>Details</DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+### Sidebar (essential pieces)
+```tsx
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarTrigger,
+  SidebarInset,
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+} from '@voluspalabs/ui/sidebar'
+
+export function AppShell() {
+  return (
+    <SidebarProvider>
+      <Sidebar>
+        <SidebarContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton isActive>Home</SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarContent>
+      </Sidebar>
+      <SidebarInset>
+        <div className="p-4">
+          <SidebarTrigger />
+          {/* page content */}
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
+  )
+}
+```
+
+## Form helpers (TanStack React Form)
+- Import from `@voluspalabs/ui/form`:
+  - **Hooks**: `useForm`, `useFormContext`, `useFieldContext`, `useFormItemContext`
+  - **HOC**: `withForm`
+- Internal building blocks like `FormItem`, `FormLabel`, etc. are wired into the hook and not exported directly. Compose fields using the hook and your input components.
+
