@@ -443,13 +443,13 @@
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "dependencies": {
-    "@tanstack/react-form": "^1.19.0",
-    "@voluspalabs/lib": "^0.0.25",
+    "@tanstack/react-form": "^1.19.2",
+    "@voluspalabs/lib": "^0.0.26",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.539.0",
-    "radix-ui": "^1.4.2",
+    "radix-ui": "^1.4.3",
     "react-day-picker": "^9.8.1",
     "react-resizable-panels": "^3.0.4",
     "recharts": "^3.1.2",
@@ -457,9 +457,9 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@biomejs/biome": "^2.1.4",
+    "@biomejs/biome": "^2.2.0",
     "@changesets/cli": "^2.29.5",
-    "@voluspalabs/lint": "^0.0.22",
+    "@voluspalabs/lint": "^0.0.23",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   },
@@ -469,13 +469,13 @@
     "class-variance-authority": "^0.7.1",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "@types/react": "^19.1.9",
+    "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "next": "15.4.6",
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "sonner": "^2.0.7",
-    "zod": "^4.0.15"
+    "zod": "^4.0.17"
   },
   "engines": {
     "node": ">=20.0.0"
