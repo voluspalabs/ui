@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/ui",
-  "version": "0.0.105",
+  "version": "0.0.106",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
   "keywords": [
     "UI",
@@ -444,7 +444,7 @@
   },
   "dependencies": {
     "@tanstack/react-form": "^1.19.2",
-    "@voluspalabs/lib": "^0.0.26",
+    "@voluspalabs/lib": "^0.0.27",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
