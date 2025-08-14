@@ -1,5 +1,5 @@
-/** biome-ignore-all lint/nursery/noNestedComponentDefinitions: We want this to be a nested component */
 /** biome-ignore-all lint/complexity/useLiteralKeys: We need this, for fixing TS errors */
+/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: We want this to be a nested component */
 'use client'
 
 import { cn } from '@voluspalabs/lib/utils/cn'
