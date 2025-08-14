@@ -5,7 +5,7 @@
       "name": "@voluspalabs/ui",
       "dependencies": {
         "@tanstack/react-form": "^1.19.2",
-        "@voluspalabs/lib": "^0.0.26",
+        "@voluspalabs/lib": "^0.0.27",
         "cmdk": "^1.1.1",
         "embla-carousel-react": "^8.6.0",
         "input-otp": "^1.4.2",
@@ -497,7 +497,7 @@
 
     "@types/use-sync-external-store": ["@types/use-sync-external-store@0.0.6", "", {}, "sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg=="],
 
-    "@voluspalabs/lib": ["@voluspalabs/lib@0.0.26", "", { "dependencies": { "clsx": "^2.1.1", "tailwind-merge": "^3.3.1" }, "peerDependencies": { "class-variance-authority": "^0.7.1", "react": "^19.1.1", "react-dom": "^19.1.1", "sonner": "^2.0.7" } }, "sha512-eXFjgvWA3m0l82Nrwu+thRCS5R3dvOrW0u4fNCgCAYcIL8VExpqdEY6eHtPAu4uNeOzunRxxJnrx3Zer1YnVPw=="],
+    "@voluspalabs/lib": ["@voluspalabs/lib@0.0.27", "", { "dependencies": { "clsx": "^2.1.1", "tailwind-merge": "^3.3.1" }, "peerDependencies": { "class-variance-authority": "^0.7.1", "react": "^19.1.1", "react-dom": "^19.1.1", "sonner": "^2.0.7" } }, "sha512-9usCQCYiZAcBaMTflYvtg2brVNq9loUtPKMrVtxId6uI3hz2n7tWqZsAJg4JjbevCrBqeTXeNMXuosM6M2d/JA=="],
 
     "@voluspalabs/lint": ["@voluspalabs/lint@0.0.23", "", {}, "sha512-VcdS/lN+e5G0hnRHTH+mE+1WQDBLAAViC7o666eKHQpfhRl0V7c6/ssmcNVXS2BMYtU3QldUvodbifstr34A5g=="],
 
