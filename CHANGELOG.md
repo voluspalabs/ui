@@ -1,5 +1,12 @@
 # @voluspalabs/ui
 
+## 0.0.105
+
+### Patch Changes
+
+- 22aa692: Updated packages
+- 0abfc2c: Updated packages
+
 ## 0.0.104
 
 ### Patch Changes
