@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.0.107
+
+### Patch Changes
+
+- f573687: Updated packages, dialog, sonner and spinner components
+
 ## 0.0.106
 
 ### Patch Changes
