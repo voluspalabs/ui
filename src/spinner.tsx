@@ -55,23 +55,29 @@ const Spinner = ({
       data-slot="spinner"
       {...props}
     >
-      {array8.map((_, index) => (
-        <span
-          className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
-          key={spinnerLineKeys[index]}
-          style={{
-            transform: `rotate(${index * 45}deg)`,
-            animationDelay: `${-(7 - index) * 100}ms`,
-          }}
-        >
+      {array8.map((_, index) => {
+        return (
           <span
-            className={cn(
-              'block h-[30%] w-full rounded-full',
-              inverted ? 'bg-foreground' : 'bg-white',
-            )}
-          />
-        </span>
-      ))}
+            className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
+            key={spinnerLineKeys[index]}
+            style={{
+              transform: `rotate(${index * 45}deg)`,
+              animationDelay: `${-(7 - index) * 100}ms`,
+            }}
+          >
+            <span
+              className={cn(
+                'block h-[30%] w-full rounded-full',
+                // TODO: Check if we can do something better here?
+                // Default: dark line on light background, light line on dark background
+                inverted
+                  ? 'bg-background dark:bg-foreground'
+                  : 'bg-foreground dark:bg-background',
+              )}
+            />
+          </span>
+        )
+      })}
     </Comp>
   )
 }

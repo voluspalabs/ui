@@ -42,11 +42,17 @@ function DialogOverlay({
   )
 }
 
+interface DialogContentProps
+  extends ComponentProps<typeof DialogPrimitive.Content> {
+  hideClose?: boolean
+}
+
 function DialogContent({
   className,
   children,
+  hideClose = false,
   ...props
-}: ComponentProps<typeof DialogPrimitive.Content>) {
+}: DialogContentProps) {
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
@@ -60,11 +66,13 @@ function DialogContent({
       >
         {children}
 
-        {/* biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting. */}
-        <DialogPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
-          <XIcon className="size-[1.15rem]" />
-          <span className="sr-only">Close</span>
-        </DialogPrimitive.Close>
+        {!hideClose && (
+          // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.
+          <DialogPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+            <XIcon className="size-[1.15rem]" />
+            <span className="sr-only">Close</span>
+          </DialogPrimitive.Close>
+        )}
       </DialogPrimitive.Content>
     </DialogPortal>
   )
