@@ -1,6 +1,5 @@
-'use client'
+import { Avatar as AvatarPrimitive } from '@base-ui-components/react/avatar'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Avatar as AvatarPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Avatar({
@@ -39,7 +38,7 @@ function AvatarFallback({
   return (
     <AvatarPrimitive.Fallback
       className={cn(
-        'flex size-full items-center justify-center rounded-full bg-muted',
+        'flex size-full items-center justify-center rounded-full bg-muted text-sm',
         className,
       )}
       data-slot="avatar-fallback"

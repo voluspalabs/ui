@@ -1,6 +1,8 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: false positive */
 'use client'
+
+import { Slider as SliderPrimitive } from '@base-ui-components/react/slider'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Slider as SliderPrimitive } from 'radix-ui'
 import { type ComponentProps, useMemo } from 'react'
 
 function Slider({
@@ -11,20 +13,14 @@ function Slider({
   max = 100,
   ...props
 }: ComponentProps<typeof SliderPrimitive.Root>) {
-  const _values = useMemo(() => {
-    if (Array.isArray(value)) {
-      return value
-    }
-    if (Array.isArray(defaultValue)) {
-      return defaultValue
-    }
-    return [min, max]
-  }, [value, defaultValue, min, max])
-
-  // Generate keys only once per _values
-  const thumbKeys = useMemo(
-    () => _values.map(() => crypto.randomUUID()),
-    [_values],
+  const _values = useMemo(
+    () =>
+      Array.isArray(value)
+        ? value
+        : Array.isArray(defaultValue)
+          ? defaultValue
+          : [min, max],
+    [value, defaultValue, min, max],
   )
 
   return (
@@ -40,26 +36,29 @@ function Slider({
       value={value}
       {...props}
     >
-      <SliderPrimitive.Track
-        className={cn(
-          'relative grow overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1.5',
-        )}
-        data-slot="slider-track"
-      >
-        <SliderPrimitive.Range
+      <SliderPrimitive.Control className="grid grow data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1.5">
+        <SliderPrimitive.Track
           className={cn(
-            'absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
+            'relative overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
           )}
-          data-slot="slider-range"
-        />
-      </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
-        <SliderPrimitive.Thumb
-          className="block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm ring-ring/50 transition-[color,box-shadow] hover:ring-4 focus-visible:outline-hidden focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
-          data-slot="slider-thumb"
-          key={thumbKeys[index]}
-        />
-      ))}
+          data-slot="slider-track"
+        >
+          <SliderPrimitive.Indicator
+            className={cn(
+              'absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
+            )}
+            data-slot="slider-range"
+          />
+        </SliderPrimitive.Track>
+        {Array.from({ length: _values.length }, (_, index) => (
+          <SliderPrimitive.Thumb
+            className="block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm ring-ring/50 transition-[color,box-shadow] hover:ring-4 focus-visible:outline-hidden focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50"
+            data-slot="slider-thumb"
+            // TODO: Fix this key issue
+            key={index}
+          />
+        ))}
+      </SliderPrimitive.Control>
     </SliderPrimitive.Root>
   )
 }

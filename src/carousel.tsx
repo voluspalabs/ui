@@ -1,4 +1,5 @@
 'use client'
+
 import { cn } from '@voluspalabs/lib/utils/cn'
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -130,15 +131,14 @@ function Carousel({
         canScrollNext,
       }}
     >
-      <div
+      <section
         className={cn('relative', className)}
         data-slot="carousel"
-        // role="region"
         onKeyDownCapture={handleKeyDown}
         {...props}
       >
         {children}
-      </div>
+      </section>
     </CarouselContext.Provider>
   )
 }

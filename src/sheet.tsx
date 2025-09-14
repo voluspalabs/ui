@@ -1,9 +1,7 @@
-'use client'
+import { Dialog as SheetPrimitive } from '@base-ui-components/react/dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Dialog as SheetPrimitive } from 'radix-ui'
+import { XIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { PiDoubleChevronRightStroke } from './icons/pi-double-chevron-right-stroke'
-import { ScrollArea } from './scroll-area'
 
 function Sheet({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
@@ -28,11 +26,11 @@ function SheetPortal({
 function SheetOverlay({
   className,
   ...props
-}: ComponentProps<typeof SheetPrimitive.Overlay>) {
+}: ComponentProps<typeof SheetPrimitive.Backdrop>) {
   return (
-    <SheetPrimitive.Overlay
+    <SheetPrimitive.Backdrop
       className={cn(
-        'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in',
+        'data-[closed]:fade-out-0 data-[closed]:animation-duration-[300ms] data-[open]:fade-in-0 fixed inset-0 z-50 bg-black/50 data-[closed]:animate-out data-[open]:animate-in',
         className,
       )}
       data-slot="sheet-overlay"
@@ -45,46 +43,35 @@ function SheetContent({
   className,
   children,
   side = 'right',
-  title,
   ...props
-}: ComponentProps<typeof SheetPrimitive.Content> & {
+}: ComponentProps<typeof SheetPrimitive.Popup> & {
   side?: 'top' | 'right' | 'bottom' | 'left'
-  title?: React.ReactNode
 }) {
   return (
     <SheetPortal>
       <SheetOverlay />
-      <SheetPrimitive.Content
+      <SheetPrimitive.Popup
         className={cn(
-          'safe-m-top safe-m-bottom fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:duration-300 data-[state=open]:duration-500',
+          'fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[closed]:animate-out data-[open]:animate-in data-[closed]:duration-300 data-[open]:duration-500',
           side === 'right' &&
-            'data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm',
+            'data-[closed]:slide-out-to-right data-[open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm',
           side === 'left' &&
-            'data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm',
+            'data-[closed]:slide-out-to-left data-[open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm',
           side === 'top' &&
-            'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 h-auto border-b',
+            'data-[closed]:slide-out-to-top data-[open]:slide-in-from-top inset-x-0 top-0 h-auto border-b',
           side === 'bottom' &&
-            'data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t',
+            'data-[closed]:slide-out-to-bottom data-[open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t',
           className,
         )}
         data-slot="sheet-content"
         {...props}
       >
-        <div className="flex items-center gap-3 border-b px-4 py-3">
-          <div className="flex-1">
-            {title && (
-              <SheetTitle className="group flex items-center gap-2 font-bold">
-                <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-                  <PiDoubleChevronRightStroke className="size-5" />
-                  <span className="sr-only">Close</span>
-                </SheetPrimitive.Close>
-                {title}
-              </SheetTitle>
-            )}
-          </div>
-        </div>
         {children}
-      </SheetPrimitive.Content>
+        <SheetPrimitive.Close className="absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[open]:bg-secondary">
+          <XIcon className="size-4" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+      </SheetPrimitive.Popup>
     </SheetPortal>
   )
 }
@@ -92,56 +79,17 @@ function SheetContent({
 function SheetHeader({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
-      className={cn(
-        'flex flex-col gap-1.5 rounded-2xl border-b bg-muted/40 p-4',
-        className,
-      )}
+      className={cn('flex flex-col gap-1.5 p-4', className)}
       data-slot="sheet-header"
       {...props}
     />
   )
 }
 
-function SheetBody({
-  className,
-  children,
-  scrollable = true,
-  padding = true,
-  ...props
-}: ComponentProps<'div'> & {
-  scrollable?: boolean
-  padding?: boolean | string
-}) {
-  let paddingClass = ''
-  if (padding === true) {
-    paddingClass = 'px-4'
-  } else if (typeof padding === 'string') {
-    paddingClass = padding
-  }
-
-  const contentStyles = cn('flex-1', paddingClass, className)
-
-  if (!scrollable) {
-    return (
-      <div className={contentStyles} {...props}>
-        {children}
-      </div>
-    )
-  }
-
-  return (
-    <div className="w-full flex-1 overflow-hidden" {...props}>
-      <ScrollArea className="h-full">
-        <div className={contentStyles}>{children}</div>
-      </ScrollArea>
-    </div>
-  )
-}
-
 function SheetFooter({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
-      className={cn('mt-auto flex gap-2 border-t p-4', className)}
+      className={cn('mt-auto flex flex-col gap-2 p-4', className)}
       data-slot="sheet-footer"
       {...props}
     />
@@ -180,7 +128,6 @@ export {
   SheetClose,
   SheetContent,
   SheetHeader,
-  SheetBody,
   SheetFooter,
   SheetTitle,
   SheetDescription,

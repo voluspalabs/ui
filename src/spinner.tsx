@@ -1,9 +1,8 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Slot } from 'radix-ui'
-import { type ComponentProps, type HTMLAttributes, useMemo } from 'react'
+import type { ComponentProps } from 'react'
 
-const spinnerVariants = cva('relative block opacity-65', {
+const spinnerVariants = cva('relative block opacity-60', {
   variants: {
     size: {
       sm: 'size-4',
@@ -17,10 +16,9 @@ const spinnerVariants = cva('relative block opacity-65', {
 })
 
 export interface SpinnerProps
-  extends HTMLAttributes<HTMLSpanElement>,
+  extends ComponentProps<'span'>,
     VariantProps<typeof spinnerVariants> {
   loading?: boolean
-  asChild?: boolean
   inverted?: boolean
 }
 
@@ -29,37 +27,27 @@ const Spinner = ({
   size,
   loading = true,
   inverted = false,
-  asChild = false,
   ...props
-}: ComponentProps<'span'> &
-  VariantProps<typeof spinnerVariants> & {
-    asChild?: boolean
-    loading?: boolean
-    inverted?: boolean
-  }) => {
-  const Comp = asChild ? Slot.Root : 'span'
-
-  const array8 = Array.from({ length: 8 })
-  const spinnerLineKeys = useMemo(
-    () => array8.map(() => crypto.randomUUID()),
-    [],
-  )
+}: SpinnerProps) => {
+  const leaves = EIGHT_LEAVES
 
   if (!loading) {
     return null
   }
 
   return (
-    <Comp
+    <span
+      aria-busy="true"
+      aria-live="polite"
       className={cn(spinnerVariants({ size, className }))}
       data-slot="spinner"
       {...props}
     >
-      {array8.map((_, index) => {
+      {leaves.map((leaf, index) => {
         return (
           <span
             className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
-            key={spinnerLineKeys[index]}
+            key={leaf.id}
             style={{
               transform: `rotate(${index * 45}deg)`,
               animationDelay: `${-(7 - index) * 100}ms`,
@@ -68,8 +56,6 @@ const Spinner = ({
             <span
               className={cn(
                 'block h-[30%] w-full rounded-full',
-                // TODO: Check if we can do something better here?
-                // Default: dark line on light background, light line on dark background
                 inverted
                   ? 'bg-background dark:bg-foreground'
                   : 'bg-foreground dark:bg-background',
@@ -78,10 +64,14 @@ const Spinner = ({
           </span>
         )
       })}
-    </Comp>
+      <span className="sr-only">Loading</span>
+    </span>
   )
 }
 
 Spinner.displayName = 'Spinner'
 
 export { Spinner, spinnerVariants }
+
+// Internal constants
+const EIGHT_LEAVES = Array.from({ length: 8 }, (_, i) => ({ id: `leaf-${i}` }))

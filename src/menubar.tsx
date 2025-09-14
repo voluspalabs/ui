@@ -1,15 +1,15 @@
-'use client'
+import { Menu as MenuPrimitive } from '@base-ui-components/react/menu'
+import { Menubar as MenubarPrimitive } from '@base-ui-components/react/menubar'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
-import { Menubar as MenubarPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Menubar({
   className,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Root>) {
+}: ComponentProps<typeof MenubarPrimitive>) {
   return (
-    <MenubarPrimitive.Root
+    <MenubarPrimitive
       className={cn(
         'flex h-9 items-center gap-1 rounded-md border bg-background p-1 shadow-xs',
         className,
@@ -20,40 +20,36 @@ function Menubar({
   )
 }
 
-function MenubarMenu({
-  ...props
-}: ComponentProps<typeof MenubarPrimitive.Menu>) {
-  return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />
+function MenubarMenu({ ...props }: ComponentProps<typeof MenuPrimitive.Root>) {
+  return <MenuPrimitive.Root data-slot="menubar-menu" {...props} />
 }
 
 function MenubarGroup({
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Group>) {
-  return <MenubarPrimitive.Group data-slot="menubar-group" {...props} />
+}: ComponentProps<typeof MenuPrimitive.Group>) {
+  return <MenuPrimitive.Group data-slot="menubar-group" {...props} />
 }
 
 function MenubarPortal({
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Portal>) {
-  return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />
+}: ComponentProps<typeof MenuPrimitive.Portal>) {
+  return <MenuPrimitive.Portal data-slot="menubar-portal" {...props} />
 }
 
 function MenubarRadioGroup({
   ...props
-}: ComponentProps<typeof MenubarPrimitive.RadioGroup>) {
-  return (
-    <MenubarPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
-  )
+}: ComponentProps<typeof MenuPrimitive.RadioGroup>) {
+  return <MenuPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
 }
 
 function MenubarTrigger({
   className,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Trigger>) {
+}: ComponentProps<typeof MenuPrimitive.Trigger>) {
   return (
-    <MenubarPrimitive.Trigger
+    <MenuPrimitive.Trigger
       className={cn(
-        'flex select-none items-center rounded-sm px-2 py-1 font-medium text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground',
+        'flex select-none items-center rounded-sm px-2 py-1 font-medium text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[popup-open]:bg-accent data-[open]:text-accent-foreground',
         className,
       )}
       data-slot="menubar-trigger"
@@ -62,27 +58,38 @@ function MenubarTrigger({
   )
 }
 
-function MenubarContent({
-  className,
+function MenubarPositioner({
   align = 'start',
   alignOffset = -4,
   sideOffset = 8,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Content>) {
+}: ComponentProps<typeof MenuPrimitive.Positioner>) {
   return (
     <MenubarPortal>
-      <MenubarPrimitive.Content
+      <MenuPrimitive.Positioner
         align={align}
         alignOffset={alignOffset}
-        className={cn(
-          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in',
-          className,
-        )}
-        data-slot="menubar-content"
+        data-slot="menubar-positioner"
         sideOffset={sideOffset}
         {...props}
       />
     </MenubarPortal>
+  )
+}
+
+function MenubarContent({
+  className,
+  ...props
+}: ComponentProps<typeof MenuPrimitive.Popup>) {
+  return (
+    <MenuPrimitive.Popup
+      className={cn(
+        'data-[closed]:fade-out-0 data-[open]:fade-in-0 data-[closed]:zoom-out-95 data-[open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] origin-(--transform-origin) overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[closed]:animate-out data-[open]:animate-in',
+        className,
+      )}
+      data-slot="menubar-content"
+      {...props}
+    />
   )
 }
 
@@ -91,15 +98,14 @@ function MenubarItem({
   inset,
   variant = 'default',
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Item> & {
+}: ComponentProps<typeof MenuPrimitive.Item> & {
   inset?: boolean
   variant?: 'default' | 'destructive'
 }) {
   return (
-    <MenubarPrimitive.Item
+    <MenuPrimitive.Item
       className={cn(
-        // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.
-        "focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive-foreground data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40 data-[variant=destructive]:focus:text-destructive-foreground data-[variant=destructive]:*:[svg]:!text-destructive-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[variant=destructive]:*:[svg]:!text-destructive relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[inset]:pl-8 data-[variant=destructive]:text-destructive data-[disabled]:opacity-50 data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       data-inset={inset}
@@ -115,25 +121,24 @@ function MenubarCheckboxItem({
   children,
   checked,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.CheckboxItem>) {
+}: ComponentProps<typeof MenuPrimitive.CheckboxItem>) {
   return (
-    <MenubarPrimitive.CheckboxItem
+    <MenuPrimitive.CheckboxItem
       checked={checked}
       className={cn(
-        // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex cursor-default select-none items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       data-slot="menubar-checkbox-item"
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <MenubarPrimitive.ItemIndicator>
+        <MenuPrimitive.CheckboxItemIndicator>
           <CheckIcon className="size-4" />
-        </MenubarPrimitive.ItemIndicator>
+        </MenuPrimitive.CheckboxItemIndicator>
       </span>
       {children}
-    </MenubarPrimitive.CheckboxItem>
+    </MenuPrimitive.CheckboxItem>
   )
 }
 
@@ -141,24 +146,23 @@ function MenubarRadioItem({
   className,
   children,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.RadioItem>) {
+}: ComponentProps<typeof MenuPrimitive.RadioItem>) {
   return (
-    <MenubarPrimitive.RadioItem
+    <MenuPrimitive.RadioItem
       className={cn(
-        // biome-ignore lint/nursery/useSortedClasses: Waiting for fix by biome, for tw class sorting.
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex cursor-default select-none items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       data-slot="menubar-radio-item"
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <MenubarPrimitive.ItemIndicator>
+        <MenuPrimitive.RadioItemIndicator>
           <CircleIcon className="size-2 fill-current" />
-        </MenubarPrimitive.ItemIndicator>
+        </MenuPrimitive.RadioItemIndicator>
       </span>
       {children}
-    </MenubarPrimitive.RadioItem>
+    </MenuPrimitive.RadioItem>
   )
 }
 
@@ -166,11 +170,11 @@ function MenubarLabel({
   className,
   inset,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Label> & {
+}: ComponentProps<typeof MenuPrimitive.GroupLabel> & {
   inset?: boolean
 }) {
   return (
-    <MenubarPrimitive.Label
+    <MenuPrimitive.GroupLabel
       className={cn(
         'px-2 py-1.5 font-medium text-sm data-[inset]:pl-8',
         className,
@@ -185,9 +189,9 @@ function MenubarLabel({
 function MenubarSeparator({
   className,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.Separator>) {
+}: ComponentProps<typeof MenuPrimitive.Separator>) {
   return (
-    <MenubarPrimitive.Separator
+    <MenuPrimitive.Separator
       className={cn('-mx-1 my-1 h-px bg-border', className)}
       data-slot="menubar-separator"
       {...props}
@@ -208,8 +212,10 @@ function MenubarShortcut({ className, ...props }: ComponentProps<'span'>) {
   )
 }
 
-function MenubarSub({ ...props }: ComponentProps<typeof MenubarPrimitive.Sub>) {
-  return <MenubarPrimitive.Sub data-slot="menubar-sub" {...props} />
+function MenubarSub({
+  ...props
+}: ComponentProps<typeof MenuPrimitive.SubmenuRoot>) {
+  return <MenuPrimitive.SubmenuRoot data-slot="menubar-sub" {...props} />
 }
 
 function MenubarSubTrigger({
@@ -217,13 +223,13 @@ function MenubarSubTrigger({
   inset,
   children,
   ...props
-}: ComponentProps<typeof MenubarPrimitive.SubTrigger> & {
+}: ComponentProps<typeof MenuPrimitive.SubmenuTrigger> & {
   inset?: boolean
 }) {
   return (
-    <MenubarPrimitive.SubTrigger
+    <MenuPrimitive.SubmenuTrigger
       className={cn(
-        'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[inset]:pl-8 data-[state=open]:text-accent-foreground',
+        'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[open]:bg-accent data-[inset]:pl-8 data-[open]:text-accent-foreground',
         className,
       )}
       data-inset={inset}
@@ -232,41 +238,25 @@ function MenubarSubTrigger({
     >
       {children}
       <ChevronRightIcon className="ml-auto h-4 w-4" />
-    </MenubarPrimitive.SubTrigger>
-  )
-}
-
-function MenubarSubContent({
-  className,
-  ...props
-}: ComponentProps<typeof MenubarPrimitive.SubContent>) {
-  return (
-    <MenubarPrimitive.SubContent
-      className={cn(
-        'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=closed]:animate-out data-[state=open]:animate-in',
-        className,
-      )}
-      data-slot="menubar-sub-content"
-      {...props}
-    />
+    </MenuPrimitive.SubmenuTrigger>
   )
 }
 
 export {
   Menubar,
-  MenubarPortal,
-  MenubarMenu,
-  MenubarTrigger,
+  MenubarCheckboxItem,
   MenubarContent,
   MenubarGroup,
-  MenubarSeparator,
-  MenubarLabel,
   MenubarItem,
-  MenubarShortcut,
-  MenubarCheckboxItem,
+  MenubarLabel,
+  MenubarMenu,
+  MenubarPortal,
+  MenubarPositioner,
   MenubarRadioGroup,
   MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
   MenubarSub,
   MenubarSubTrigger,
-  MenubarSubContent,
+  MenubarTrigger,
 }

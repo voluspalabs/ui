@@ -1,46 +1,43 @@
-import { Slot } from '@radix-ui/react-slot'
+'use client'
+
+import { useRender } from '@base-ui-components/react/use-render'
 import {
-  createFormHook,
   createFormHookContexts,
-  useStore,
+  createFormHook as createTanstackFormHook,
 } from '@tanstack/react-form'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { type ComponentProps, createContext, useContext, useId } from 'react'
 import { Label } from './label'
 
-const {
-  fieldContext,
-  formContext,
-  useFieldContext: _useFieldContext,
-  useFormContext,
-} = createFormHookContexts()
+const { fieldContext, formContext, useFieldContext } = createFormHookContexts()
 
-const { useAppForm, withForm } = createFormHook({
-  fieldContext,
-  formContext,
-  fieldComponents: {
-    FormLabel,
-    FormControl,
-    FormDescription,
-    FormMessage,
-    FormItem,
-  },
-  formComponents: {},
-})
+const useFormField = () => {
+  const itemContext = useContext(FormItemContext)
+  const fieldContext = useFieldContext()
+
+  if (!fieldContext) {
+    throw new Error('useFormField should be used within <field.Container>')
+  }
+
+  const { id } = itemContext
+
+  return {
+    id,
+    name: fieldContext.name,
+    formItemId: `${id}-form-item`,
+    formDescriptionId: `${id}-form-item-description`,
+    formMessageId: `${id}-form-item-message`,
+    ...fieldContext.state.meta,
+  }
+}
 
 type FormItemContextValue = {
   id: string
-} | null
-
-const FormItemContext = createContext<FormItemContextValue>(null)
-
-const useFormItemContext = () => {
-  const context = useContext(FormItemContext)
-  if (!context) {
-    throw new Error('useFormItemContext must be used within FormItem')
-  }
-  return context
 }
+
+const FormItemContext = createContext<FormItemContextValue>(
+  {} as FormItemContextValue,
+)
 
 function FormItem({ className, ...props }: ComponentProps<'div'>) {
   const id = useId()
@@ -56,128 +53,64 @@ function FormItem({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
-const useFieldContext = () => {
-  const { id } = useFormItemContext()
-  const fieldContext = _useFieldContext()
-
-  if (!fieldContext) {
-    throw new Error(
-      'useFieldContext must be used within a form field component',
-    )
-  }
-
-  const errors = useStore(fieldContext.store, (state) => state.meta.errors)
-
-  return {
-    id,
-    formItemId: `${id}-form-item`,
-    formDescriptionId: `${id}-form-item-description`,
-    formMessageId: `${id}-form-item-message`,
-    errors,
-    ...fieldContext,
-  }
-}
-
-type FormLabelProps = ComponentProps<typeof Label> & {
-  /**
-   * Whether to show the required indicator
-   */
-  showRequiredIndicator?: boolean
-}
-
-function FormLabel({
-  className,
-  children,
-  showRequiredIndicator,
-  ...props
-}: FormLabelProps) {
-  const { formItemId, errors } = useFieldContext()
+function FieldLabel({ className, ...props }: ComponentProps<typeof Label>) {
+  const { formItemId, isValid } = useFormField()
 
   return (
     <Label
       className={cn('data-[error=true]:text-destructive', className)}
-      data-error={!!errors.length}
-      data-slot="form-label"
+      data-error={!isValid}
+      data-slot="field-label"
       htmlFor={formItemId}
-      {...props}
-    >
-      {children}
-      {showRequiredIndicator && (
-        <span className="ml-0.5 text-destructive">*</span>
-      )}
-    </Label>
-  )
-}
-
-type FormControlProps = ComponentProps<typeof Slot> & {
-  /**
-   * Custom error message to override field validation errors
-   */
-  error?: string
-}
-
-function FormControl({ error, className, ...props }: FormControlProps) {
-  const { errors, formItemId, formDescriptionId, formMessageId } =
-    useFieldContext()
-  const displayErrors = error ? [{ message: error }] : errors
-
-  return (
-    <Slot
-      aria-describedby={
-        displayErrors.length
-          ? `${formDescriptionId} ${formMessageId}`
-          : `${formDescriptionId}`
-      }
-      aria-invalid={!!displayErrors.length}
-      className={cn('w-full', className)}
-      data-slot="form-control"
-      id={formItemId}
       {...props}
     />
   )
 }
 
-type FormDescriptionProps = ComponentProps<'p'> & {
-  /**
-   * Whether to force show the description even when there are errors
-   */
-  forceShow?: boolean
+function FieldControl({
+  children = <div />,
+}: {
+  children?: useRender.RenderProp
+}) {
+  const { formItemId, isValid, formDescriptionId, formMessageId } =
+    useFormField()
+
+  return useRender({
+    render: children,
+    props: {
+      'data-slot': 'field-control',
+      id: formItemId,
+      'aria-describedby': isValid
+        ? `${formDescriptionId}`
+        : `${formDescriptionId} ${formMessageId}`,
+      'aria-invalid': !isValid,
+    },
+  })
 }
 
-function FormDescription({
-  className,
-  forceShow,
-  ...props
-}: FormDescriptionProps) {
-  const { formDescriptionId, errors } = useFieldContext()
-
-  if (errors.length && !forceShow) {
-    return null
-  }
+function FieldDescription({ className, ...props }: ComponentProps<'p'>) {
+  const { formDescriptionId } = useFormField()
 
   return (
     <p
       className={cn('text-muted-foreground text-sm', className)}
-      data-slot="form-description"
+      data-slot="field-description"
       id={formDescriptionId}
       {...props}
     />
   )
 }
 
-type FormMessageProps = ComponentProps<'p'> & {
-  /**
-   * Custom error message to override field validation errors
-   */
-  error?: string
-}
+function FieldMessage({ className, ...props }: ComponentProps<'p'>) {
+  const { formMessageId, isValid, errors } = useFormField()
 
-function FormMessage({ className, error, ...props }: FormMessageProps) {
-  const { errors, formMessageId } = useFieldContext()
-  const displayErrors = error ? [{ message: error }] : errors
-  const body = displayErrors.length
-    ? String(displayErrors[0]?.message ?? '')
-    : props.children
+  if (props.children) {
+    return props.children
+  }
+
+  const body = isValid
+    ? props.children
+    : String(errors.map((error) => error.message).join(', ') ?? '')
 
   if (!body) {
     return null
@@ -186,7 +119,7 @@ function FormMessage({ className, error, ...props }: FormMessageProps) {
   return (
     <p
       className={cn('text-destructive text-sm', className)}
-      data-slot="form-message"
+      data-slot="field-message"
       id={formMessageId}
       {...props}
     >
@@ -195,11 +128,23 @@ function FormMessage({ className, error, ...props }: FormMessageProps) {
   )
 }
 
-export {
-  useAppForm as useForm,
-  useFormContext,
-  useFieldContext,
-  useFormItemContext,
-  withForm,
-  type FormItemContextValue,
+const createFormHook = (
+  args?: Parameters<typeof createTanstackFormHook>[0],
+) => {
+  const formHook = createTanstackFormHook({
+    fieldComponents: {
+      ...args?.fieldComponents,
+      Label: FieldLabel,
+      Control: FieldControl,
+      Description: FieldDescription,
+      Message: FieldMessage,
+    },
+    formComponents: { ...args?.formComponents, Item: FormItem },
+    fieldContext,
+    formContext,
+  })
+
+  return formHook
 }
+
+export { createFormHook }

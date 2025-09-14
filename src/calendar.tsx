@@ -1,5 +1,5 @@
-/** biome-ignore-all lint/complexity/useLiteralKeys: We need this, for fixing TS errors */
-/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: We want this to be a nested component */
+/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: false positive */
+/** biome-ignore-all lint/complexity/useLiteralKeys: false positive */
 'use client'
 
 import { cn } from '@voluspalabs/lib/utils/cn'
@@ -72,7 +72,10 @@ function Calendar({
           'relative rounded-md border border-input shadow-xs has-focus:border-ring has-focus:ring-[3px] has-focus:ring-ring/50',
           defaultClassNames.dropdown_root,
         ),
-        dropdown: cn('absolute inset-0 opacity-0', defaultClassNames.dropdown),
+        dropdown: cn(
+          'absolute inset-0 bg-popover opacity-0',
+          defaultClassNames.dropdown,
+        ),
         caption_label: cn(
           'select-none font-medium',
           captionLayout === 'label'

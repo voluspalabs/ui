@@ -1,26 +1,25 @@
 'use client'
+
+import { AlertDialog as AlertDialogPrimitive } from '@base-ui-components/react/alert-dialog'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { AlertDialog as AlertDialogPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { buttonVariants } from './button'
 
-function AlertDialog({
-  ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Root>) {
+function AlertDialog(props: ComponentProps<typeof AlertDialogPrimitive.Root>) {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
-function AlertDialogTrigger({
-  ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Trigger>) {
+function AlertDialogTrigger(
+  props: ComponentProps<typeof AlertDialogPrimitive.Trigger>,
+) {
   return (
     <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
   )
 }
 
-function AlertDialogPortal({
-  ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Portal>) {
+function AlertDialogPortal(
+  props: ComponentProps<typeof AlertDialogPrimitive.Portal>,
+) {
   return (
     <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
   )
@@ -29,11 +28,11 @@ function AlertDialogPortal({
 function AlertDialogOverlay({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
+}: ComponentProps<typeof AlertDialogPrimitive.Backdrop>) {
   return (
-    <AlertDialogPrimitive.Overlay
+    <AlertDialogPrimitive.Backdrop
       className={cn(
-        'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in',
+        'data-[open]:fade-in-0 data-[closed]:fade-out-0 data-[closed]:animation-duration-[200ms] fixed inset-0 z-50 bg-black/50 data-[closed]:animate-out data-[open]:animate-in',
         className,
       )}
       data-slot="alert-dialog-overlay"
@@ -44,24 +43,19 @@ function AlertDialogOverlay({
 
 function AlertDialogContent({
   className,
-  children,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Content>) {
+}: ComponentProps<typeof AlertDialogPrimitive.Popup>) {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
-      <AlertDialogPrimitive.Content
+      <AlertDialogPrimitive.Popup
         className={cn(
-          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-3xl border bg-background p-2 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-lg',
+          'data-[closed]:fade-out-0 data-[open]:fade-in-0 data-[closed]:zoom-out-95 data-[open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 data-[closed]:animate-out data-[open]:animate-in sm:max-w-lg',
           className,
         )}
         data-slot="alert-dialog-content"
         {...props}
-      >
-        <div className="max-h-full w-full min-w-0 rounded-2xl p-6 shadow-dialog backdrop-blur-[1px] transition-all duration-300 will-change-transform">
-          {children}
-        </div>
-      </AlertDialogPrimitive.Content>
+      />
     </AlertDialogPortal>
   )
 }
@@ -118,9 +112,9 @@ function AlertDialogDescription({
 function AlertDialogAction({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Action>) {
+}: ComponentProps<typeof AlertDialogPrimitive.Close>) {
   return (
-    <AlertDialogPrimitive.Action
+    <AlertDialogPrimitive.Close
       className={cn(buttonVariants(), className)}
       {...props}
     />
@@ -130,9 +124,9 @@ function AlertDialogAction({
 function AlertDialogCancel({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
+}: ComponentProps<typeof AlertDialogPrimitive.Close>) {
   return (
-    <AlertDialogPrimitive.Cancel
+    <AlertDialogPrimitive.Close
       className={cn(buttonVariants({ variant: 'outline' }), className)}
       {...props}
     />

@@ -40,6 +40,9 @@
       "aspect-ratio": [
         "./dist/aspect-ratio.d.ts"
       ],
+      "autocomplete": [
+        "./dist/autocomplete.d.ts"
+      ],
       "avatar": [
         "./dist/avatar.d.ts"
       ],
@@ -69,6 +72,9 @@
       ],
       "collapsible": [
         "./dist/collapsible.d.ts"
+      ],
+      "combobox": [
+        "./dist/combobox.d.ts"
       ],
       "command": [
         "./dist/command.d.ts"
@@ -201,6 +207,11 @@
       "import": "./dist/aspect-ratio.js",
       "default": "./dist/aspect-ratio.js"
     },
+    "./autocomplete": {
+      "types": "./dist/autocomplete.d.ts",
+      "import": "./dist/autocomplete.js",
+      "default": "./dist/autocomplete.js"
+    },
     "./avatar": {
       "types": "./dist/avatar.d.ts",
       "import": "./dist/avatar.js",
@@ -250,6 +261,11 @@
       "types": "./dist/collapsible.d.ts",
       "import": "./dist/collapsible.js",
       "default": "./dist/collapsible.js"
+    },
+    "./combobox": {
+      "types": "./dist/combobox.d.ts",
+      "import": "./dist/combobox.js",
+      "default": "./dist/combobox.js"
     },
     "./command": {
       "types": "./dist/command.d.ts",
@@ -443,13 +459,13 @@
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "dependencies": {
+    "@base-ui-components/react": "^1.0.0-beta.3",
     "@tanstack/react-form": "^1.20.0",
     "@voluspalabs/lib": "^0.0.30",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.544.0",
-    "radix-ui": "^1.4.3",
     "react-day-picker": "^9.9.0",
     "react-resizable-panels": "^3.0.6",
     "recharts": "^3.2.0",

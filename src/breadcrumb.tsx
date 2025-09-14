@@ -1,6 +1,8 @@
+/** biome-ignore-all lint/a11y/useAnchorContent: false positive */
+/** biome-ignore-all lint/a11y/useValidAnchor: false positive */
+import { useRender } from '@base-ui-components/react/use-render'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
-import { Slot } from 'radix-ui'
 import type { ComponentProps } from 'react'
 
 function Breadcrumb({ ...props }: ComponentProps<'nav'>) {
@@ -31,31 +33,30 @@ function BreadcrumbItem({ className, ...props }: ComponentProps<'li'>) {
 }
 
 function BreadcrumbLink({
-  asChild,
   className,
+  render = <a />,
   ...props
 }: ComponentProps<'a'> & {
-  asChild?: boolean
+  render?: useRender.RenderProp
 }) {
-  const Comp = asChild ? Slot.Root : 'a'
-
-  return (
-    <Comp
-      className={cn('transition-colors hover:text-foreground', className)}
-      data-slot="breadcrumb-link"
-      {...props}
-    />
-  )
+  return useRender({
+    render,
+    props: {
+      'data-slot': 'breadcrumb-link',
+      className: cn('transition-colors hover:text-foreground', className),
+      ...props,
+    },
+  })
 }
 
 function BreadcrumbPage({ className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       aria-current="page"
-      // role="link"
       aria-disabled="true"
       className={cn('font-normal text-foreground', className)}
       data-slot="breadcrumb-page"
+      // role="link"
       {...props}
     />
   )
@@ -96,10 +97,10 @@ function BreadcrumbEllipsis({ className, ...props }: ComponentProps<'span'>) {
 
 export {
   Breadcrumb,
-  BreadcrumbList,
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
 }

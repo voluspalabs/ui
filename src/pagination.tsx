@@ -5,20 +5,16 @@ import {
   MoreHorizontalIcon,
 } from 'lucide-react'
 import type { ComponentProps } from 'react'
-
 import { type Button, buttonVariants } from './button'
 
 function Pagination({ className, ...props }: ComponentProps<'nav'>) {
   return (
     <nav
-      // role="navigation"
       aria-label="pagination"
       className={cn('mx-auto flex w-full justify-center', className)}
       data-slot="pagination"
       {...props}
-    >
-      {props.children}
-    </nav>
+    />
   )
 }
 
