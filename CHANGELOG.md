@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.0
+
+### Minor Changes
+
+- 474c2bc: Migrated to the base/ui and component updates
+
 ## 0.0.108
 
 ### Patch Changes
