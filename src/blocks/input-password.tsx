@@ -14,11 +14,12 @@ export type InputProps = ComponentPropsWithRef<'input'>
 
 const PasswordInput = ({ className, ...props }: ComponentProps<'input'>) => {
   const [showPassword, setShowPassword] = useState(false)
-  const disabled =
-    props.value === '' || props.value === undefined || props.disabled
+  const isEmpty =
+    props.value === '' || props.value === undefined || props.value === null
+  const disabled = props.disabled || isEmpty
 
   return (
-    <div className="relative">
+    <div className="relative" data-slot="password-input-container">
       <Input
         className={cn('hide-password-toggle pr-10', className)}
         data-slot="password-input"
@@ -26,7 +27,11 @@ const PasswordInput = ({ className, ...props }: ComponentProps<'input'>) => {
         {...props}
       />
       <Button
-        className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
+        aria-label={showPassword ? 'Hide password' : 'Show password'}
+        className={cn(
+          'absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent',
+        )}
+        data-slot="password-toggle"
         disabled={disabled}
         onClick={() => setShowPassword((prev) => !prev)}
         size="sm"

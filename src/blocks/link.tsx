@@ -23,13 +23,17 @@ function Link({ className, href, children, hideArrow, ...props }: LinkProps) {
         'rounded-md ring-offset-background focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2',
         className,
       )}
+      data-slot="link"
       href={href}
       {...externalLinkProps}
       {...props}
     >
       {children}
       {!isInternal && !hideArrow ? (
-        <ArrowUpRight className="group-hover:-translate-y-px ml-0.5 inline-block h-4 w-4 text-muted-foreground group-hover:translate-x-px group-hover:text-foreground" />
+        <ArrowUpRight
+          aria-hidden="true"
+          className="group-hover:-translate-y-px ml-0.5 inline-block h-4 w-4 text-muted-foreground group-hover:translate-x-px group-hover:text-foreground"
+        />
       ) : null}
     </NextLink>
   )
