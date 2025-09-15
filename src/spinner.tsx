@@ -20,6 +20,17 @@ export interface SpinnerProps
     VariantProps<typeof spinnerVariants> {
   loading?: boolean
   inverted?: boolean
+  /**
+   * Optional color context to ensure spinner is visible on various backgrounds.
+   * When omitted, spinner inherits current text color from parent.
+   */
+  on?:
+    | 'surface'
+    | 'primary'
+    | 'secondary'
+    | 'muted'
+    | 'destructive'
+    | 'inverted'
 }
 
 const Spinner = ({
@@ -27,6 +38,7 @@ const Spinner = ({
   size,
   loading = true,
   inverted = false,
+  on,
   ...props
 }: SpinnerProps) => {
   const leaves = EIGHT_LEAVES
@@ -35,11 +47,35 @@ const Spinner = ({
     return null
   }
 
+  // Map contextual backgrounds to appropriate text colors (spinner uses bg-current)
+  const onColorClass =
+    on === 'surface'
+      ? 'text-foreground'
+      : on === 'primary'
+        ? 'text-primary-foreground'
+        : on === 'secondary'
+          ? 'text-secondary-foreground'
+          : on === 'muted'
+            ? 'text-muted-foreground'
+            : on === 'destructive'
+              ? 'text-white'
+              : on === 'inverted'
+                ? 'text-background dark:text-foreground'
+                : undefined
+
+  // Back-compat: if `inverted` is set and no explicit `on`, invert colors
+  const invertedFallback =
+    !on && inverted ? 'text-background dark:text-foreground' : undefined
+
   return (
     <span
       aria-busy="true"
       aria-live="polite"
-      className={cn(spinnerVariants({ size, className }))}
+      className={cn(
+        spinnerVariants({ size, className }),
+        onColorClass,
+        invertedFallback,
+      )}
       data-slot="spinner"
       {...props}
     >
@@ -47,6 +83,7 @@ const Spinner = ({
         return (
           <span
             className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
+            data-slot="spinner-leaf"
             key={leaf.id}
             style={{
               transform: `rotate(${index * 45}deg)`,
@@ -54,12 +91,8 @@ const Spinner = ({
             }}
           >
             <span
-              className={cn(
-                'block h-[30%] w-full rounded-full',
-                inverted
-                  ? 'bg-background dark:bg-foreground'
-                  : 'bg-foreground dark:bg-background',
-              )}
+              className={cn('block h-[30%] w-full rounded-full bg-current')}
+              data-slot="spinner-leaf-bar"
             />
           </span>
         )

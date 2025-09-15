@@ -2,6 +2,7 @@ import { useRender } from '@base-ui-components/react/use-render'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
 import type { ComponentProps } from 'react'
+import { Spinner } from './spinner'
 
 const buttonVariants = cva(
   "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
@@ -38,6 +39,8 @@ interface ButtonProps
   extends ComponentProps<'button'>,
     VariantProps<typeof buttonVariants> {
   render?: useRender.RenderProp
+  /** Shows a centered spinner overlay without changing width */
+  loading?: boolean
 }
 
 function Button({
@@ -45,13 +48,59 @@ function Button({
   variant,
   size,
   render = <button type="button" />,
+  loading = false,
   ...props
 }: ButtonProps) {
+  // Determine spinner size based on button size
+  const spinnerSize: 'sm' | 'md' | 'lg' = size === 'lg' ? 'md' : 'sm'
+
+  // Determine spinner color context based on variant/background
+  const spinnerOn:
+    | 'surface'
+    | 'primary'
+    | 'secondary'
+    | 'muted'
+    | 'destructive'
+    | 'inverted' =
+    variant === 'destructive'
+      ? 'destructive'
+      : variant === 'secondary'
+        ? 'secondary'
+        : variant === 'default'
+          ? 'primary'
+          : 'surface'
+
+  const children = props.children
+  // Compose children with optional loading overlay
+  const composedChildren = (
+    <>
+      {loading ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 grid place-items-center"
+          data-slot="button-spinner-overlay"
+        >
+          <Spinner loading on={spinnerOn} size={spinnerSize} />
+        </span>
+      ) : null}
+      {children != null ? (
+        <span className={cn(loading && 'invisible')}>{children}</span>
+      ) : null}
+    </>
+  )
+
   return useRender({
     render,
     props: {
       'data-slot': 'button',
-      className: cn(buttonVariants({ variant, size, className })),
+      'data-loading': loading ? '' : undefined,
+      'aria-busy': loading ? true : undefined,
+      className: cn(
+        buttonVariants({ variant, size, className }),
+        // anchor spinner overlay positioning only when needed
+        loading && 'relative',
+      ),
+      children: composedChildren,
       ...props,
     },
   })
