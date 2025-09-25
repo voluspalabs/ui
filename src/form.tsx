@@ -148,3 +148,4 @@ const createFormHook = (
 }
 
 export { createFormHook }
+export const { useAppForm: useForm } = createFormHook()
