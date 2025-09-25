@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.1
+
+### Patch Changes
+
+- a8c0da7: Updated form exports and package updates
+
 ## 0.1.0
 
 ### Minor Changes
