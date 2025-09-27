@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- 8a4abb9: Updated button component
+
 ## 0.1.1
 
 ### Patch Changes
