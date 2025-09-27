@@ -73,6 +73,13 @@ function Button({
           : 'surface'
 
   // Compose children with optional loading overlay
+  const childContent =
+    loading && children != null ? (
+      <span className="invisible">{children}</span>
+    ) : (
+      children
+    )
+
   const composedChildren = (
     <>
       {loading ? (
@@ -84,9 +91,7 @@ function Button({
           <Spinner loading on={spinnerOn} size={spinnerSize} />
         </span>
       ) : null}
-      {children != null ? (
-        <span className={cn(loading && 'invisible')}>{children}</span>
-      ) : null}
+      {childContent}
     </>
   )
 
