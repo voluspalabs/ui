@@ -47,8 +47,10 @@ function Button({
   className,
   variant,
   size,
-  render = <button type="button" />,
+  render,
   loading = false,
+  type,
+  children,
   ...props
 }: ButtonProps) {
   // Determine spinner size based on button size
@@ -70,7 +72,6 @@ function Button({
           ? 'primary'
           : 'surface'
 
-  const children = props.children
   // Compose children with optional loading overlay
   const composedChildren = (
     <>
@@ -89,7 +90,10 @@ function Button({
     </>
   )
 
+  const finalType = type ?? (render ? undefined : 'button')
+
   return useRender({
+    defaultTagName: 'button',
     render,
     props: {
       'data-slot': 'button',
@@ -101,6 +105,7 @@ function Button({
         loading && 'relative',
       ),
       children: composedChildren,
+      type: finalType,
       ...props,
     },
   })
