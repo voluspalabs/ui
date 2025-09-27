@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.3
+
+### Patch Changes
+
+- 19950cd: Fixed style issue with button component
+
 ## 0.1.2
 
 ### Patch Changes
