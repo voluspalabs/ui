@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.4
+
+### Patch Changes
+
+- 02a1cab: Updated select component
+
 ## 0.1.3
 
 ### Patch Changes
