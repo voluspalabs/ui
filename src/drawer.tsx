@@ -1,8 +1,9 @@
 'use client'
+
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { Check, X } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { Drawer as DrawerPrimitive } from 'vaul'
+import { Drawer as DrawerPrimitive } from 'vaul-base'
 import { Button } from './button'
 
 function Drawer({ ...props }: ComponentProps<typeof DrawerPrimitive.Root>) {
@@ -77,30 +78,34 @@ function DrawerContent({
         {hasAnyButton && (
           <div className="absolute top-4 right-4 z-10 flex gap-2">
             {showCloseButton && (
-              <DrawerClose asChild>
-                <Button
-                  aria-label="Cancel"
-                  className="size-12 rounded-full bg-transparent brightness-125 backdrop-saturate-150"
-                  onClick={onCancel}
-                  size="icon"
-                  variant="outline"
-                >
-                  <X className="size-5" />
-                </Button>
-              </DrawerClose>
+              <DrawerClose
+                render={
+                  <Button
+                    aria-label="Cancel"
+                    className="size-12 rounded-full bg-transparent brightness-125 backdrop-saturate-150"
+                    onClick={onCancel}
+                    size="icon"
+                    variant="outline"
+                  >
+                    <X className="size-5" />
+                  </Button>
+                }
+              />
             )}
             {showConfirmButton && (
-              <DrawerClose asChild>
-                <Button
-                  aria-label="Confirm"
-                  className="size-12 rounded-full"
-                  onClick={onConfirm}
-                  size="icon"
-                  variant="default"
-                >
-                  <Check className="size-5" />
-                </Button>
-              </DrawerClose>
+              <DrawerClose
+                render={
+                  <Button
+                    aria-label="Confirm"
+                    className="size-12 rounded-full"
+                    onClick={onConfirm}
+                    size="icon"
+                    variant="default"
+                  >
+                    <Check className="size-5" />
+                  </Button>
+                }
+              />
             )}
           </div>
         )}
