@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.8
+
+### Patch Changes
+
+- bb112d8: Updated types for all BaseUI components
+
 ## 0.1.7
 
 ### Patch Changes
