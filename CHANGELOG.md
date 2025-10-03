@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.7
+
+### Patch Changes
+
+- 9359fd5: Updated packages
+
 ## 0.1.6
 
 ### Patch Changes
