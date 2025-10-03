@@ -3,10 +3,13 @@
 import { Select as SelectPrimitive } from '@base-ui-components/react/select'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
-import type { RefObject } from 'react'
+import type { ComponentType, RefObject } from 'react'
 
-function Select(props: SelectPrimitive.Root.Props) {
-  return <SelectPrimitive.Root data-slot="select" {...props} />
+function Select<Value extends {}>(props: SelectPrimitive.Root.Props<Value>) {
+  const Component = SelectPrimitive.Root as ComponentType<
+    SelectPrimitive.Root.Props<Value>
+  >
+  return <Component {...props} />
 }
 
 function SelectGroup(props: SelectPrimitive.Group.Props) {

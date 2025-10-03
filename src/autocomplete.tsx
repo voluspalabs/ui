@@ -1,11 +1,17 @@
 import { Autocomplete as AutocompletePrimitive } from '@base-ui-components/react/autocomplete'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { XIcon } from 'lucide-react'
+import type { ComponentType } from 'react'
 import { Button } from './button'
 import { Input } from './input'
 
-function Autocomplete(props: AutocompletePrimitive.Root.Props) {
-  return <AutocompletePrimitive.Root data-slot="autocomplete" {...props} />
+function Autocomplete<ItemValue>(
+  props: AutocompletePrimitive.Root.Props<ItemValue>,
+) {
+  const Component = AutocompletePrimitive.Root as ComponentType<
+    AutocompletePrimitive.Root.Props<ItemValue>
+  >
+  return <Component {...props} />
 }
 
 function AutocompleteInput(props: AutocompletePrimitive.Input.Props) {
