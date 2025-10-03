@@ -1,2 +1,13 @@
 node_modules
 dist
+
+# START Ruler Generated Files
+/.codex/config.json
+/.codex/config.json.bak
+/.codex/config.toml
+/.codex/config.toml.bak
+/.vscode/mcp.json
+/.vscode/mcp.json.bak
+/AGENTS.md
+/AGENTS.md.bak
+# END Ruler Generated Files

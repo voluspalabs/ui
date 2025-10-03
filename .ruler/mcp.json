@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "filesystem": {
+      "command": "bunx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    },
+    "sequential-thinking": {
+      "command": "bunx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "chrome-devtools": {
+      "command": "bunx",
+      "args": ["chrome-devtools-mcp@latest"]
+    }
+  }
+}
