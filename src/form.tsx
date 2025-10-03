@@ -67,16 +67,23 @@ function FieldLabel({ className, ...props }: ComponentProps<typeof Label>) {
   )
 }
 
-function FieldControl({
-  children = <div />,
-}: {
+type FieldControlProps = useRender.ComponentProps<'div'> & {
   children?: useRender.RenderProp
-}) {
+}
+
+function FieldControl({
+  render,
+  children = <div />,
+  ...props
+}: FieldControlProps) {
   const { formItemId, isValid, formDescriptionId, formMessageId } =
     useFormField()
 
+  const renderProp = render ?? children ?? <div />
+
   return useRender({
-    render: children,
+    defaultTagName: 'div',
+    render: renderProp,
     props: {
       'data-slot': 'field-control',
       id: formItemId,
@@ -84,6 +91,7 @@ function FieldControl({
         ? `${formDescriptionId}`
         : `${formDescriptionId} ${formMessageId}`,
       'aria-invalid': !isValid,
+      ...props,
     },
   })
 }

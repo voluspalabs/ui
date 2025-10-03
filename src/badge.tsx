@@ -1,7 +1,6 @@
 import { useRender } from '@base-ui-components/react/use-render'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
 
 const badgeVariants = cva(
   'inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border px-2 py-0.5 font-medium text-xs transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3',
@@ -24,14 +23,18 @@ const badgeVariants = cva(
   },
 )
 
+interface BadgeProps
+  extends useRender.ComponentProps<'span'>,
+    VariantProps<typeof badgeVariants> {}
+
 function Badge({
   className,
   variant,
   render = <span />,
   ...props
-}: ComponentProps<'span'> &
-  VariantProps<typeof badgeVariants> & { render?: useRender.RenderProp }) {
+}: BadgeProps) {
   return useRender({
+    defaultTagName: 'span',
     render,
     props: {
       'data-slot': 'badge',

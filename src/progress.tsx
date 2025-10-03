@@ -2,13 +2,12 @@
 
 import { Progress as ProgressPrimitive } from '@base-ui-components/react/progress'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
 function Progress({
   className,
   children,
   ...props
-}: ComponentProps<typeof ProgressPrimitive.Root>) {
+}: ProgressPrimitive.Root.Props) {
   return (
     <ProgressPrimitive.Root
       className={cn('relative w-full', className)}
@@ -26,10 +25,7 @@ function Progress({
   )
 }
 
-function ProgressTrack({
-  className,
-  ...props
-}: ComponentProps<typeof ProgressPrimitive.Track>) {
+function ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {
   return (
     <ProgressPrimitive.Track
       className={cn(
@@ -45,7 +41,7 @@ function ProgressTrack({
 function ProgressIndicator({
   className,
   ...props
-}: ComponentProps<typeof ProgressPrimitive.Indicator>) {
+}: ProgressPrimitive.Indicator.Props) {
   return (
     <ProgressPrimitive.Indicator
       className={cn(
@@ -58,10 +54,7 @@ function ProgressIndicator({
   )
 }
 
-function ProgressLabel({
-  className,
-  ...props
-}: ComponentProps<typeof ProgressPrimitive.Label>) {
+function ProgressLabel({ className, ...props }: ProgressPrimitive.Label.Props) {
   return (
     <ProgressPrimitive.Label
       className={cn('text-muted-foreground text-sm', className)}
@@ -71,10 +64,7 @@ function ProgressLabel({
   )
 }
 
-function ProgressValue({
-  className,
-  ...props
-}: ComponentProps<typeof ProgressPrimitive.Value>) {
+function ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {
   return (
     <ProgressPrimitive.Value
       className={cn('text-muted-foreground text-sm', className)}

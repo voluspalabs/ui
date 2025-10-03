@@ -2,12 +2,8 @@ import { Radio as RadioPrimitive } from '@base-ui-components/react/radio'
 import { RadioGroup as RadioGroupPrimitive } from '@base-ui-components/react/radio-group'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CircleIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
 
-function RadioGroup({
-  className,
-  ...props
-}: ComponentProps<typeof RadioGroupPrimitive>) {
+function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
     <RadioGroupPrimitive
       className={cn('grid gap-3', className)}
@@ -17,10 +13,7 @@ function RadioGroup({
   )
 }
 
-function RadioGroupItem({
-  className,
-  ...props
-}: ComponentProps<typeof RadioPrimitive.Root>) {
+function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
   return (
     <RadioPrimitive.Root
       className={cn(

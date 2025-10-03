@@ -1,11 +1,7 @@
 import { Tabs as TabsPrimitive } from '@base-ui-components/react/tabs'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Tabs({
-  className,
-  ...props
-}: ComponentProps<typeof TabsPrimitive.Root>) {
+function Tabs({ className, ...props }: TabsPrimitive.Root.Props) {
   return (
     <TabsPrimitive.Root
       className={cn('flex flex-col gap-2', className)}
@@ -15,10 +11,7 @@ function Tabs({
   )
 }
 
-function TabsList({
-  className,
-  ...props
-}: ComponentProps<typeof TabsPrimitive.List>) {
+function TabsList({ className, ...props }: TabsPrimitive.List.Props) {
   return (
     <TabsPrimitive.List
       className={cn(
@@ -31,10 +24,7 @@ function TabsList({
   )
 }
 
-function TabsTrigger({
-  className,
-  ...props
-}: ComponentProps<typeof TabsPrimitive.Tab>) {
+function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
   return (
     <TabsPrimitive.Tab
       className={cn(
@@ -47,10 +37,7 @@ function TabsTrigger({
   )
 }
 
-function TabsContent({
-  className,
-  ...props
-}: ComponentProps<typeof TabsPrimitive.Panel>) {
+function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
   return (
     <TabsPrimitive.Panel
       className={cn('flex-1 outline-none', className)}

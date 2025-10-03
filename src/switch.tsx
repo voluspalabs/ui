@@ -1,12 +1,7 @@
 import { Switch as SwitchPrimitive } from '@base-ui-components/react/switch'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Switch({
-  className,
-  children,
-  ...props
-}: ComponentProps<typeof SwitchPrimitive.Root>) {
+function Switch({ className, children, ...props }: SwitchPrimitive.Root.Props) {
   return (
     <SwitchPrimitive.Root
       className={cn(
@@ -21,10 +16,7 @@ function Switch({
   )
 }
 
-function SwitchThumb({
-  className,
-  ...props
-}: ComponentProps<typeof SwitchPrimitive.Thumb>) {
+function SwitchThumb({ className, ...props }: SwitchPrimitive.Thumb.Props) {
   return (
     <SwitchPrimitive.Thumb
       className={cn(

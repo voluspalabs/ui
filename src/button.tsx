@@ -1,7 +1,6 @@
 import { useRender } from '@base-ui-components/react/use-render'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
 import { Spinner } from './spinner'
 
 const buttonVariants = cva(
@@ -36,9 +35,8 @@ const buttonVariants = cva(
 )
 
 interface ButtonProps
-  extends ComponentProps<'button'>,
+  extends useRender.ComponentProps<'button'>,
     VariantProps<typeof buttonVariants> {
-  render?: useRender.RenderProp
   /** Shows a centered spinner overlay without changing width */
   loading?: boolean
 }

@@ -5,21 +5,17 @@ import { cn } from '@voluspalabs/lib/utils/cn'
 import type { ComponentProps } from 'react'
 import { buttonVariants } from './button'
 
-function AlertDialog(props: ComponentProps<typeof AlertDialogPrimitive.Root>) {
+function AlertDialog(props: AlertDialogPrimitive.Root.Props) {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
-function AlertDialogTrigger(
-  props: ComponentProps<typeof AlertDialogPrimitive.Trigger>,
-) {
+function AlertDialogTrigger(props: AlertDialogPrimitive.Trigger.Props) {
   return (
     <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
   )
 }
 
-function AlertDialogPortal(
-  props: ComponentProps<typeof AlertDialogPrimitive.Portal>,
-) {
+function AlertDialogPortal(props: AlertDialogPrimitive.Portal.Props) {
   return (
     <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
   )
@@ -28,7 +24,7 @@ function AlertDialogPortal(
 function AlertDialogOverlay({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Backdrop>) {
+}: AlertDialogPrimitive.Backdrop.Props) {
   return (
     <AlertDialogPrimitive.Backdrop
       className={cn(
@@ -44,7 +40,7 @@ function AlertDialogOverlay({
 function AlertDialogContent({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Popup>) {
+}: AlertDialogPrimitive.Popup.Props) {
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
@@ -86,7 +82,7 @@ function AlertDialogFooter({ className, ...props }: ComponentProps<'div'>) {
 function AlertDialogTitle({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Title>) {
+}: AlertDialogPrimitive.Title.Props) {
   return (
     <AlertDialogPrimitive.Title
       className={cn('font-semibold text-lg', className)}
@@ -99,7 +95,7 @@ function AlertDialogTitle({
 function AlertDialogDescription({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Description>) {
+}: AlertDialogPrimitive.Description.Props) {
   return (
     <AlertDialogPrimitive.Description
       className={cn('text-muted-foreground text-sm', className)}
@@ -112,7 +108,7 @@ function AlertDialogDescription({
 function AlertDialogAction({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Close>) {
+}: AlertDialogPrimitive.Close.Props) {
   return (
     <AlertDialogPrimitive.Close
       className={cn(buttonVariants(), className)}
@@ -124,7 +120,7 @@ function AlertDialogAction({
 function AlertDialogCancel({
   className,
   ...props
-}: ComponentProps<typeof AlertDialogPrimitive.Close>) {
+}: AlertDialogPrimitive.Close.Props) {
   return (
     <AlertDialogPrimitive.Close
       className={cn(buttonVariants({ variant: 'outline' }), className)}

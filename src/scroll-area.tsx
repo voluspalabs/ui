@@ -1,12 +1,11 @@
 import { ScrollArea as ScrollAreaPrimitive } from '@base-ui-components/react/scroll-area'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
 function ScrollArea({
   className,
   children,
   ...props
-}: ComponentProps<typeof ScrollAreaPrimitive.Root>) {
+}: ScrollAreaPrimitive.Root.Props) {
   return (
     <ScrollAreaPrimitive.Root
       className={cn('relative', className)}
@@ -29,7 +28,7 @@ function ScrollBar({
   className,
   orientation = 'vertical',
   ...props
-}: ComponentProps<typeof ScrollAreaPrimitive.Scrollbar>) {
+}: ScrollAreaPrimitive.Scrollbar.Props) {
   return (
     <ScrollAreaPrimitive.Scrollbar
       className={cn(

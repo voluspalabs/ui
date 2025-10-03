@@ -3,22 +3,20 @@
 import { Select as SelectPrimitive } from '@base-ui-components/react/select'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
-import type { ComponentProps, RefObject } from 'react'
+import type { RefObject } from 'react'
 
-function Select({ ...props }: ComponentProps<typeof SelectPrimitive.Root>) {
+function Select(props: SelectPrimitive.Root.Props) {
   return <SelectPrimitive.Root data-slot="select" {...props} />
 }
 
-function SelectGroup({
-  ...props
-}: ComponentProps<typeof SelectPrimitive.Group>) {
+function SelectGroup(props: SelectPrimitive.Group.Props) {
   return <SelectPrimitive.Group data-slot="select-group" {...props} />
 }
 
 function SelectValue({
   placeholder,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Value> & {
+}: SelectPrimitive.Value.Props & {
   placeholder?: string
 }) {
   if (!placeholder) {
@@ -49,7 +47,7 @@ function SelectTrigger({
   size = 'default',
   children,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Trigger> & {
+}: SelectPrimitive.Trigger.Props & {
   size?: 'sm' | 'default'
 }) {
   return (
@@ -73,7 +71,7 @@ function SelectTrigger({
 function SelectPositioner({
   container,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Positioner> & {
+}: SelectPrimitive.Positioner.Props & {
   container?: HTMLElement | null | RefObject<HTMLElement>
 }) {
   return (
@@ -92,7 +90,7 @@ function SelectContent({
   className,
   children,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Popup>) {
+}: SelectPrimitive.Popup.Props) {
   return (
     <>
       <SelectScrollUpButton />
@@ -114,7 +112,7 @@ function SelectContent({
 function SelectLabel({
   className,
   ...props
-}: ComponentProps<typeof SelectPrimitive.GroupLabel>) {
+}: SelectPrimitive.GroupLabel.Props) {
   return (
     <SelectPrimitive.GroupLabel
       className={cn('px-2 py-1.5 text-muted-foreground text-xs', className)}
@@ -128,7 +126,7 @@ function SelectItem({
   className,
   children,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Item>) {
+}: SelectPrimitive.Item.Props) {
   return (
     <SelectPrimitive.Item
       className={cn(
@@ -151,7 +149,7 @@ function SelectItem({
 function SelectSeparator({
   className,
   ...props
-}: ComponentProps<typeof SelectPrimitive.Separator>) {
+}: SelectPrimitive.Separator.Props) {
   return (
     <SelectPrimitive.Separator
       className={cn('-mx-1 pointer-events-none my-1 h-px bg-border', className)}
@@ -164,7 +162,7 @@ function SelectSeparator({
 function SelectScrollUpButton({
   className,
   ...props
-}: ComponentProps<typeof SelectPrimitive.ScrollUpArrow>) {
+}: SelectPrimitive.ScrollUpArrow.Props) {
   return (
     <SelectPrimitive.ScrollUpArrow
       className={cn(
@@ -182,7 +180,7 @@ function SelectScrollUpButton({
 function SelectScrollDownButton({
   className,
   ...props
-}: ComponentProps<typeof SelectPrimitive.ScrollDownArrow>) {
+}: SelectPrimitive.ScrollDownArrow.Props) {
   return (
     <SelectPrimitive.ScrollDownArrow
       className={cn(

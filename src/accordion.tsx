@@ -3,20 +3,14 @@
 import { Accordion as AccordionPrimitive } from '@base-ui-components/react/accordion'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { ChevronDownIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
 
-function Accordion({
-  ...props
-}: ComponentProps<typeof AccordionPrimitive.Root>) {
+function Accordion({ ...props }: AccordionPrimitive.Root.Props) {
   return (
     <AccordionPrimitive.Root data-slot="accordion" keepMounted {...props} />
   )
 }
 
-function AccordionItem({
-  className,
-  ...props
-}: ComponentProps<typeof AccordionPrimitive.Item>) {
+function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
   return (
     <AccordionPrimitive.Item
       className={cn('border-b last:border-b-0', className)}
@@ -30,7 +24,7 @@ function AccordionTrigger({
   className,
   children,
   ...props
-}: ComponentProps<typeof AccordionPrimitive.Trigger>) {
+}: AccordionPrimitive.Trigger.Props) {
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
@@ -52,7 +46,7 @@ function AccordionContent({
   className,
   children,
   ...props
-}: ComponentProps<typeof AccordionPrimitive.Panel>) {
+}: AccordionPrimitive.Panel.Props) {
   return (
     <AccordionPrimitive.Panel
       className="overflow-hidden text-sm data-[closed]:animate-accordion-collapse data-[open]:animate-accordion-expand"

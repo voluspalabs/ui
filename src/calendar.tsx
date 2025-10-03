@@ -209,6 +209,7 @@ function CalendarDayButton({
         !modifiers['range_end'] &&
         !modifiers['range_middle']
       }
+      data-slot="calendar-day-button"
       ref={ref}
       size="icon"
       variant="ghost"

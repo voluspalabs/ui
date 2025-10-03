@@ -2,13 +2,13 @@ import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui-components/r
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva } from 'class-variance-authority'
 import { ChevronDownIcon } from 'lucide-react'
-import type { ComponentProps, CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 
 function NavigationMenu({
   className,
   children,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Root>) {
+}: NavigationMenuPrimitive.Root.Props) {
   return (
     <NavigationMenuPrimitive.Root
       className={cn(
@@ -26,7 +26,7 @@ function NavigationMenu({
 function NavigationMenuList({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.List>) {
+}: NavigationMenuPrimitive.List.Props) {
   return (
     <NavigationMenuPrimitive.List
       className={cn(
@@ -42,7 +42,7 @@ function NavigationMenuList({
 function NavigationMenuItem({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Item>) {
+}: NavigationMenuPrimitive.Item.Props) {
   return (
     <NavigationMenuPrimitive.Item
       className={cn('relative', className)}
@@ -60,7 +60,7 @@ function NavigationMenuTrigger({
   className,
   children,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Trigger>) {
+}: NavigationMenuPrimitive.Trigger.Props) {
   return (
     <NavigationMenuPrimitive.Trigger
       className={cn(navigationMenuTriggerStyle(), 'group', className)}
@@ -79,7 +79,7 @@ function NavigationMenuTrigger({
 function NavigationMenuContent({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Content>) {
+}: NavigationMenuPrimitive.Content.Props) {
   return (
     <NavigationMenuPrimitive.Content
       className={cn(
@@ -102,7 +102,7 @@ function NavigationMenuPositioner({
   className,
   children,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Positioner>) {
+}: NavigationMenuPrimitive.Positioner.Props) {
   return (
     <NavigationMenuPrimitive.Portal>
       <NavigationMenuPrimitive.Positioner
@@ -132,7 +132,7 @@ function NavigationMenuPopup({
   className,
   children,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Popup>) {
+}: NavigationMenuPrimitive.Popup.Props) {
   return (
     <NavigationMenuPrimitive.Popup
       className={cn(
@@ -150,7 +150,7 @@ function NavigationMenuPopup({
 function NavigationMenuViewport({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
+}: NavigationMenuPrimitive.Viewport.Props) {
   return (
     <NavigationMenuPrimitive.Viewport
       className={cn('relative h-full w-full overflow-hidden', className)}
@@ -162,7 +162,7 @@ function NavigationMenuViewport({
 function NavigationMenuLink({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Link>) {
+}: NavigationMenuPrimitive.Link.Props) {
   return (
     <NavigationMenuPrimitive.Link
       className={cn(
@@ -178,7 +178,7 @@ function NavigationMenuLink({
 function NavigationMenuArrow({
   className,
   ...props
-}: ComponentProps<typeof NavigationMenuPrimitive.Arrow>) {
+}: NavigationMenuPrimitive.Arrow.Props) {
   return (
     <NavigationMenuPrimitive.Arrow
       className={cn(
@@ -193,7 +193,7 @@ function NavigationMenuArrow({
   )
 }
 
-function ArrowSvg(props: ComponentProps<'svg'>) {
+function ArrowSvg(props: React.ComponentProps<'svg'>) {
   return (
     <svg fill="none" height="10" viewBox="0 0 20 10" width="20" {...props}>
       <title>Arrow</title>

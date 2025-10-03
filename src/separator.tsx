@@ -1,11 +1,7 @@
 import { Separator as SeparatorPrimitive } from '@base-ui-components/react/separator'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Separator({
-  className,
-  ...props
-}: ComponentProps<typeof SeparatorPrimitive>) {
+function Separator({ className, ...props }: SeparatorPrimitive.Props) {
   return (
     <SeparatorPrimitive
       className={cn(

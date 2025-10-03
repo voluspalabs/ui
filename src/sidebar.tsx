@@ -403,12 +403,15 @@ function SidebarGroup({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
+type SidebarGroupLabelProps = useRender.ComponentProps<'div'>
+
 function SidebarGroupLabel({
   className,
   render = <div />,
   ...props
-}: ComponentProps<'div'> & { render?: useRender.RenderProp }) {
+}: SidebarGroupLabelProps) {
   return useRender({
+    defaultTagName: 'div',
     render,
     props: {
       'data-slot': 'sidebar-group-label',
@@ -423,12 +426,15 @@ function SidebarGroupLabel({
   })
 }
 
+type SidebarGroupActionProps = useRender.ComponentProps<'button'>
+
 function SidebarGroupAction({
   className,
   render = <button type="button" />,
   ...props
-}: ComponentProps<'button'> & { render?: useRender.RenderProp }) {
+}: SidebarGroupActionProps) {
   return useRender({
+    defaultTagName: 'button',
     render,
     props: {
       'data-slot': 'sidebar-group-action',
@@ -500,6 +506,11 @@ const sidebarMenuButtonVariants = cva(
   },
 )
 
+type SidebarMenuButtonProps = useRender.ComponentProps<'button'> & {
+  isActive?: boolean
+  tooltip?: string | ComponentProps<typeof TooltipContent>
+} & VariantProps<typeof sidebarMenuButtonVariants>
+
 function SidebarMenuButton({
   render = <button type="button" />,
   isActive = false,
@@ -508,14 +519,11 @@ function SidebarMenuButton({
   tooltip,
   className,
   ...props
-}: ComponentProps<'button'> & {
-  render?: useRender.RenderProp
-  isActive?: boolean
-  tooltip?: string | ComponentProps<typeof TooltipContent>
-} & VariantProps<typeof sidebarMenuButtonVariants>) {
+}: SidebarMenuButtonProps) {
   const { isMobile, state } = useSidebar()
 
   const button = useRender({
+    defaultTagName: 'button',
     render,
     props: {
       'data-slot': 'sidebar-menu-button',
@@ -531,11 +539,8 @@ function SidebarMenuButton({
     return button
   }
 
-  if (typeof tooltip === 'string') {
-    tooltip = {
-      children: tooltip,
-    }
-  }
+  const tooltipProps =
+    typeof tooltip === 'string' ? { children: tooltip } : tooltip
 
   return (
     <Tooltip>
@@ -545,7 +550,7 @@ function SidebarMenuButton({
       <TooltipPositioner align="center" side="right">
         <TooltipContent
           hidden={state !== 'collapsed' || isMobile}
-          {...tooltip}
+          {...tooltipProps}
         />
       </TooltipPositioner>
     </Tooltip>
@@ -557,11 +562,11 @@ function SidebarMenuAction({
   render = <button type="button" />,
   showOnHover = false,
   ...props
-}: ComponentProps<'button'> & {
-  render?: useRender.RenderProp
+}: useRender.ComponentProps<'button'> & {
   showOnHover?: boolean
 }) {
   return useRender({
+    defaultTagName: 'button',
     render,
     props: {
       'data-slot': 'sidebar-menu-action',
@@ -666,18 +671,20 @@ function SidebarMenuSubItem({ className, ...props }: ComponentProps<'li'>) {
   )
 }
 
+type SidebarMenuSubButtonProps = useRender.ComponentProps<'a'> & {
+  size?: 'sm' | 'md'
+  isActive?: boolean
+}
+
 function SidebarMenuSubButton({
   render = <a />,
   size = 'md',
   isActive = false,
   className,
   ...props
-}: ComponentProps<'a'> & {
-  render?: useRender.RenderProp
-  size?: 'sm' | 'md'
-  isActive?: boolean
-}) {
+}: SidebarMenuSubButtonProps) {
   return useRender({
+    defaultTagName: 'a',
     render,
     props: {
       'data-slot': 'sidebar-menu-sub-button',

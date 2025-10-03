@@ -1,11 +1,10 @@
 import { Tooltip as TooltipPrimitive } from '@base-ui-components/react/tooltip'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
 function TooltipProvider({
   delay = 0,
   ...props
-}: ComponentProps<typeof TooltipPrimitive.Provider>) {
+}: TooltipPrimitive.Provider.Props) {
   return (
     <TooltipPrimitive.Provider
       data-slot="tooltip-provider"
@@ -15,7 +14,7 @@ function TooltipProvider({
   )
 }
 
-function Tooltip({ ...props }: ComponentProps<typeof TooltipPrimitive.Root>) {
+function Tooltip(props: TooltipPrimitive.Root.Props) {
   return (
     <TooltipProvider>
       <TooltipPrimitive.Root data-slot="tooltip" {...props} />
@@ -23,16 +22,14 @@ function Tooltip({ ...props }: ComponentProps<typeof TooltipPrimitive.Root>) {
   )
 }
 
-function TooltipTrigger({
-  ...props
-}: ComponentProps<typeof TooltipPrimitive.Trigger>) {
+function TooltipTrigger(props: TooltipPrimitive.Trigger.Props) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
 }
 
 function TooltipPositioner({
   className,
   ...props
-}: ComponentProps<typeof TooltipPrimitive.Positioner>) {
+}: TooltipPrimitive.Positioner.Props) {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Positioner
@@ -49,7 +46,7 @@ function TooltipContent({
   className,
   children,
   ...props
-}: ComponentProps<typeof TooltipPrimitive.Popup>) {
+}: TooltipPrimitive.Popup.Props) {
   return (
     <TooltipPrimitive.Popup
       className={cn(
@@ -65,10 +62,7 @@ function TooltipContent({
   )
 }
 
-function TooltipArrow({
-  className,
-  ...props
-}: ComponentProps<typeof TooltipPrimitive.Arrow>) {
+function TooltipArrow({ className, ...props }: TooltipPrimitive.Arrow.Props) {
   return (
     <TooltipPrimitive.Arrow
       className={cn(

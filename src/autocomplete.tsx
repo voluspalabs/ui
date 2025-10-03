@@ -1,19 +1,14 @@
 import { Autocomplete as AutocompletePrimitive } from '@base-ui-components/react/autocomplete'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { XIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
 import { Button } from './button'
 import { Input } from './input'
 
-function Autocomplete(
-  props: ComponentProps<typeof AutocompletePrimitive.Root>,
-) {
+function Autocomplete(props: AutocompletePrimitive.Root.Props) {
   return <AutocompletePrimitive.Root data-slot="autocomplete" {...props} />
 }
 
-function AutocompleteInput(
-  props: ComponentProps<typeof AutocompletePrimitive.Input>,
-) {
+function AutocompleteInput(props: AutocompletePrimitive.Input.Props) {
   return (
     <AutocompletePrimitive.Input
       data-slot="autocomplete-input"
@@ -26,7 +21,7 @@ function AutocompleteInput(
 function AutocompletePopup({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Popup>) {
+}: AutocompletePrimitive.Popup.Props) {
   return (
     <AutocompletePrimitive.Popup
       className={cn(
@@ -39,9 +34,7 @@ function AutocompletePopup({
   )
 }
 
-function AutocompletePositioner(
-  props: ComponentProps<typeof AutocompletePrimitive.Positioner>,
-) {
+function AutocompletePositioner(props: AutocompletePrimitive.Positioner.Props) {
   return (
     <AutocompletePrimitive.Portal>
       <AutocompletePrimitive.Positioner
@@ -55,7 +48,7 @@ function AutocompletePositioner(
 function AutocompleteList({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.List>) {
+}: AutocompletePrimitive.List.Props) {
   return (
     <AutocompletePrimitive.List
       className={cn('not-empty:p-1.5', className)}
@@ -68,7 +61,7 @@ function AutocompleteList({
 function AutocompleteEmpty({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Empty>) {
+}: AutocompletePrimitive.Empty.Props) {
   return (
     <AutocompletePrimitive.Empty
       className={cn(
@@ -84,7 +77,7 @@ function AutocompleteEmpty({
 function AutocompleteItem({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Item>) {
+}: AutocompletePrimitive.Item.Props) {
   return (
     <AutocompletePrimitive.Item
       className={cn(
@@ -100,7 +93,7 @@ function AutocompleteItem({
 function AutocompleteGroup({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Group>) {
+}: AutocompletePrimitive.Group.Props) {
   return (
     <AutocompletePrimitive.Group
       className={cn('block pb-2', className)}
@@ -113,7 +106,7 @@ function AutocompleteGroup({
 function AutocompleteGroupLabel({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.GroupLabel>) {
+}: AutocompletePrimitive.GroupLabel.Props) {
   return (
     <AutocompletePrimitive.GroupLabel
       className={cn(
@@ -126,9 +119,7 @@ function AutocompleteGroupLabel({
   )
 }
 
-function AutocompleteCollection({
-  ...props
-}: ComponentProps<typeof AutocompletePrimitive.Collection>) {
+function AutocompleteCollection(props: AutocompletePrimitive.Collection.Props) {
   return (
     <AutocompletePrimitive.Collection
       data-slot="autocomplete-collection"
@@ -140,7 +131,7 @@ function AutocompleteCollection({
 function AutocompleteStatus({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Status>) {
+}: AutocompletePrimitive.Status.Props) {
   return (
     <AutocompletePrimitive.Status
       className={cn(
@@ -157,7 +148,7 @@ function AutocompleteClear({
   className,
   children,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Clear>) {
+}: AutocompletePrimitive.Clear.Props) {
   return (
     <AutocompletePrimitive.Clear
       className={cn(className)}
@@ -172,7 +163,7 @@ function AutocompleteClear({
 function AutocompleteRow({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Row>) {
+}: AutocompletePrimitive.Row.Props) {
   return (
     <AutocompletePrimitive.Row
       className={cn(className)}
@@ -185,7 +176,7 @@ function AutocompleteRow({
 function AutocompleteTrigger({
   className,
   ...props
-}: ComponentProps<typeof AutocompletePrimitive.Trigger>) {
+}: AutocompletePrimitive.Trigger.Props) {
   return (
     <AutocompletePrimitive.Trigger
       className={cn(className)}

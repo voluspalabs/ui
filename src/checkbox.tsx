@@ -1,12 +1,8 @@
 import { Checkbox as CheckboxPrimitive } from '@base-ui-components/react/checkbox'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
 
-function Checkbox({
-  className,
-  ...props
-}: ComponentProps<typeof CheckboxPrimitive.Root>) {
+function Checkbox({ className, ...props }: CheckboxPrimitive.Root.Props) {
   return (
     <CheckboxPrimitive.Root
       className={cn(

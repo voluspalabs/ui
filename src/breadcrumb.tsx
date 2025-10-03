@@ -32,14 +32,15 @@ function BreadcrumbItem({ className, ...props }: ComponentProps<'li'>) {
   )
 }
 
+type BreadcrumbLinkProps = useRender.ComponentProps<'a'>
+
 function BreadcrumbLink({
   className,
   render = <a />,
   ...props
-}: ComponentProps<'a'> & {
-  render?: useRender.RenderProp
-}) {
+}: BreadcrumbLinkProps) {
   return useRender({
+    defaultTagName: 'a',
     render,
     props: {
       'data-slot': 'breadcrumb-link',

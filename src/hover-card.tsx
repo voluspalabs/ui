@@ -1,16 +1,11 @@
 import { PreviewCard as PreviewCardPrimitive } from '@base-ui-components/react/preview-card'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function HoverCard({
-  ...props
-}: ComponentProps<typeof PreviewCardPrimitive.Root>) {
+function HoverCard(props: PreviewCardPrimitive.Root.Props) {
   return <PreviewCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
-function HoverCardTrigger({
-  ...props
-}: ComponentProps<typeof PreviewCardPrimitive.Trigger>) {
+function HoverCardTrigger(props: PreviewCardPrimitive.Trigger.Props) {
   return (
     <PreviewCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
   )
@@ -19,7 +14,7 @@ function HoverCardTrigger({
 function HoverCardPositioner({
   sideOffset = 4,
   ...props
-}: ComponentProps<typeof PreviewCardPrimitive.Positioner>) {
+}: PreviewCardPrimitive.Positioner.Props) {
   return (
     <PreviewCardPrimitive.Portal data-slot="hover-card-portal">
       <PreviewCardPrimitive.Positioner
@@ -34,7 +29,7 @@ function HoverCardPositioner({
 function HoverCardContent({
   className,
   ...props
-}: ComponentProps<typeof PreviewCardPrimitive.Popup>) {
+}: PreviewCardPrimitive.Popup.Props) {
   return (
     <PreviewCardPrimitive.Popup
       className={cn(

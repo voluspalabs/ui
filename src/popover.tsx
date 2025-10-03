@@ -1,21 +1,18 @@
 import { Popover as PopoverPrimitive } from '@base-ui-components/react/popover'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Popover({ ...props }: ComponentProps<typeof PopoverPrimitive.Root>) {
+function Popover(props: PopoverPrimitive.Root.Props) {
   return <PopoverPrimitive.Root data-slot="popover" {...props} />
 }
 
-function PopoverTrigger({
-  ...props
-}: ComponentProps<typeof PopoverPrimitive.Trigger>) {
+function PopoverTrigger(props: PopoverPrimitive.Trigger.Props) {
   return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />
 }
 
 function PopoverPositioner({
   sideOffset = 4,
   ...props
-}: ComponentProps<typeof PopoverPrimitive.Positioner>) {
+}: PopoverPrimitive.Positioner.Props) {
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Positioner
@@ -27,10 +24,7 @@ function PopoverPositioner({
   )
 }
 
-function PopoverContent({
-  className,
-  ...props
-}: ComponentProps<typeof PopoverPrimitive.Popup>) {
+function PopoverContent({ className, ...props }: PopoverPrimitive.Popup.Props) {
   return (
     <PopoverPrimitive.Popup
       className={cn(
@@ -43,9 +37,7 @@ function PopoverContent({
   )
 }
 
-function PopoverAnchor({
-  ...props
-}: ComponentProps<typeof PopoverPrimitive.Arrow>) {
+function PopoverAnchor(props: PopoverPrimitive.Arrow.Props) {
   return <PopoverPrimitive.Arrow data-slot="popover-anchor" {...props} />
 }
 

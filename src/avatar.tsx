@@ -1,11 +1,7 @@
 import { Avatar as AvatarPrimitive } from '@base-ui-components/react/avatar'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Avatar({
-  className,
-  ...props
-}: ComponentProps<typeof AvatarPrimitive.Root>) {
+function Avatar({ className, ...props }: AvatarPrimitive.Root.Props) {
   return (
     <AvatarPrimitive.Root
       className={cn(
@@ -18,10 +14,7 @@ function Avatar({
   )
 }
 
-function AvatarImage({
-  className,
-  ...props
-}: ComponentProps<typeof AvatarPrimitive.Image>) {
+function AvatarImage({ className, ...props }: AvatarPrimitive.Image.Props) {
   return (
     <AvatarPrimitive.Image
       className={cn('aspect-square size-full', className)}
@@ -34,7 +27,7 @@ function AvatarImage({
 function AvatarFallback({
   className,
   ...props
-}: ComponentProps<typeof AvatarPrimitive.Fallback>) {
+}: AvatarPrimitive.Fallback.Props) {
   return (
     <AvatarPrimitive.Fallback
       className={cn(

@@ -221,6 +221,7 @@ function ChartTooltipContent({
         'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',
         className,
       )}
+      data-slot="chart-tooltip-content"
     >
       {nestLabel ? null : tooltipLabel}
       <div className="grid gap-1.5">
@@ -315,6 +316,7 @@ function ChartLegendContent({
         verticalAlign === 'top' ? 'pb-3' : 'pt-3',
         className,
       )}
+      data-slot="chart-legend-content"
     >
       {payload.map((item) => {
         const key = `${nameKey || item.dataKey || 'value'}`

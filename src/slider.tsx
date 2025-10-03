@@ -3,7 +3,7 @@
 
 import { Slider as SliderPrimitive } from '@base-ui-components/react/slider'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { type ComponentProps, useMemo } from 'react'
+import { useMemo } from 'react'
 
 function Slider({
   className,
@@ -12,7 +12,7 @@ function Slider({
   min = 0,
   max = 100,
   ...props
-}: ComponentProps<typeof SliderPrimitive.Root>) {
+}: SliderPrimitive.Root.Props) {
   const _values = useMemo(
     () =>
       Array.isArray(value)
