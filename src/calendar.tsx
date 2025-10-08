@@ -1,5 +1,5 @@
-/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: false positive */
-/** biome-ignore-all lint/complexity/useLiteralKeys: false positive */
+/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: Needed for this component */
+/** biome-ignore-all lint/complexity/useLiteralKeys: Needed for this component */
 'use client'
 
 import { cn } from '@voluspalabs/lib/utils/cn'
@@ -209,7 +209,6 @@ function CalendarDayButton({
         !modifiers['range_end'] &&
         !modifiers['range_middle']
       }
-      data-slot="calendar-day-button"
       ref={ref}
       size="icon"
       variant="ghost"

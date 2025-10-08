@@ -55,6 +55,9 @@
       "button": [
         "./dist/button.d.ts"
       ],
+      "button-group": [
+        "./dist/button-group.d.ts"
+      ],
       "calendar": [
         "./dist/calendar.d.ts"
       ],
@@ -91,6 +94,12 @@
       "dropdown-menu": [
         "./dist/dropdown-menu.d.ts"
       ],
+      "empty": [
+        "./dist/empty.d.ts"
+      ],
+      "field": [
+        "./dist/field.d.ts"
+      ],
       "form": [
         "./dist/form.d.ts"
       ],
@@ -102,6 +111,15 @@
       ],
       "input": [
         "./dist/input.d.ts"
+      ],
+      "input-group": [
+        "./dist/input-group.d.ts"
+      ],
+      "item": [
+        "./dist/item.d.ts"
+      ],
+      "kbd": [
+        "./dist/kbd.d.ts"
       ],
       "label": [
         "./dist/label.d.ts"
@@ -135,6 +153,9 @@
       ],
       "separator": [
         "./dist/separator.d.ts"
+      ],
+      "separator-extended": [
+        "./dist/separator-extended.d.ts"
       ],
       "sheet": [
         "./dist/sheet.d.ts"
@@ -232,6 +253,11 @@
       "import": "./dist/button.js",
       "default": "./dist/button.js"
     },
+    "./button-group": {
+      "types": "./dist/button-group.d.ts",
+      "import": "./dist/button-group.js",
+      "default": "./dist/button-group.js"
+    },
     "./calendar": {
       "types": "./dist/calendar.d.ts",
       "import": "./dist/calendar.js",
@@ -292,6 +318,16 @@
       "import": "./dist/dropdown-menu.js",
       "default": "./dist/dropdown-menu.js"
     },
+    "./empty": {
+      "types": "./dist/empty.d.ts",
+      "import": "./dist/empty.js",
+      "default": "./dist/empty.js"
+    },
+    "./field": {
+      "types": "./dist/field.d.ts",
+      "import": "./dist/field.js",
+      "default": "./dist/field.js"
+    },
     "./form": {
       "types": "./dist/form.d.ts",
       "import": "./dist/form.js",
@@ -311,6 +347,21 @@
       "types": "./dist/input.d.ts",
       "import": "./dist/input.js",
       "default": "./dist/input.js"
+    },
+    "./input-group": {
+      "types": "./dist/input-group.d.ts",
+      "import": "./dist/input-group.js",
+      "default": "./dist/input-group.js"
+    },
+    "./item": {
+      "types": "./dist/item.d.ts",
+      "import": "./dist/item.js",
+      "default": "./dist/item.js"
+    },
+    "./kbd": {
+      "types": "./dist/kbd.d.ts",
+      "import": "./dist/kbd.js",
+      "default": "./dist/kbd.js"
     },
     "./label": {
       "types": "./dist/label.d.ts",
@@ -366,6 +417,11 @@
       "types": "./dist/separator.d.ts",
       "import": "./dist/separator.js",
       "default": "./dist/separator.js"
+    },
+    "./separator-extended": {
+      "types": "./dist/separator-extended.d.ts",
+      "import": "./dist/separator-extended.js",
+      "default": "./dist/separator-extended.js"
     },
     "./sheet": {
       "types": "./dist/sheet.d.ts",
@@ -461,12 +517,12 @@
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.4",
-    "@tanstack/react-form": "^1.23.5",
+    "@tanstack/react-form": "^1.23.6",
     "@voluspalabs/lib": "^0.0.30",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.544.0",
+    "lucide-react": "^0.545.0",
     "react-day-picker": "^9.11.0",
     "react-resizable-panels": "^3.0.6",
     "recharts": "^3.2.1",
@@ -486,13 +542,13 @@
     "class-variance-authority": "^0.7.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
     "next": "15.5.4",
     "tailwindcss": "^4.1.14",
     "tailwindcss-animate": "^1.0.7",
     "sonner": "^2.0.7",
-    "zod": "^4.1.11"
+    "zod": "^4.1.12"
   },
   "engines": {
     "node": ">=20.0.0"

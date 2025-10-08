@@ -78,6 +78,7 @@ const Spinner = ({
       )}
       data-slot="spinner"
       {...props}
+      // role="status"
     >
       {leaves.map((leaf, index) => {
         return (
