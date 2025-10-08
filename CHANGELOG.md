@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.9
+
+### Patch Changes
+
+- cd5eab6: New components, some component style changes and updated packages
+
 ## 0.1.8
 
 ### Patch Changes
