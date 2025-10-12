@@ -517,13 +517,13 @@
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.4",
-    "@tanstack/react-form": "^1.23.6",
-    "@voluspalabs/lib": "^0.0.30",
+    "@tanstack/react-form": "^1.23.7",
+    "@voluspalabs/lib": "^0.0.31",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.545.0",
-    "react-day-picker": "^9.11.0",
+    "react-day-picker": "^9.11.1",
     "react-resizable-panels": "^3.0.6",
     "recharts": "^3.2.1",
     "vaul-base": "^0.0.6"
@@ -532,7 +532,7 @@
     "@arethetypeswrong/cli": "^0.18.2",
     "@biomejs/biome": "^2.2.5",
     "@changesets/cli": "^2.29.7",
-    "@voluspalabs/lint": "^0.0.27",
+    "@voluspalabs/lint": "^0.0.28",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
