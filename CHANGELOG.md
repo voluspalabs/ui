@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.11
+
+### Patch Changes
+
+- 3630bae: Update pacakges and switch minor fix
+
 ## 0.1.10
 
 ### Patch Changes
