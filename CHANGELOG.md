@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.10
+
+### Patch Changes
+
+- 07703cc: Updated packages and switch component
+
 ## 0.1.9
 
 ### Patch Changes
