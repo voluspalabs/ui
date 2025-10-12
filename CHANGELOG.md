@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.12
+
+### Patch Changes
+
+- 60bf909: Minor fix for switch
+
 ## 0.1.11
 
 ### Patch Changes
