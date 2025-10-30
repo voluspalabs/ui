@@ -80,24 +80,22 @@ const Spinner = ({
       {...props}
       // role="status"
     >
-      {leaves.map((leaf, index) => {
-        return (
+      {leaves.map((leaf, index) => (
+        <span
+          className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
+          data-slot="spinner-leaf"
+          key={leaf.id}
+          style={{
+            transform: `rotate(${index * 45}deg)`,
+            animationDelay: `${-(7 - index) * 100}ms`,
+          }}
+        >
           <span
-            className="absolute top-0 left-1/2 h-full w-[12.5%] animate-spinner-leaf-fade"
-            data-slot="spinner-leaf"
-            key={leaf.id}
-            style={{
-              transform: `rotate(${index * 45}deg)`,
-              animationDelay: `${-(7 - index) * 100}ms`,
-            }}
-          >
-            <span
-              className={cn('block h-[30%] w-full rounded-full bg-current')}
-              data-slot="spinner-leaf-bar"
-            />
-          </span>
-        )
-      })}
+            className={cn('block h-[30%] w-full rounded-full bg-current')}
+            data-slot="spinner-leaf-bar"
+          />
+        </span>
+      ))}
       <span className="sr-only">Loading</span>
     </span>
   )
