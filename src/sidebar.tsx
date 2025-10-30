@@ -39,7 +39,8 @@ import {
 } from './tooltip'
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state'
-const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
+const DAYS_IN_WEEK = 7
+const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * DAYS_IN_WEEK
 const SIDEBAR_WIDTH = '16rem'
 const SIDEBAR_WIDTH_MOBILE = '18rem'
 const SIDEBAR_WIDTH_ICON = '3rem'
@@ -617,7 +618,13 @@ function SidebarMenuSkeleton({
   showIcon?: boolean
 }) {
   // Random width between 50 to 90%.
-  const width = useMemo(() => `${Math.floor(Math.random() * 40) + 50}%`, [])
+  const RANDOM_WIDTH_RANGE = 40
+  const RANDOM_WIDTH_MIN = 50
+  const width = useMemo(
+    () =>
+      `${Math.floor(Math.random() * RANDOM_WIDTH_RANGE) + RANDOM_WIDTH_MIN}%`,
+    [],
+  )
 
   return (
     <div

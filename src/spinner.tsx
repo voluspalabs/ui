@@ -33,6 +33,11 @@ export interface SpinnerProps
     | 'inverted'
 }
 
+const DEGREES_PER_LEAF = 45
+const TOTAL_LEAVES = 8
+const ANIMATION_DELAY_BASE_MS = 100
+const LAST_LEAF_INDEX = 7
+
 const Spinner = ({
   className,
   size,
@@ -86,8 +91,8 @@ const Spinner = ({
           data-slot="spinner-leaf"
           key={leaf.id}
           style={{
-            transform: `rotate(${index * 45}deg)`,
-            animationDelay: `${-(7 - index) * 100}ms`,
+            transform: `rotate(${index * DEGREES_PER_LEAF}deg)`,
+            animationDelay: `${-(LAST_LEAF_INDEX - index) * ANIMATION_DELAY_BASE_MS}ms`,
           }}
         >
           <span
@@ -106,4 +111,6 @@ Spinner.displayName = 'Spinner'
 export { Spinner, spinnerVariants }
 
 // Internal constants
-const EIGHT_LEAVES = Array.from({ length: 8 }, (_, i) => ({ id: `leaf-${i}` }))
+const EIGHT_LEAVES = Array.from({ length: TOTAL_LEAVES }, (_, i) => ({
+  id: `leaf-${i}`,
+}))
