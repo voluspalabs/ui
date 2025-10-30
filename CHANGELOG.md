@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.13
+
+### Patch Changes
+
+- d011eee: Updated packages
+
 ## 0.1.12
 
 ### Patch Changes
