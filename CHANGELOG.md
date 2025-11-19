@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.1.14
+
+### Patch Changes
+
+- 458b2bb: Update packages version and component types
+
 ## 0.1.13
 
 ### Patch Changes
