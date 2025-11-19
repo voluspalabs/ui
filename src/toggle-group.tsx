@@ -1,10 +1,9 @@
 'use client'
 
-import type { Toggle as TogglePrimitive } from '@base-ui-components/react/toggle'
 import { ToggleGroup as ToggleGroupPrimitive } from '@base-ui-components/react/toggle-group'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import type { VariantProps } from 'class-variance-authority'
-import { createContext, useContext } from 'react'
+import { type ComponentProps, createContext, useContext } from 'react'
 import { Toggle, toggleVariants } from './toggle'
 
 const ToggleGroupContext = createContext<VariantProps<typeof toggleVariants>>({
@@ -43,7 +42,7 @@ function ToggleGroupItem({
   variant,
   size,
   ...props
-}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {
+}: ComponentProps<typeof Toggle> & VariantProps<typeof toggleVariants>) {
   const context = useContext(ToggleGroupContext)
 
   return (

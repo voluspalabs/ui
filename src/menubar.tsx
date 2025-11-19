@@ -2,6 +2,7 @@ import { Menu as MenuPrimitive } from '@base-ui-components/react/menu'
 import { Menubar as MenubarPrimitive } from '@base-ui-components/react/menubar'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react'
+import type { ComponentProps } from 'react'
 
 function Menubar({ className, ...props }: MenubarPrimitive.Props) {
   return (
@@ -16,19 +17,19 @@ function Menubar({ className, ...props }: MenubarPrimitive.Props) {
   )
 }
 
-function MenubarMenu(props: MenuPrimitive.Root.Props) {
+function MenubarMenu({ ...props }: MenuPrimitive.Root.Props) {
   return <MenuPrimitive.Root data-slot="menubar-menu" {...props} />
 }
 
-function MenubarGroup(props: MenuPrimitive.Group.Props) {
+function MenubarGroup({ ...props }: MenuPrimitive.Group.Props) {
   return <MenuPrimitive.Group data-slot="menubar-group" {...props} />
 }
 
-function MenubarPortal(props: MenuPrimitive.Portal.Props) {
+function MenubarPortal({ ...props }: MenuPrimitive.Portal.Props) {
   return <MenuPrimitive.Portal data-slot="menubar-portal" {...props} />
 }
 
-function MenubarRadioGroup(props: MenuPrimitive.RadioGroup.Props) {
+function MenubarRadioGroup({ ...props }: MenuPrimitive.RadioGroup.Props) {
   return <MenuPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
 }
 
@@ -183,10 +184,7 @@ function MenubarSeparator({
   )
 }
 
-function MenubarShortcut({
-  className,
-  ...props
-}: React.ComponentProps<'span'>) {
+function MenubarShortcut({ className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       className={cn(
@@ -199,7 +197,7 @@ function MenubarShortcut({
   )
 }
 
-function MenubarSub(props: MenuPrimitive.SubmenuRoot.Props) {
+function MenubarSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
   return <MenuPrimitive.SubmenuRoot data-slot="menubar-sub" {...props} />
 }
 

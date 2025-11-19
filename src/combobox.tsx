@@ -1,19 +1,18 @@
 import { Combobox as ComboboxPrimitive } from '@base-ui-components/react/combobox'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, XIcon } from 'lucide-react'
-import type { ComponentType } from 'react'
+import type { RefObject } from 'react'
 import { Button } from './button'
 import { Input } from './input'
 import { Separator } from './separator'
 
-function Combobox<ItemValue>(props: ComboboxPrimitive.Root.Props<ItemValue>) {
-  const Component = ComboboxPrimitive.Root as ComponentType<
-    ComboboxPrimitive.Root.Props<ItemValue>
-  >
-  return <Component {...props} />
-}
+const Combobox = ComboboxPrimitive.Root
 
-function ComboboxInput(props: ComboboxPrimitive.Input.Props) {
+function ComboboxInput(
+  props: ComboboxPrimitive.Input.Props & {
+    ref?: RefObject<HTMLInputElement | null>
+  },
+) {
   return (
     <ComboboxPrimitive.Input
       data-slot="combobox-input"
@@ -61,7 +60,10 @@ function ComboboxValue(props: ComboboxPrimitive.Value.Props) {
   return <ComboboxPrimitive.Value data-slot="combobox-value" {...props} />
 }
 
-function ComboboxChips({ className, ...props }: ComboboxPrimitive.Chips.Props) {
+function ComboboxChips({
+  className,
+  ...props
+}: ComboboxPrimitive.Chips.Props & { ref?: RefObject<HTMLDivElement | null> }) {
   return (
     <ComboboxPrimitive.Chips
       className={cn(

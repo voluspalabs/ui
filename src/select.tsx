@@ -3,16 +3,10 @@
 import { Select as SelectPrimitive } from '@base-ui-components/react/select'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
-import type { ComponentType, RefObject } from 'react'
 
-function Select<Value extends {}>(props: SelectPrimitive.Root.Props<Value>) {
-  const Component = SelectPrimitive.Root as ComponentType<
-    SelectPrimitive.Root.Props<Value>
-  >
-  return <Component {...props} />
-}
+const Select = SelectPrimitive.Root
 
-function SelectGroup(props: SelectPrimitive.Group.Props) {
+function SelectGroup({ ...props }: SelectPrimitive.Group.Props) {
   return <SelectPrimitive.Group data-slot="select-group" {...props} />
 }
 
@@ -71,14 +65,9 @@ function SelectTrigger({
   )
 }
 
-function SelectPositioner({
-  container,
-  ...props
-}: SelectPrimitive.Positioner.Props & {
-  container?: HTMLElement | null | RefObject<HTMLElement>
-}) {
+function SelectPositioner(props: SelectPrimitive.Positioner.Props) {
   return (
-    <SelectPrimitive.Portal container={container}>
+    <SelectPrimitive.Portal>
       <SelectPrimitive.Positioner
         alignItemWithTrigger={false}
         data-slot="select-positioner"

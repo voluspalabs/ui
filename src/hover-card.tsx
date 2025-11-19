@@ -1,11 +1,11 @@
 import { PreviewCard as PreviewCardPrimitive } from '@base-ui-components/react/preview-card'
 import { cn } from '@voluspalabs/lib/utils/cn'
 
-function HoverCard(props: PreviewCardPrimitive.Root.Props) {
+function HoverCard({ ...props }: PreviewCardPrimitive.Root.Props) {
   return <PreviewCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
-function HoverCardTrigger(props: PreviewCardPrimitive.Trigger.Props) {
+function HoverCardTrigger({ ...props }: PreviewCardPrimitive.Trigger.Props) {
   return (
     <PreviewCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
   )

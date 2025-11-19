@@ -27,7 +27,7 @@
       },
       "peerDependencies": {
         "@tailwindcss/postcss": "^4.1.17",
-        "@types/react": "^19.2.5",
+        "@types/react": "^19.2.6",
         "@types/react-dom": "^19.2.3",
         "class-variance-authority": "^0.7.1",
         "next": "16.0.3",

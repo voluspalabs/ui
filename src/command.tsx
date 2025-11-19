@@ -3,7 +3,7 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -40,6 +40,7 @@ function CommandDialog({
   description?: string
   className?: string
   showCloseButton?: boolean
+  children: ReactNode
 }) {
   return (
     <Dialog {...props}>

@@ -1,6 +1,7 @@
 import { cn } from '@voluspalabs/lib/utils/cn'
+import type { ComponentProps } from 'react'
 
-function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
+function Kbd({ className, ...props }: ComponentProps<'kbd'>) {
   return (
     <kbd
       className={cn(
@@ -15,7 +16,7 @@ function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
   )
 }
 
-function KbdGroup({ className, ...props }: React.ComponentProps<'div'>) {
+function KbdGroup({ className, ...props }: ComponentProps<'div'>) {
   return (
     <kbd
       className={cn('inline-flex items-center gap-1', className)}

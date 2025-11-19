@@ -1,6 +1,7 @@
 /** biome-ignore-all lint/a11y/noNoninteractiveElementInteractions: Needed for this component */
 /** biome-ignore-all lint/a11y/noStaticElementInteractions: Needed for this component */
 /** biome-ignore-all lint/a11y/useKeyWithClickEvents: Needed for this component */
+
 'use client'
 
 import { cn } from '@voluspalabs/lib/utils/cn'
@@ -101,7 +102,6 @@ const inputGroupButtonVariants = cva(
 
 function InputGroupButton({
   className,
-  type = 'button',
   variant = 'ghost',
   size = 'xs',
   ...props
@@ -111,7 +111,6 @@ function InputGroupButton({
     <Button
       className={cn(inputGroupButtonVariants({ size }), className)}
       data-size={size}
-      type={type}
       variant={variant}
       {...props}
     />

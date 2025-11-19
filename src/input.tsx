@@ -1,7 +1,13 @@
 import { Input as InputPrimitive } from '@base-ui-components/react/input'
-import { cn } from '@voluspalabs/lib/utils/cn'
 
-function Input({ className, type, ...props }: InputPrimitive.Props) {
+import { cn } from '@voluspalabs/lib/utils/cn'
+import type { RefAttributes } from 'react'
+
+function Input({
+  className,
+  type,
+  ...props
+}: InputPrimitive.Props & RefAttributes<HTMLInputElement>) {
   return (
     <InputPrimitive
       className={cn(

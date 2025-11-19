@@ -2,7 +2,7 @@ import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui-components/r
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva } from 'class-variance-authority'
 import { ChevronDownIcon } from 'lucide-react'
-import type { CSSProperties } from 'react'
+import type { ComponentProps, CSSProperties } from 'react'
 
 function NavigationMenu({
   className,
@@ -193,7 +193,7 @@ function NavigationMenuArrow({
   )
 }
 
-function ArrowSvg(props: React.ComponentProps<'svg'>) {
+function ArrowSvg(props: ComponentProps<'svg'>) {
   return (
     <svg fill="none" height="10" viewBox="0 0 20 10" width="20" {...props}>
       <title>Arrow</title>
