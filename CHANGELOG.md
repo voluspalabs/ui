@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.5
+
+### Patch Changes
+
+- 303accd: Add Portal, Positioner, Popup, and Arrow components for Combobox, ContextMenu, Popover, and Select
+
 ## 0.2.4
 
 ### Patch Changes
