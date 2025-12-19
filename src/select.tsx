@@ -29,6 +29,61 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
   )
 }
 
+function SelectPortal({ ...props }: SelectPrimitive.Portal.Props) {
+  return <SelectPrimitive.Portal data-slot="select-portal" {...props} />
+}
+
+function SelectPositioner({
+  className,
+  side = 'bottom',
+  sideOffset = 4,
+  align = 'center',
+  alignOffset = 0,
+  alignItemWithTrigger = true,
+  ...props
+}: SelectPrimitive.Positioner.Props) {
+  return (
+    <SelectPrimitive.Portal>
+      <SelectPrimitive.Positioner
+        align={align}
+        alignItemWithTrigger={alignItemWithTrigger}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50', className)}
+        data-slot="select-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </SelectPrimitive.Portal>
+  )
+}
+
+function SelectPopup({ className, ...props }: SelectPrimitive.Popup.Props) {
+  return (
+    <SelectPrimitive.Popup
+      className={cn(
+        'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
+        className,
+      )}
+      data-slot="select-popup"
+      {...props}
+    />
+  )
+}
+
+function SelectArrow({ className, ...props }: SelectPrimitive.Arrow.Props) {
+  return (
+    <SelectPrimitive.Arrow
+      className={cn(
+        'z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-popover fill-popover data-[side=bottom]:top-0 data-[side=left]:top-1/2 data-[side=right]:top-1/2 data-[side=left]:right-0 data-[side=top]:bottom-0 data-[side=right]:left-0 data-[side=left]:-translate-y-1/2 data-[side=right]:-translate-y-1/2',
+        className,
+      )}
+      data-slot="select-arrow"
+      {...props}
+    />
+  )
+}
+
 function SelectTrigger({
   className,
   size = 'default',
@@ -190,10 +245,14 @@ function SelectScrollDownButton({
 
 export {
   Select,
+  SelectArrow,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
+  SelectPopup,
+  SelectPortal,
+  SelectPositioner,
   SelectScrollDownButton,
   SelectScrollUpButton,
   SelectSeparator,

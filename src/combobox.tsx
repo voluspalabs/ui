@@ -48,6 +48,61 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
   )
 }
 
+function ComboboxPortal({ ...props }: ComboboxPrimitive.Portal.Props) {
+  return <ComboboxPrimitive.Portal data-slot="combobox-portal" {...props} />
+}
+
+function ComboboxPositioner({
+  className,
+  side = 'bottom',
+  sideOffset = 6,
+  align = 'start',
+  alignOffset = 0,
+  anchor,
+  ...props
+}: ComboboxPrimitive.Positioner.Props) {
+  return (
+    <ComboboxPrimitive.Portal>
+      <ComboboxPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        anchor={anchor}
+        className={cn('isolate z-50', className)}
+        data-slot="combobox-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </ComboboxPrimitive.Portal>
+  )
+}
+
+function ComboboxPopup({ className, ...props }: ComboboxPrimitive.Popup.Props) {
+  return (
+    <ComboboxPrimitive.Popup
+      className={cn(
+        'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 group/combobox-content relative max-h-(--available-height) max-h-72 w-(--anchor-width) min-w-36 min-w-[calc(var(--anchor-width)+--spacing(7))] max-w-(--available-width) origin-(--transform-origin) overflow-hidden rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[chips=true]:min-w-(--anchor-width) data-closed:animate-out data-open:animate-in *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 *:data-[slot=input-group]:border-input/30 *:data-[slot=input-group]:bg-input/30 *:data-[slot=input-group]:shadow-none',
+        className,
+      )}
+      data-slot="combobox-popup"
+      {...props}
+    />
+  )
+}
+
+function ComboboxArrow({ className, ...props }: ComboboxPrimitive.Arrow.Props) {
+  return (
+    <ComboboxPrimitive.Arrow
+      className={cn(
+        'z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-popover fill-popover data-[side=bottom]:top-0 data-[side=left]:top-1/2 data-[side=right]:top-1/2 data-[side=left]:right-0 data-[side=top]:bottom-0 data-[side=right]:left-0 data-[side=left]:-translate-y-1/2 data-[side=right]:-translate-y-1/2',
+        className,
+      )}
+      data-slot="combobox-arrow"
+      {...props}
+    />
+  )
+}
+
 function ComboboxInput({
   className,
   children,
@@ -281,18 +336,22 @@ function useComboboxAnchor() {
 
 export {
   Combobox,
-  ComboboxInput,
-  ComboboxContent,
-  ComboboxList,
-  ComboboxItem,
-  ComboboxGroup,
-  ComboboxLabel,
-  ComboboxCollection,
-  ComboboxEmpty,
-  ComboboxSeparator,
-  ComboboxChips,
+  ComboboxArrow,
   ComboboxChip,
+  ComboboxChips,
   ComboboxChipsInput,
+  ComboboxCollection,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxLabel,
+  ComboboxList,
+  ComboboxPopup,
+  ComboboxPortal,
+  ComboboxPositioner,
+  ComboboxSeparator,
   ComboboxTrigger,
   ComboboxValue,
   useComboboxAnchor,

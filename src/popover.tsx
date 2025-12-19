@@ -12,6 +12,46 @@ function PopoverTrigger({ ...props }: PopoverPrimitive.Trigger.Props) {
   return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />
 }
 
+function PopoverPortal({ ...props }: PopoverPrimitive.Portal.Props) {
+  return <PopoverPrimitive.Portal data-slot="popover-portal" {...props} />
+}
+
+function PopoverPositioner({
+  className,
+  align = 'center',
+  alignOffset = 0,
+  side = 'bottom',
+  sideOffset = 4,
+  ...props
+}: PopoverPrimitive.Positioner.Props) {
+  return (
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50', className)}
+        data-slot="popover-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </PopoverPrimitive.Portal>
+  )
+}
+
+function PopoverPopup({ className, ...props }: PopoverPrimitive.Popup.Props) {
+  return (
+    <PopoverPrimitive.Popup
+      className={cn(
+        'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 flex w-72 origin-(--transform-origin) flex-col gap-2.5 rounded-lg bg-popover p-2.5 text-popover-foreground text-sm shadow-md outline-hidden ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
+        className,
+      )}
+      data-slot="popover-popup"
+      {...props}
+    />
+  )
+}
+
 function PopoverContent({
   className,
   align = 'center',
@@ -98,6 +138,9 @@ export {
   PopoverContent,
   PopoverDescription,
   PopoverHeader,
+  PopoverPopup,
+  PopoverPortal,
+  PopoverPositioner,
   PopoverTitle,
   PopoverTrigger,
 }

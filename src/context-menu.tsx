@@ -15,6 +15,61 @@ function ContextMenuPortal({ ...props }: ContextMenuPrimitive.Portal.Props) {
   )
 }
 
+function ContextMenuPositioner({
+  className,
+  align = 'start',
+  alignOffset = 4,
+  side = 'right',
+  sideOffset = 0,
+  ...props
+}: ContextMenuPrimitive.Positioner.Props) {
+  return (
+    <ContextMenuPrimitive.Portal>
+      <ContextMenuPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50 outline-none', className)}
+        data-slot="context-menu-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </ContextMenuPrimitive.Portal>
+  )
+}
+
+function ContextMenuPopup({
+  className,
+  ...props
+}: ContextMenuPrimitive.Popup.Props) {
+  return (
+    <ContextMenuPrimitive.Popup
+      className={cn(
+        'data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--available-height) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-lg bg-popover p-1 text-popover-foreground shadow-md outline-none ring-1 ring-foreground/10 duration-100 data-closed:animate-out data-open:animate-in',
+        className,
+      )}
+      data-slot="context-menu-popup"
+      {...props}
+    />
+  )
+}
+
+function ContextMenuArrow({
+  className,
+  ...props
+}: ContextMenuPrimitive.Arrow.Props) {
+  return (
+    <ContextMenuPrimitive.Arrow
+      className={cn(
+        'z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-popover fill-popover data-[side=bottom]:top-0 data-[side=left]:top-1/2 data-[side=right]:top-1/2 data-[side=left]:right-0 data-[side=top]:bottom-0 data-[side=right]:left-0 data-[side=left]:-translate-y-1/2 data-[side=right]:-translate-y-1/2',
+        className,
+      )}
+      data-slot="context-menu-arrow"
+      {...props}
+    />
+  )
+}
+
 function ContextMenuTrigger({
   className,
   ...props
@@ -243,18 +298,21 @@ function ContextMenuShortcut({ className, ...props }: ComponentProps<'span'>) {
 
 export {
   ContextMenu,
-  ContextMenuTrigger,
-  ContextMenuContent,
-  ContextMenuItem,
+  ContextMenuArrow,
   ContextMenuCheckboxItem,
-  ContextMenuRadioItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
   ContextMenuLabel,
+  ContextMenuPopup,
+  ContextMenuPortal,
+  ContextMenuPositioner,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
   ContextMenuSeparator,
   ContextMenuShortcut,
-  ContextMenuGroup,
-  ContextMenuPortal,
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuRadioGroup,
+  ContextMenuTrigger,
 }
