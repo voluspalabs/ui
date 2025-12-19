@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- 1a050c5: Stable BaseUI and all component update
+
 ## 0.1.14
 
 ### Patch Changes
