@@ -32,7 +32,7 @@ function Link({ className, href, children, hideArrow, ...props }: LinkProps) {
       {!isInternal && !hideArrow ? (
         <ArrowUpRight
           aria-hidden="true"
-          className="group-hover:-translate-y-px ml-0.5 inline-block h-4 w-4 text-muted-foreground group-hover:translate-x-px group-hover:text-foreground"
+          className="ml-0.5 inline-block h-4 w-4 text-muted-foreground group-hover:translate-x-px group-hover:-translate-y-px group-hover:text-foreground"
         />
       ) : null}
     </NextLink>

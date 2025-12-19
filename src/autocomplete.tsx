@@ -1,4 +1,4 @@
-import { Autocomplete as AutocompletePrimitive } from '@base-ui-components/react/autocomplete'
+import { Autocomplete as AutocompletePrimitive } from '@base-ui/react/autocomplete'
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { XIcon } from 'lucide-react'
 import { Button } from './button'

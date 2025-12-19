@@ -30,7 +30,7 @@
 ### Performance
 
 - Implement proper memoization (useMemo, useCallback)
-- Use React.memo for expensive components
+- Use memo for expensive components
 - Avoid unnecessary re-renders
 - Implement proper lazy loading
 - Use proper key props in lists

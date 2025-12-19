@@ -1,10 +1,8 @@
 'use client'
 
 import { cn } from '@voluspalabs/lib/utils/cn'
-import { Check, X } from 'lucide-react'
 import type { ComponentProps } from 'react'
-import { Drawer as DrawerPrimitive } from 'vaul-base'
-import { Button } from './button'
+import { Drawer as DrawerPrimitive } from 'vaul'
 
 function Drawer({ ...props }: ComponentProps<typeof DrawerPrimitive.Root>) {
   return <DrawerPrimitive.Root data-slot="drawer" {...props} />
@@ -35,7 +33,7 @@ function DrawerOverlay({
   return (
     <DrawerPrimitive.Overlay
       className={cn(
-        'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in',
+        'data-closed:fade-out-0 data-open:fade-in-0 fixed inset-0 z-50 bg-black/10 data-closed:animate-out data-open:animate-in supports-backdrop-filter:backdrop-blur-xs',
         className,
       )}
       data-slot="drawer-overlay"
@@ -47,68 +45,20 @@ function DrawerOverlay({
 function DrawerContent({
   className,
   children,
-  showCloseButton = false,
-  showConfirmButton = false,
-  onCancel,
-  onConfirm,
   ...props
-}: ComponentProps<typeof DrawerPrimitive.Content> & {
-  showCloseButton?: boolean
-  showConfirmButton?: boolean
-  onCancel?: () => void
-  onConfirm?: () => void
-}) {
-  const hasAnyButton = showCloseButton || showConfirmButton
-
+}: ComponentProps<typeof DrawerPrimitive.Content>) {
   return (
     <DrawerPortal data-slot="drawer-portal">
       <DrawerOverlay />
       <DrawerPrimitive.Content
         className={cn(
-          'group/drawer-content drawer-safe-spacing fixed z-50 flex h-auto flex-col bg-background',
-          'data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[95vh] data-[vaul-drawer-direction=top]:rounded-b-4xl',
-          'data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[95vh] data-[vaul-drawer-direction=bottom]:rounded-t-4xl',
-          'data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:rounded-l-4xl data-[vaul-drawer-direction=right]:sm:max-w-sm',
-          'data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:rounded-r-4xl data-[vaul-drawer-direction=left]:sm:max-w-sm',
+          'group/drawer-content fixed z-50 flex h-auto flex-col bg-background text-sm data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=bottom]:rounded-t-xl data-[vaul-drawer-direction=left]:rounded-r-xl data-[vaul-drawer-direction=top]:rounded-b-xl data-[vaul-drawer-direction=right]:rounded-l-xl data-[vaul-drawer-direction=bottom]:border-t data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=top]:border-b data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=left]:sm:max-w-sm data-[vaul-drawer-direction=right]:sm:max-w-sm',
           className,
         )}
         data-slot="drawer-content"
         {...props}
       >
-        {hasAnyButton && (
-          <div className="absolute top-4 right-4 z-10 flex gap-2">
-            {showCloseButton && (
-              <DrawerClose
-                render={
-                  <Button
-                    aria-label="Cancel"
-                    className="size-12 rounded-full bg-transparent brightness-125 backdrop-saturate-150"
-                    onClick={onCancel}
-                    size="icon"
-                    variant="outline"
-                  >
-                    <X className="size-5" />
-                  </Button>
-                }
-              />
-            )}
-            {showConfirmButton && (
-              <DrawerClose
-                render={
-                  <Button
-                    aria-label="Confirm"
-                    className="size-12 rounded-full"
-                    onClick={onConfirm}
-                    size="icon"
-                    variant="default"
-                  >
-                    <Check className="size-5" />
-                  </Button>
-                }
-              />
-            )}
-          </div>
-        )}
+        <div className="mx-auto mx-auto mt-4 hidden hidden h-1 w-[100px] shrink-0 shrink-0 rounded-full bg-muted bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -118,7 +68,10 @@ function DrawerContent({
 function DrawerHeader({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
-      className={cn('flex flex-col gap-1.5 pt-7 pb-6', className)}
+      className={cn(
+        'flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-0.5 md:text-left',
+        className,
+      )}
       data-slot="drawer-header"
       {...props}
     />
@@ -141,7 +94,7 @@ function DrawerTitle({
 }: ComponentProps<typeof DrawerPrimitive.Title>) {
   return (
     <DrawerPrimitive.Title
-      className={cn('font-semibold text-foreground', className)}
+      className={cn('font-medium text-base text-foreground', className)}
       data-slot="drawer-title"
       {...props}
     />
