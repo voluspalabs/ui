@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.3
+
+### Patch Changes
+
+- 24a0189: Add DropdownMenuPositioner, DropdownMenuPopup, and DropdownMenuArrow components
+
 ## 0.2.2
 
 ### Patch Changes
