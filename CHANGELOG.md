@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.4
+
+### Patch Changes
+
+- 55aeec4: Add HoverCardPortal, HoverCardPositioner, HoverCardPopup, and HoverCardArrow components
+
 ## 0.2.3
 
 ### Patch Changes
