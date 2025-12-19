@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.2
+
+### Patch Changes
+
+- 78b43ee: Add TooltipPortal, TooltipPositioner, TooltipPopup, and TooltipArrow components
+
 ## 0.2.1
 
 ### Patch Changes
