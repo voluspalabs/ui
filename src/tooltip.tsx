@@ -52,15 +52,17 @@ function TooltipPositioner({
   ...props
 }: TooltipPrimitive.Positioner.Props) {
   return (
-    <TooltipPrimitive.Positioner
-      align={align}
-      alignOffset={alignOffset}
-      className={cn('isolate z-50', className)}
-      data-slot="tooltip-positioner"
-      side={side}
-      sideOffset={sideOffset}
-      {...props}
-    />
+    <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50', className)}
+        data-slot="tooltip-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </TooltipPrimitive.Portal>
   )
 }
 

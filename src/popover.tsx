@@ -79,8 +79,22 @@ function PopoverDescription({
   )
 }
 
+function PopoverArrow({ className, ...props }: PopoverPrimitive.Arrow.Props) {
+  return (
+    <PopoverPrimitive.Arrow
+      className={cn(
+        'z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-popover fill-popover data-[side=bottom]:top-0 data-[side=left]:top-1/2 data-[side=right]:top-1/2 data-[side=left]:right-0 data-[side=top]:bottom-0 data-[side=right]:left-0 data-[side=left]:-translate-y-1/2 data-[side=right]:-translate-y-1/2',
+        className,
+      )}
+      data-slot="popover-arrow"
+      {...props}
+    />
+  )
+}
+
 export {
   Popover,
+  PopoverArrow,
   PopoverContent,
   PopoverDescription,
   PopoverHeader,

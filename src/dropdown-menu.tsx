@@ -26,15 +26,17 @@ function DropdownMenuPositioner({
   ...props
 }: MenuPrimitive.Positioner.Props) {
   return (
-    <MenuPrimitive.Positioner
-      align={align}
-      alignOffset={alignOffset}
-      className={cn('isolate z-50 outline-none', className)}
-      data-slot="dropdown-menu-positioner"
-      side={side}
-      sideOffset={sideOffset}
-      {...props}
-    />
+    <MenuPrimitive.Portal>
+      <MenuPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50 outline-none', className)}
+        data-slot="dropdown-menu-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </MenuPrimitive.Portal>
   )
 }
 

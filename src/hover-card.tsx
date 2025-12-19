@@ -28,15 +28,17 @@ function HoverCardPositioner({
   ...props
 }: PreviewCardPrimitive.Positioner.Props) {
   return (
-    <PreviewCardPrimitive.Positioner
-      align={align}
-      alignOffset={alignOffset}
-      className={cn('isolate z-50', className)}
-      data-slot="hover-card-positioner"
-      side={side}
-      sideOffset={sideOffset}
-      {...props}
-    />
+    <PreviewCardPrimitive.Portal>
+      <PreviewCardPrimitive.Positioner
+        align={align}
+        alignOffset={alignOffset}
+        className={cn('isolate z-50', className)}
+        data-slot="hover-card-positioner"
+        side={side}
+        sideOffset={sideOffset}
+        {...props}
+      />
+    </PreviewCardPrimitive.Portal>
   )
 }
 

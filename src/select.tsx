@@ -5,7 +5,9 @@ import { cn } from '@voluspalabs/lib/utils/cn'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
 
-const Select = SelectPrimitive.Root
+function Select<T>({ ...props }: SelectPrimitive.Root.Props<T>) {
+  return <SelectPrimitive.Root data-slot="select" {...props} />
+}
 
 function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
   return (
