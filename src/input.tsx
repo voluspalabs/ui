@@ -1,8 +1,7 @@
 import { Input as InputPrimitive } from '@base-ui/react/input'
 import { cn } from '@voluspalabs/lib/utils/cn'
-import type { ComponentProps } from 'react'
 
-function Input({ className, type, ...props }: ComponentProps<'input'>) {
+function Input({ className, type, ...props }: InputPrimitive.Props) {
   return (
     <InputPrimitive
       className={cn(

@@ -3,6 +3,17 @@
 import { Tooltip as TooltipPrimitive } from '@base-ui/react/tooltip'
 import { cn } from '@voluspalabs/lib/utils/cn'
 
+/**
+ * TooltipProvider manages shared tooltip behavior like delay and close behavior.
+ * For optimal performance, wrap your app (or a section of it) with a single TooltipProvider
+ * instead of using individual Tooltip components which each create their own provider.
+ *
+ * @example
+ * // App-level usage (recommended)
+ * <TooltipProvider delay={300}>
+ *   <App />
+ * </TooltipProvider>
+ */
 function TooltipProvider({
   delay = 0,
   ...props
