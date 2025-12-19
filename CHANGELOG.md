@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- edee121: Minor components updates
+
 ## 0.2.0
 
 ### Minor Changes
