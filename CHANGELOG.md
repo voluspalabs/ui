@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.7
+
+### Patch Changes
+
+- 79ecf1a: Update button font size for XL
+
 ## 0.2.6
 
 ### Patch Changes
