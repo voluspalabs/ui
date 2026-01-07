@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.6
+
+### Patch Changes
+
+- 70fc0d2: Updated packages and button/input variants
+
 ## 0.2.5
 
 ### Patch Changes
