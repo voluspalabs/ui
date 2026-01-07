@@ -12,7 +12,11 @@ import { Input } from '../input'
 
 export type InputProps = ComponentPropsWithRef<'input'>
 
-const PasswordInput = ({ className, ...props }: ComponentProps<'input'>) => {
+const PasswordInput = ({
+  className,
+  size,
+  ...props
+}: Omit<ComponentProps<'input'>, 'size'> & ComponentProps<typeof Input>) => {
   const [showPassword, setShowPassword] = useState(false)
   const isEmpty =
     props.value === '' || props.value === undefined || props.value === null
@@ -23,6 +27,7 @@ const PasswordInput = ({ className, ...props }: ComponentProps<'input'>) => {
       <Input
         className={cn('hide-password-toggle pr-10', className)}
         data-slot="password-input"
+        size={size}
         type={showPassword ? 'text' : 'password'}
         {...props}
       />

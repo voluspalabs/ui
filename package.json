@@ -517,20 +517,20 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
-    "@tanstack/react-form": "^1.27.5",
+    "@tanstack/react-form": "^1.27.7",
     "@voluspalabs/lib": "^0.0.35",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
     "react-day-picker": "^9.13.0",
-    "react-resizable-panels": "^4.0.10",
+    "react-resizable-panels": "^4.3.0",
     "recharts": "^3.6.0",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@biomejs/biome": "^2.3.10",
+    "@biomejs/biome": "^2.3.11",
     "@changesets/cli": "^2.29.8",
     "@voluspalabs/lint": "^0.0.34",
     "tsup": "^8.5.1",
@@ -544,11 +544,11 @@
     "react-dom": "19.2.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "next": "16.1.0",
+    "next": "16.1.1",
     "tailwindcss": "^4.1.18",
     "tailwindcss-animate": "^1.0.7",
     "sonner": "^2.0.7",
-    "zod": "^4.2.1"
+    "zod": "^4.3.5"
   },
   "engines": {
     "node": ">=20.0.0"

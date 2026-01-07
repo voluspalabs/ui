@@ -131,7 +131,11 @@ function InputGroupText({ className, ...props }: ComponentProps<'span'>) {
   )
 }
 
-function InputGroupInput({ className, ...props }: ComponentProps<'input'>) {
+function InputGroupInput({
+  className,
+  size,
+  ...props
+}: Omit<ComponentProps<'input'>, 'size'> & ComponentProps<typeof Input>) {
   return (
     <Input
       className={cn(
@@ -139,6 +143,7 @@ function InputGroupInput({ className, ...props }: ComponentProps<'input'>) {
         className,
       )}
       data-slot="input-group-control"
+      size={size}
       {...props}
     />
   )
