@@ -516,7 +516,7 @@
     "ruler:apply": "bunx @intellectronica/ruler@latest apply --local-only --agents copilot,codex,claude"
   },
   "dependencies": {
-    "@base-ui/react": "^1.0.0",
+    "@base-ui/react": "^1.1.0",
     "@tanstack/react-form": "^1.27.7",
     "@voluspalabs/lib": "^0.0.35",
     "cmdk": "^1.1.1",
@@ -524,7 +524,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
     "react-day-picker": "^9.13.0",
-    "react-resizable-panels": "^4.3.0",
+    "react-resizable-panels": "^4.4.1",
     "recharts": "^3.6.0",
     "vaul": "^1.1.2"
   },
@@ -542,7 +542,7 @@
     "class-variance-authority": "^0.7.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "next": "16.1.1",
     "tailwindcss": "^4.1.18",
