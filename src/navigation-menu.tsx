@@ -2,12 +2,13 @@ import { NavigationMenu as NavigationMenuPrimitive } from '@base-ui/react/naviga
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva } from 'class-variance-authority'
 import { ChevronDownIcon } from 'lucide-react'
+import type { ComponentProps } from 'react'
 
 function NavigationMenu({
   className,
   children,
   ...props
-}: NavigationMenuPrimitive.Root.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Root>) {
   return (
     <NavigationMenuPrimitive.Root
       className={cn(
@@ -26,7 +27,7 @@ function NavigationMenu({
 function NavigationMenuList({
   className,
   ...props
-}: NavigationMenuPrimitive.List.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.List>) {
   return (
     <NavigationMenuPrimitive.List
       className={cn(
@@ -42,7 +43,7 @@ function NavigationMenuList({
 function NavigationMenuItem({
   className,
   ...props
-}: NavigationMenuPrimitive.Item.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Item>) {
   return (
     <NavigationMenuPrimitive.Item
       className={cn('relative', className)}
@@ -60,7 +61,7 @@ function NavigationMenuTrigger({
   className,
   children,
   ...props
-}: NavigationMenuPrimitive.Trigger.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Trigger>) {
   return (
     <NavigationMenuPrimitive.Trigger
       className={cn(navigationMenuTriggerStyle(), 'group', className)}
@@ -79,7 +80,7 @@ function NavigationMenuTrigger({
 function NavigationMenuContent({
   className,
   ...props
-}: NavigationMenuPrimitive.Content.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Content>) {
   return (
     <NavigationMenuPrimitive.Content
       className={cn(
@@ -99,7 +100,7 @@ function NavigationMenuPositioner({
   align = 'start',
   alignOffset = 0,
   ...props
-}: NavigationMenuPrimitive.Positioner.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Positioner>) {
   return (
     <NavigationMenuPrimitive.Portal>
       <NavigationMenuPrimitive.Positioner
@@ -124,7 +125,7 @@ function NavigationMenuPositioner({
 function NavigationMenuLink({
   className,
   ...props
-}: NavigationMenuPrimitive.Link.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Link>) {
   return (
     <NavigationMenuPrimitive.Link
       className={cn(
@@ -140,7 +141,7 @@ function NavigationMenuLink({
 function NavigationMenuIndicator({
   className,
   ...props
-}: NavigationMenuPrimitive.Icon.Props) {
+}: ComponentProps<typeof NavigationMenuPrimitive.Icon>) {
   return (
     <NavigationMenuPrimitive.Icon
       className={cn(
