@@ -18,8 +18,8 @@ const spinnerVariants = cva('relative block opacity-60', {
 export interface SpinnerProps
   extends ComponentProps<'span'>,
     VariantProps<typeof spinnerVariants> {
-  loading?: boolean
   inverted?: boolean
+  loading?: boolean
   /**
    * Optional color context to ensure spinner is visible on various backgrounds.
    * When omitted, spinner inherits current text color from parent.

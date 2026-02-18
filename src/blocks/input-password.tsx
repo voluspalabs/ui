@@ -5,6 +5,7 @@ import { Eye, EyeClosed } from 'lucide-react'
 import {
   type ComponentProps,
   type ComponentPropsWithRef,
+  useCallback,
   useState,
 } from 'react'
 import { Button } from '../button'
@@ -18,6 +19,9 @@ const PasswordInput = ({
   ...props
 }: Omit<ComponentProps<'input'>, 'size'> & ComponentProps<typeof Input>) => {
   const [showPassword, setShowPassword] = useState(false)
+  const togglePassword = useCallback(() => {
+    setShowPassword((prev) => !prev)
+  }, [])
   const isEmpty =
     props.value === '' || props.value === undefined || props.value === null
   const disabled = props.disabled || isEmpty
@@ -38,7 +42,7 @@ const PasswordInput = ({
         )}
         data-slot="password-toggle"
         disabled={disabled}
-        onClick={() => setShowPassword((prev) => !prev)}
+        onClick={togglePassword}
         size="sm"
         type="button"
         variant="ghost"

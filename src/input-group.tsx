@@ -2,7 +2,12 @@
 
 import { cn } from '@voluspalabs/lib/utils/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
-import type { ComponentProps, KeyboardEvent, MouseEvent } from 'react'
+import {
+  type ComponentProps,
+  type KeyboardEvent,
+  type MouseEvent,
+  useCallback,
+} from 'react'
 import { Button } from './button'
 import { Input } from './input'
 import { Textarea } from './textarea'
@@ -48,23 +53,29 @@ function InputGroupAddon({
   onKeyDown,
   ...props
 }: ComponentProps<'div'> & VariantProps<typeof inputGroupAddonVariants>) {
-  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-    onClick?.(e)
-    if ((e.target as HTMLElement).closest('button')) {
-      return
-    }
-    e.currentTarget.parentElement?.querySelector('input')?.focus()
-  }
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    onKeyDown?.(e)
-    if (e.key === 'Enter' || e.key === ' ') {
+  const handleClick = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      onClick?.(e)
       if ((e.target as HTMLElement).closest('button')) {
         return
       }
       e.currentTarget.parentElement?.querySelector('input')?.focus()
-    }
-  }
+    },
+    [onClick],
+  )
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      onKeyDown?.(e)
+      if (e.key === 'Enter' || e.key === ' ') {
+        if ((e.target as HTMLElement).closest('button')) {
+          return
+        }
+        e.currentTarget.parentElement?.querySelector('input')?.focus()
+      }
+    },
+    [onKeyDown],
+  )
 
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: Click handler forwards focus to the input field
