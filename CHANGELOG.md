@@ -1,5 +1,11 @@
 # @voluspalabs/ui
 
+## 0.2.10
+
+### Patch Changes
+
+- 8c3e42e: Moved to bunup and updated packages
+
 ## 0.2.9
 
 ### Patch Changes

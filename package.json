@@ -1,7 +1,7 @@
 {
   "name": "@voluspalabs/ui",
   "description": "A collection of high-quality React components styled with Tailwind CSS for building modern web interfaces.",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "type": "module",
   "files": [
     "dist"
